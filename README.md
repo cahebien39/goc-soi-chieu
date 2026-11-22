@@ -1,72 +1,81 @@
-Bản quyền Tiếng Việt:
------------
-KHÔNG GIAN WEB ĐƯỢC TẠO BỞI
-Cá Hề Dieu An
-Liên hệ: cahebien39@gmail.com 
-- Quy định này áp dụng cho việc truy cập, đọc nội dung, ghi chép và tương tác trên trang web. 
-- Khi sử dụng trang, người dùng đồng ý tôn trọng quyền tác giả và quyền riêng tư của người khác.
-- Kiến thức nền thuộc tri thức cộng đồng; ý tưởng & cấu trúc trang thuộc quyền tác giả.
------------
-* Điều 1 · Phần thuộc về tác giả:
+# Bản quyền và điều khoản sử dụng
+
+**Không gian web được tạo bởi Cá Hề Dieu An**  
+Liên hệ: [cahebien39@gmail.com](mailto:cahebien39@gmail.com)
+
+Các điều khoản này áp dụng khi truy cập, đọc nội dung, ghi chép hoặc tương tác trên trang web. Khi sử dụng trang, bạn đồng ý tôn trọng quyền tác giả và quyền riêng tư của người khác. Kiến thức nền thuộc tri thức chung của cộng đồng; ý tưởng, cách tổ chức và cấu trúc riêng của trang thuộc quyền tác giả.
+
+## Điều 1 · Nội dung thuộc quyền tác giả
+
 - Ý tưởng xây dựng trang web và cách kết nối các mục thực hành thành một hệ thống thống nhất.
-- Thiết kế giao diện, bố cục, màu sắc, cách trình bày, hiệu ứng và toàn bộ mã nguồn của trang.
-- Các câu hỏi gợi ý, khung đối thoại, lời dẫn và văn bản được soạn thảo riêng cho trang web này.
+- Thiết kế giao diện, bố cục, màu sắc, cách trình bày, hiệu ứng và mã nguồn của trang web.
+- Các câu hỏi gợi ý, khung đối thoại, lời dẫn và nội dung được biên soạn riêng cho trang web này.
 
-* Điều 2 · Phần thuộc về cộng đồng:
-- Các nền tảng kiến thức chung như tâm lý học phân tích của Carl Gustav Jung (Bóng, Persona...), biểu tượng Tarot, phương pháp Shadow Work, hơi thở cơ hoành và các thói quen tự chăm sóc bản thân.
-- Những kiến thức nền này thuộc về tri thức chung của cộng đồng; không giữ độc quyền đối với bản thân các khái niệm nền tảng đó.
-- Các sách, tài liệu được sử dụng cho Web:
-+ Carl Jung Thăm Dò Tiềm Thức
-+ Carl Jung Con Người và Biểu Tượng
-+ Tarot 78 độ Minh Triết
+## Điều 2 · Kiến thức nền thuộc cộng đồng
 
-* ĐIỀU 3 · NHỮNG ĐIỀU ĐƯỢC COPY:
-- Sử dụng trang web cho mục đích tìm hiểu cá nhân, ghi chép nhật ký riêng và thực hành hằng ngày.
-- Chia sẻ đường dẫn trang web hoặc trao đổi các kiến thức chung về Shadow Work, Tarot và tự chăm sóc bản thân.
-- Copy hoặc trích dẫn ngắn gọn một phần nội dung chữ để học tập, nghiên cứu hoặc chia sẻ phi lợi nhuận, với điều kiện giữ nguyên thông tin bản quyền và ghi rõ nguồn trang.
+- Các kiến thức nền tảng như tâm lý học phân tích của Carl Gustav Jung (Bóng, Persona...), biểu tượng Tarot, phương pháp Shadow Work, hơi thở cơ hoành và thực hành tự chăm sóc bản thân là tri thức chung của cộng đồng.
+- Không tuyên bố độc quyền đối với các khái niệm nền tảng này.
+- Sách và tài liệu tham khảo được sử dụng cho trang web:
+  - *Carl Jung: Thăm dò tiềm thức*
+  - *Carl Jung: Con người và biểu tượng*
+  - *Tarot: 78 độ minh triết*
 
-* ĐIỀU 4 · NHỮNG ĐIỀU KHÔNG ĐƯỢC COPY:
-- Copy toàn bộ hoặc một phần quan trọng mã nguồn, giao diện hoặc cấu trúc trang để sao chép thành bản sao tương tự.
-- Copy nội dung, mã nguồn hoặc sản phẩm từ trang web đem kinh doanh, buôn bán, thu phí hoặc sử dụng cho mục đích thương mại dưới bất kỳ hình thức nào.
-- Mạo danh tác giả, xóa bỏ, che giấu, chỉnh sửa hoặc thay đổi thông tin người tạo ra không gian web này dưới bất kỳ hình thức nào..
+## Điều 3 · Những nội dung được phép
 
-* ĐIỀU 5 · TÔN TRỌNG QUYỀN TÁC GIẢ VÀ QUYỀN RIÊNG TƯ:
-- Tôn trọng quyền tác giả: Mọi trích dẫn hoặc chia sẻ lại phần nội dung thuộc trang đều phải giữ đúng xuất xứ và không làm sai lệch ý nghĩa ban đầu.
-- Tôn trọng quyền riêng tư của người khác: Không thu thập, chụp lại, phát tán hoặc xâm phạm thông tin, hình ảnh hay ghi chép cá nhân của người khác khi sử dụng chung thiết bị hoặc không gian chia sẻ.
-- Quyền riêng tư nhật ký của bạn: Nội dung nhật ký bạn viết thuộc quyền sở hữu của bạn, chỉ lưu tạm trong phiên hiện tại của trình duyệt, không gửi lên máy chủ nào và sẽ tự xóa khi tải lại trang nếu bạn chưa tải bản sao lưu.
----------------------
-English Copyright:
------------
-WEB SPACE CREATED BY © 2026
-Cá Hề Dieu An
-Contact: cahebien39@gmail.com
-- These terms apply to accessing, reading, taking notes, and interacting within this website.
-- By using this site, users agree to respect the intellectual property rights and privacy of others.
-- Foundational knowledge belongs to the public domain; the specific ideas and structure of this site are the author’s intellectual property.
------------
-* Article 1 · The Author’s Intellectual Property:
-- The concept behind the website and the method of connecting various practice modules into a unified system.
-- The interface design, layout, color scheme, presentation, visual effects, and the entire source code of the website.
-- Prompting questions, dialogue frameworks, introductory text, and written content specifically crafted for this website.
+- Sử dụng trang web để tìm hiểu cá nhân, viết nhật ký riêng và thực hành hằng ngày.
+- Chia sẻ đường dẫn trang web hoặc trao đổi về kiến thức chung liên quan đến Shadow Work, Tarot và tự chăm sóc bản thân.
+- Sao chép hoặc trích dẫn ngắn một phần nội dung chữ cho mục đích học tập, nghiên cứu hoặc chia sẻ phi lợi nhuận, với điều kiện giữ nguyên thông tin bản quyền và ghi rõ nguồn.
 
-* Article 2 · Public Domain / Community Knowledge:
-- General foundational knowledge, such as Carl Gustav Jung’s analytical psychology (the Shadow, the Persona, etc.), Tarot symbolism, Shadow Work methods, diaphragmatic breathing, and self-care practices.
-- This foundational knowledge belongs to the public domain; no exclusive rights are claimed over these underlying concepts themselves. - Books and materials used for this website:
-+ *Carl Jung: Exploring the Unconscious*
-+ *Carl Jung: Man and His Symbols*
-+ *Tarot: 78 Degrees of Wisdom*
+## Điều 4 · Những nội dung không được phép
 
-* ARTICLE 3 · PERMITTED USES:
+- Sao chép toàn bộ hoặc phần đáng kể mã nguồn, giao diện hay cấu trúc trang web để tạo bản sao tương tự.
+- Sao chép nội dung, mã nguồn hoặc tài liệu từ trang web để kinh doanh, bán, thu phí hoặc sử dụng cho bất kỳ mục đích thương mại nào.
+- Mạo danh tác giả, hoặc xóa, che giấu, chỉnh sửa hay thay đổi thông tin nhận diện người tạo ra không gian web này.
+
+## Điều 5 · Tôn trọng quyền tác giả và quyền riêng tư
+
+- **Quyền tác giả:** Khi trích dẫn hoặc chia sẻ lại nội dung từ trang, hãy ghi đúng nguồn và không làm sai lệch ý nghĩa ban đầu.
+- **Quyền riêng tư của người khác:** Không thu thập, chụp lại, phát tán hoặc xâm phạm thông tin, hình ảnh hay ghi chép cá nhân của người khác khi sử dụng thiết bị dùng chung hoặc ở không gian sinh hoạt chung.
+- **Quyền riêng tư nhật ký:** Nội dung nhật ký bạn viết thuộc về bạn; nội dung chỉ được lưu tạm trong phiên hiện tại của trình duyệt và không được gửi lên máy chủ.
+
+---
+
+# Copyright and Terms of Use
+
+**Web space created by © 2026 Cá Hề Dieu An**  
+Contact: [cahebien39@gmail.com](mailto:cahebien39@gmail.com)
+
+These terms apply to accessing, reading, taking notes, or interacting with this website. By using the site, you agree to respect the intellectual property rights and privacy of others. Foundational knowledge belongs to the community; the site’s specific ideas, organization, and structure belong to the author.
+
+## Article 1 · The Author’s Intellectual Property
+
+- The concept behind the website and the way its practice modules are connected into a unified system.
+- The website’s interface design, layout, color scheme, presentation, visual effects, and source code.
+- The prompts, dialogue frameworks, introductory text, and written content created specifically for this website.
+
+## Article 2 · Community Knowledge
+
+- Foundational knowledge—including Carl Gustav Jung’s analytical psychology (the Shadow, the Persona, and related concepts), Tarot symbolism, Shadow Work methods, diaphragmatic breathing, and self-care practices—is part of the community’s shared knowledge.
+- No exclusive rights are claimed over these underlying concepts.
+- Books and reference materials used for this website:
+  - *Carl Jung: Exploring the Unconscious*
+  - *Carl Jung: Man and His Symbols*
+  - *Tarot: 78 Degrees of Wisdom*
+
+## Article 3 · Permitted Uses
+
 - Using the website for personal exploration, private journaling, and daily practice.
-- Sharing the website link or discussing general knowledge regarding Shadow Work, Tarot, and self-care.
-- Copying or briefly quoting portions of the text for study, research, or non-profit sharing, provided that copyright information is retained and the source is clearly credited.
+- Sharing the website link or discussing general knowledge about Shadow Work, Tarot, and self-care.
+- Copying or briefly quoting portions of the written content for study, research, or non-profit sharing, provided that copyright information is retained and the source is credited.
 
-* ARTICLE 4 · PROHIBITED USES:
-- Copying all or a significant portion of the source code, interface, or site structure to create a replica or derivative version.
-- Copying content, source code, or materials from the website for business, sales, monetization, or any other commercial purpose.
-- Impersonating the author, or removing, concealing, editing, or altering information identifying the creator of this website.
+## Article 4 · Prohibited Uses
 
-* ARTICLE 5 · RESPECTING COPYRIGHT AND PRIVACY:
-- Respecting copyright: Any quotation or sharing of content from this site must accurately reflect the original source and must not distort the original meaning.
-- Respecting the privacy of others: Do not collect, capture, distribute, or infringe upon the personal information, images, or private notes of others when using shared devices or communal spaces. - Privacy of your journal: The journal content you write remains yours; it is stored only temporarily within your current browser session, is not sent to any server, and will be automatically deleted upon reloading the page if you have not downloaded a backup copy.
----------------------
+- Copying all or a substantial part of the source code, interface, or site structure to create a similar replica.
+- Copying content, source code, or materials from the website for business, sales, fees, or any commercial purpose.
+- Impersonating the author, or removing, concealing, editing, or altering information identifying the creator of this web space.
+
+## Article 5 · Respecting Copyright and Privacy
+
+- **Copyright:** Any quotation or redistribution of content from this site must identify the source accurately and must not distort the original meaning.
+- **Other people’s privacy:** Do not collect, capture, distribute, or infringe upon another person’s personal information, images, or private notes when using shared devices or communal spaces.
+- **Your journal privacy:** The journal content you write belongs to you. It is stored temporarily in your current browser session and is not sent to a server.
