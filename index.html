@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   ================================================================================
-  GÓC SOI CHIẾU · SHADOW WORK
+  GÓC SOI CHIẾU · SHADOW WORK (PROGRESSIVE WEB APP EDITION)
   Tác giả / Creator : CÁ HỀ DIEU AN
   © 2026 CÁ HỀ DIEU AN. Bảo lưu quyền tác giả đối với ý tưởng & kiến trúc sản phẩm.
 
@@ -40,6 +40,7 @@
   "name": "Góc Soi Chiếu · Shadow Work",
   "inLanguage": "vi",
   "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
   "creator": {
     "@type": "Person",
     "name": "CÁ HỀ DIEU AN"
@@ -56,16 +57,27 @@
   "copyrightNotice": "© 2026 CÁ HỀ DIEU AN. Ý tưởng xây dựng web, cấu trúc trải nghiệm, thiết kế giao diện và mã nguồn thuộc quyền tác giả; các kiến thức nền thuộc sở hữu trí tuệ cộng đồng."
 }
 </script>
-<meta name="theme-color" content="#282238">
+
+<!-- Cấu hình PWA & Giao diện Hệ điều hành (iOS / Android / Desktop) -->
+<meta name="theme-color" content="#f8f4ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#282238" media="(prefers-color-scheme: dark)">
+<meta name="application-name" content="Góc Soi Chiếu">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="icons/icon-192.png" type="image/png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Góc Soi Chiếu">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Liên kết động cho Manifest và Icon SVG (tự tạo bằng JS để chạy độc lập 1 tệp) -->
+<link id="pwa-manifest" rel="manifest">
+<link id="pwa-icon" rel="icon" type="image/svg+xml">
+<link id="pwa-apple-icon" rel="apple-touch-icon">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"></noscript>
+
 <style>
 /* ===== BẢNG MÀU TRƯỞNG THÀNH, ẤM ÁP & ÁNH ĐÈN DỊU NHẸ ===== */
 :root {
@@ -206,6 +218,14 @@ body {
   background-size: 130% 130%, 130% 130%, 130% 130%, 130% 130%, 100% 100%;
   line-height: 1.72;
   overflow-x: hidden;
+  /* Cảm giác ứng dụng độc lập (PWA Standalone) */
+  overscroll-behavior-y: contain;
+}
+
+/* Không bôi đen nhầm các nút bấm & điều hướng như app native */
+nav, button, .chip, .face, .mirror-badge, .by {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -283,7 +303,7 @@ main {
   position: relative;
   max-width: min(1180px, 100%);
   margin: 0 auto;
-  padding: calc(var(--nav) + 18px) max(clamp(14px, 2.2vw, 24px), env(safe-area-inset-right, 0px)) 96px max(clamp(14px, 2.2vw, 24px), env(safe-area-inset-left, 0px));
+  padding: calc(var(--nav) + 18px) max(clamp(14px, 2.2vw, 24px), env(safe-area-inset-right, 0px)) 110px max(clamp(14px, 2.2vw, 24px), env(safe-area-inset-left, 0px));
 }
 
 .tab { display: none; }
@@ -433,6 +453,40 @@ h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 700; color: var(--ink); }
   width: 42px;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--b2), transparent);
+}
+
+/* ===== THANH TRẠNG THÁI PWA (CÀI ĐẶT & NGOẠI TUYẾN) ===== */
+.pwa-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 4px 0 14px;
+}
+
+.pwa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .74rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card2);
+  color: var(--soft);
+}
+
+.pwa-pill .p-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.pwa-pill.offline .p-dot {
+  background: var(--gold);
 }
 
 /* ===== ĐỊNH DANH CREATOR & BẢO VỆ QUYỀN TÁC GIẢ ===== */
@@ -806,11 +860,18 @@ body.playing #mus-box { border-color: var(--b2); box-shadow: 0 10px 28px -8px va
 }
 #toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-#reopen {
+.float-left {
   position: fixed;
   left: 18px;
   bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   z-index: 29;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.float-pill {
   font-family: "Be Vietnam Pro", system-ui, sans-serif;
   font-size: .82rem;
   font-weight: 600;
@@ -821,6 +882,12 @@ body.playing #mus-box { border-color: var(--b2); box-shadow: 0 10px 28px -8px va
   color: var(--ink);
   cursor: pointer;
   box-shadow: 0 8px 20px -12px var(--shadow);
+}
+
+.float-pill.install {
+  border-color: var(--b2);
+  background: linear-gradient(135deg, var(--f1), var(--gold-soft));
+  color: #1f192b;
 }
 
 /* ===== MÀN GIỚI THIỆU ===== */
@@ -870,7 +937,7 @@ body.playing #mus-box { border-color: var(--b2); box-shadow: 0 10px 28px -8px va
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--b1), var(--b2)); border-radius: 99px; }
 
-/* ===== TỐI ƯU CHO ANDROID / THIẾT BỊ CẢM ỨNG ===== */
+/* ===== TỐI ƯU CHO ANDROID / IOS / THIẾT BỊ CẢM ỨNG ===== */
 button, select, .chip, .btn { touch-action: manipulation; }
 
 @media (hover: hover) and (pointer: fine) {
@@ -908,7 +975,7 @@ button, select, .chip, .btn { touch-action: manipulation; }
 }
 
 @media (max-width: 620px) {
-  main { padding-bottom: 144px; }
+  main { padding-bottom: 148px; }
   #mus-box {
     left: 12px; right: 12px;
     bottom: calc(10px + env(safe-area-inset-bottom, 0px));
@@ -920,8 +987,8 @@ button, select, .chip, .btn { touch-action: manipulation; }
   #mus-box select { flex: 1; min-width: 0; text-overflow: ellipsis; }
   #vol { width: 56px; }
   #mus { white-space: nowrap; }
-  #reopen { bottom: calc(68px + env(safe-area-inset-bottom, 0px)); left: 12px; }
-  #toast { bottom: calc(118px + env(safe-area-inset-bottom, 0px)); max-width: 90vw; text-align: center; }
+  .float-left { bottom: calc(68px + env(safe-area-inset-bottom, 0px)); left: 12px; }
+  #toast { bottom: calc(122px + env(safe-area-inset-bottom, 0px)); max-width: 90vw; text-align: center; }
   .cta .btn { flex: 1 1 100%; justify-content: center; }
   .row .btn { flex: 0 1 auto; }
   .pillars { grid-template-columns: 1fr; gap: 8px; margin: 10px 0 14px; }
@@ -959,7 +1026,7 @@ button, select, .chip, .btn { touch-action: manipulation; }
 <div id="curtain" role="dialog" aria-modal="true" aria-labelledby="ct0">
   <div class="ch cl"></div><div class="ch cr"></div>
   <div class="ci">
-    <span class="mirror-badge">✦ Không gian thấu hiểu nội tâm</span>
+    <span class="mirror-badge">✦ Không gian nội tâm</span>
     <h1 id="ct0">Góc Soi Chiếu</h1>
     <div class="by">Sáng tạo bởi <b>Cá Hề Dieu An</b></div>
     <p class="lead c" style="margin-bottom:0">Nơi bạn tạm gác lại những vội vã bên ngoài để nhận diện, đối thoại và tích hợp những phần bóng tối của mình, không phán xét, không tự hành hạ.</p>
@@ -967,7 +1034,6 @@ button, select, .chip, .btn { touch-action: manipulation; }
       <div class="pillar"><b>◐ Cẩm nang Shadow Work</b>Quy trình 7 bước, thực hành buổi sáng, trước khi ngủ và trong các mối quan hệ.</div>
       <div class="pillar"><b>◈ Gương Soi Cảm Xúc</b>Khi bạn viết, gương gọi tên cảm xúc, nhu cầu và điều nó muốn nói.</div>
       <div class="pillar"><b>✦ 78 Thẻ Thấu Suốt</b>78 lá Tarot soi 78 kiểu bóng theo Jung, kèm 54 lá Self-Care và bài tập thở cơ hoành.</div>
-      <div class="pillar"><b>🎵 Âm nhạc mới</b>8 bài: piano bình minh, kalimba bên suối, lofi chill, guitar bên sóng biển, cùng piano ambient, drone và chuông gió.</div>
     </div>
     <button class="btn" id="open">✦ Bước vào không gian</button>
   </div>
@@ -989,6 +1055,10 @@ button, select, .chip, .btn { touch-action: manipulation; }
     <div class="editorial-mark" aria-hidden="true"><span></span>✦<span></span></div>
     <h1 class="c">Góc Soi Chiếu</h1>
     <div class="byw"><div class="by">Sáng tạo bởi <b>Cá Hề Dieu An</b></div></div>
+    <div class="pwa-bar" aria-label="Trạng thái ứng dụng">
+      <button type="button" class="chip" id="pwa-theme" title="Đổi giao diện Sáng / Tối">🌓 Giao diện</button>
+      <button type="button" class="chip" id="pwa-install-top" hidden>📲 Cài đặt ứng dụng</button>
+    </div>
     <p class="lead c">Chào bạn trở về với chính mình. Hãy dành một nhịp thở chậm để lắng nghe những điều đang âm thầm diễn ra bên trong, không vội phán xét, chỉ cần đủ dịu dàng để nhìn rõ.</p>
     <div class="cta">
       <button class="btn" data-pr="0">☀ Bắt đầu buổi sáng</button>
@@ -1115,7 +1185,7 @@ button, select, .chip, .btn { touch-action: manipulation; }
     <p class="lead" style="font-size:.86rem">Nhật ký chỉ lưu tạm thời trong phiên hiện tại và tự xóa khi tải lại trang để bảo vệ riêng tư. Hãy tải bản sao lưu nếu bạn muốn giữ lại.</p>
   </section>
 
-  <!-- Tab 6: Bản quyền & quy định sử dụng web (2 bản ngôn ngữ tách biệt) -->
+  <!-- Tab 6: Bản quyền & quy định sử dụng web -->
   <section class="tab ip-wrap" id="copyright">
     <h2>🛡️ Bản quyền &amp; quy định sử dụng web</h2>
     <p class="lead">Văn bản quy định sử dụng không gian trực tuyến này, nêu rõ phần thuộc về tác giả, phần thuộc về cộng đồng, phạm vi sao chép và nguyên tắc tôn trọng người khác.</p>
@@ -1259,8 +1329,38 @@ button, select, .chip, .btn { touch-action: manipulation; }
   </div>
 </div>
 
+<!-- Modal hướng dẫn cài đặt PWA (cho iOS Safari hoặc trình duyệt chưa hỗ trợ prompt tự động) -->
+<div class="mod" id="pwa-mod" hidden>
+  <div class="box">
+    <button class="x" id="pwa-mx" aria-label="Đóng">✕</button>
+    <div class="sc-slot">📲 Cài đặt Progressive Web App</div>
+    <h3>Thêm Góc Soi Chiếu vào màn hình chính</h3>
+    <p>Cài đặt ứng dụng giúp bạn mở nhanh toàn màn hình, không thanh địa chỉ trình duyệt và hoạt động mượt mà ngay cả khi ngoại tuyến:</p>
+    <div class="ip-box" style="margin:10px 0">
+      <h4>Trên iPhone / iPad (Safari)</h4>
+      <ul>
+        <li>Chạm vào biểu tượng <b>Chia sẻ (Share)</b> ở thanh dưới cùng của Safari.</li>
+        <li>Cuộn xuống và chọn <b>Thêm vào MH chính (Add to Home Screen)</b>.</li>
+        <li>Nhấn <b>Thêm (Add)</b> ở góc trên bên phải.</li>
+      </ul>
+    </div>
+    <div class="ip-box" style="margin:10px 0">
+      <h4>Trên Android / Chrome / Edge</h4>
+      <ul>
+        <li>Mở trình đơn <b>⋮ (ba chấm)</b> ở góc trên bên phải trình duyệt.</li>
+        <li>Chọn <b>Cài đặt ứng dụng (Install app)</b> hoặc <b>Thêm vào màn hình chính</b>.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div id="toast" role="status"></div>
-<button id="reopen">◈ Màn giới thiệu</button>
+
+<!-- Các nút nổi góc trái dưới: Màn giới thiệu & Cài đặt App PWA -->
+<div class="float-left">
+  <button id="reopen" class="float-pill">◈ Màn giới thiệu</button>
+  <button id="pwa-install" class="float-pill install" hidden>📲 Cài App</button>
+</div>
 
 <!-- Trình phát nhạc nền Web Audio -->
 <div id="mus-box">
@@ -1287,6 +1387,103 @@ button, select, .chip, .btn { touch-action: manipulation; }
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/* ===== KHỞI TẠO KIẾN TRÚC PROGRESSIVE WEB APP (SINGLE-FILE PWA) ===== */
+(function initPWA() {
+  // 1. Tạo biểu tượng ứng dụng SVG chất lượng cao (192x192 / 512x512)
+  const appSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#332654"/>
+        <stop offset="55%" stop-color="#574282"/>
+        <stop offset="100%" stop-color="#282238"/>
+      </linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fcf0ce"/>
+        <stop offset="50%" stop-color="#e8c16c"/>
+        <stop offset="100%" stop-color="#cca049"/>
+      </linearGradient>
+    </defs>
+    <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+    <circle cx="256" cy="256" r="186" fill="none" stroke="url(#gold)" stroke-width="5" opacity="0.45"/>
+    <path d="M278 134a124 124 0 1 0 100 198 102 102 0 1 1-100-198z" fill="url(#gold)"/>
+    <path d="M342 152l8 22 22 8-22 8-8 22-8-22-22-8 22-8z" fill="#fcf0ce"/>
+    <circle cx="322" cy="240" r="6" fill="#e8c16c"/>
+  </svg>`;
+  const iconDataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(appSvg);
+
+  const iconEl = $('#pwa-icon');
+  const appleIconEl = $('#pwa-apple-icon');
+  if (iconEl) iconEl.href = iconDataUrl;
+  if (appleIconEl) appleIconEl.href = iconDataUrl;
+
+  // 2. Tạo Web App Manifest động (hỗ trợ cài đặt & phím tắt App Shortcuts)
+  try {
+    const baseUrl = location.href.split('#')[0];
+    const manifestObj = {
+      name: 'Góc Soi Chiếu · Shadow Work',
+      short_name: 'Góc Soi Chiếu',
+      description: 'Không gian thực hành tâm lý chiều sâu, 78 Thẻ Thấu Suốt, Gương Soi Cảm Xúc và Self-Care — Sáng tạo bởi CÁ HỀ DIEU AN.',
+      start_url: baseUrl + '#home',
+      scope: baseUrl.substring(0, baseUrl.lastIndexOf('/') + 1) || './',
+      display: 'standalone',
+      orientation: 'any',
+      background_color: '#282238',
+      theme_color: '#282238',
+      lang: 'vi',
+      categories: ['health', 'lifestyle', 'wellness'],
+      icons: [
+        { src: iconDataUrl, sizes: '192x192', type: 'image/svg+xml', purpose: 'any maskable' },
+        { src: iconDataUrl, sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable' }
+      ],
+      shortcuts: [
+        { name: 'Viết Nhật Ký & Gương Soi', short_name: 'Nhật Ký', url: baseUrl + '#journal' },
+        { name: 'Rút Thẻ Thấu Suốt', short_name: '78 Thẻ', url: baseUrl + '#cards' },
+        { name: '54 Thói Quen Self-Care', short_name: 'Self-Care', url: baseUrl + '#care' }
+      ]
+    };
+    const manifestBlob = new Blob([JSON.stringify(manifestObj)], { type: 'application/manifest+json' });
+    const manifestEl = $('#pwa-manifest');
+    if (manifestEl) manifestEl.href = URL.createObjectURL(manifestBlob);
+  } catch (e) {}
+
+  // 3. Đăng ký Service Worker ngoại tuyến (ưu tiên tệp sw.js nếu có, tự động dự phòng bằng Blob SW)
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {
+        try {
+          const swCode = `
+            const CACHE = 'goc-soi-chieu-pwa-v1';
+            self.addEventListener('install', e => {
+              self.skipWaiting();
+              e.waitUntil(caches.open(CACHE).then(c => c.addAll(['./']).catch(() => {})));
+            });
+            self.addEventListener('activate', e => {
+              e.waitUntil(self.clients.claim());
+            });
+            self.addEventListener('fetch', e => {
+              if (e.request.method !== 'GET') return;
+              e.respondWith(
+                caches.match(e.request).then(cached => {
+                  const fetched = fetch(e.request).then(res => {
+                    if (res && res.status === 200 && res.type === 'basic') {
+                      const clone = res.clone();
+                      caches.open(CACHE).then(c => c.put(e.request, clone));
+                    }
+                    return res;
+                  }).catch(() => cached);
+                  return cached || fetched;
+                })
+              );
+            });
+          `;
+          const swBlob = new Blob([swCode], { type: 'application/javascript' });
+          navigator.serviceWorker.register(URL.createObjectURL(swBlob)).catch(() => {});
+        } catch (err) {}
+      });
+    });
+  }
+})();
 
 // Trạng thái phiên làm việc tạm thời trong bộ nhớ và biến âm thanh Web Audio
 let mem = [];
@@ -1450,7 +1647,7 @@ const SC = [
   ['Thanh Lọc Năng Lượng Tiêu Cực', 'Tắm nước muối ấm hoặc ngâm chân cuối ngày để gột rửa áp lực tích tụ.', 'Năng lượng của tôi luôn sạch sẽ, tích cực.', 'Thói quen nào đang vô tình rút cạn năng lượng của bạn mỗi ngày?'],
   ['Neo Năng Lượng Từ Khoáng Vật', 'Đặt một viên đá tự nhiên hoặc vật gốm lên bàn làm việc để nhắc về sự kiên định.', 'Tôi giữ điềm tĩnh và vững chắc trước mọi biến động.', 'Bạn đang cần thêm sự điềm tĩnh hay sự quyết đoán?'],
   ['Thắp Sáng Cảm Hứng Hành Động', 'Thắp một ngọn nến nhỏ khi bắt đầu làm việc, nhìn ngọn lửa 30 giây để lấy tập trung.', 'Ngọn lửa đam mê trong tôi luôn cháy sáng.', 'Ý tưởng nào đang chờ bạn thổi bùng bằng hành động?'],
-  ['Chạm Vào Thiên Nhiên (Earthing)', 'Đi chân trần trên cỏ hoặc mặt đất 10 phút (chọn nơi sạch, an toàn).', 'Tôi cân bằng và vững vàng khi hòa nhịp cùng tự nhiên.', 'Đã bao lâu bạn chưa thư thái ở ngoài trời?'],
+  ['Chạm Vào Thiên Nhiên (Earthing)', 'Đi chân trần trên cỏ hoặc mặt đất 10 phút (tránh nơi ẩm ướt, chọn nơi sạch, an toàn).', 'Tôi cân bằng và vững vàng khi hòa nhịp cùng tự nhiên.', 'Đã bao lâu bạn chưa thư thái ở ngoài trời?'],
   ['Học Hỏi Từ Bài Học Dòng Họ', 'Suy ngẫm về một phẩm chất tốt đẹp thừa hưởng từ cha mẹ hoặc thế hệ trước.', 'Tôi kế thừa giá trị tốt đẹp và kiến tạo di sản của riêng mình.', 'Thói quen tích cực nào từ gia đình bạn muốn duy trì?'],
   ['Kích Hoạt Trung Tâm Sáng Tạo', 'Brainstorm những ý tưởng táo bạo nhất mà không phán xét tính khả thi.', 'Tiềm năng sáng tạo của tôi là vô hạn.', 'Dự án nào bạn muốn thử nếu không sợ thất bại?'],
   ['Sắp Đặt Góc Nạp Năng Lượng', 'Tạo một góc nhỏ chỉ chứa vật mang lại niềm vui: sách hay, chậu cây, ảnh kỷ niệm.', 'Tôi luôn có một không gian nội tâm yên tĩnh để trở về.', 'Điều gì trong góc riêng sẽ giúp bạn thấy được vỗ về nhất?'],
@@ -2169,14 +2366,19 @@ $('#list').onclick = e => {
 
 $('#mx').onclick = () => { $('#mod').hidden = true; };
 $('#mod').onclick = e => { if (e.target.id === 'mod') $('#mod').hidden = true; };
-addEventListener('keydown', e => { if (e.key === 'Escape') $('#mod').hidden = true; });
+addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    $('#mod').hidden = true;
+    $('#pwa-mod').hidden = true;
+  }
+});
 $('#mcont').onclick = () => {
   if (!viewing) return;
   $('#mod').hidden = true;
   write({ prompt: 'Viết tiếp: ' + (viewing.prompt || 'điều đọng lại sau lần viết trước'), emo: viewing.emotion || '', src: viewing.src || { t: 'free', title: 'Viết tiếp một bài cũ' } });
 };
 
-/* Tự động đính kèm ghi nguồn Creator khi sao chép đoạn dài từ nội dung hệ thống (không can thiệp nhật ký cá nhân của người dùng) */
+/* Tự động đính kèm ghi nguồn Creator khi sao chép đoạn dài từ nội dung hệ thống */
 document.addEventListener('copy', e => {
   try {
     const sel = window.getSelection(), t = String(sel || '');
@@ -2189,7 +2391,7 @@ document.addEventListener('copy', e => {
 });
 
 try {
-  console.info('%c🐠 Góc Soi Chiếu · Creator: ' + CREDIT.name + ' (© ' + CREDIT.year + ')', 'font-weight:bold;font-size:13px;color:#634c91;');
+  console.info('%c🐠 Góc Soi Chiếu (PWA) · Creator: ' + CREDIT.name + ' (© ' + CREDIT.year + ')', 'font-weight:bold;font-size:13px;color:#634c91;');
   console.info(CREDIT.scope);
 } catch (err) {}
 
@@ -2520,6 +2722,94 @@ function sparkle() {
   }
 }
 
+/* ===== TƯƠNG TÁC PWA: CÀI ĐẶT ỨNG DỤNG, GIAO DIỆN & TRẠNG THÁI MẠNG ===== */
+let deferredPrompt = null;
+const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+function updateInstallUI(show) {
+  const b1 = $('#pwa-install');
+  const b2 = $('#pwa-install-top');
+  if (b1) b1.hidden = !show;
+  if (b2) b2.hidden = !show;
+}
+
+if (!isStandalone) {
+  // Hiển thị nút cài đặt trên iOS hoặc các trình duyệt hỗ trợ hướng dẫn thủ công
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if (isIOS) updateInstallUI(true);
+}
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  updateInstallUI(true);
+});
+
+window.addEventListener('appinstalled', () => {
+  deferredPrompt = null;
+  updateInstallUI(false);
+  toast('✦ Đã cài đặt Góc Soi Chiếu vào màn hình chính!');
+});
+
+async function handleInstallClick() {
+  if (deferredPrompt) {
+    try {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') updateInstallUI(false);
+      deferredPrompt = null;
+    } catch (e) {}
+  } else {
+    $('#pwa-mod').hidden = false;
+  }
+}
+
+$('#pwa-install').onclick = handleInstallClick;
+$('#pwa-install-top').onclick = handleInstallClick;
+$('#pwa-mx').onclick = () => { $('#pwa-mod').hidden = true; };
+$('#pwa-mod').onclick = e => { if (e.target.id === 'pwa-mod') $('#pwa-mod').hidden = true; };
+
+// Chuyển đổi giao diện Sáng / Tối & đồng bộ theme-color cho thanh trạng thái PWA
+function applyTheme(t) {
+  if (t === 'dark' || t === 'light') {
+    document.documentElement.setAttribute('data-theme', t);
+    store('swj.theme', t);
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+  const isDark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const btn = $('#pwa-theme');
+  if (btn) btn.textContent = isDark ? '☀️ Chế độ Sáng' : '🌙 Chế độ Tối';
+  $$('meta[name="theme-color"]').forEach(m => m.setAttribute('content', isDark ? '#282238' : '#f8f4ed'));
+}
+
+const savedTheme = store('swj.theme');
+applyTheme(savedTheme);
+$('#pwa-theme').onclick = () => {
+  const curTheme = document.documentElement.getAttribute('data-theme');
+  const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const next = curTheme ? (curTheme === 'dark' ? 'light' : 'dark') : (sysDark ? 'light' : 'dark');
+  applyTheme(next);
+  chime('tab');
+};
+
+// Theo dõi kết nối mạng trực tuyến / ngoại tuyến (Offline-first indicator)
+function updateNetworkStatus() {
+  const pill = $('#pwa-net');
+  const txt = $('#pwa-net-txt');
+  if (!pill || !txt) return;
+  if (navigator.onLine) {
+    pill.classList.remove('offline');
+    txt.textContent = 'Sẵn sàng ngoại tuyến';
+  } else {
+    pill.classList.add('offline');
+    txt.textContent = 'Đang ngoại tuyến';
+  }
+}
+window.addEventListener('online', () => { updateNetworkStatus(); toast('Đã kết nối lại mạng'); });
+window.addEventListener('offline', () => { updateNetworkStatus(); toast('Chế độ ngoại tuyến — Ứng dụng vẫn hoạt động bình thường'); });
+updateNetworkStatus();
+
 /* ===== MÀN GIỚI THIỆU & KHỞI ĐỘNG ===== */
 $('#open').onclick = () => { $('#curtain').classList.add('open'); chime('flip'); };
 $('#reopen').onclick = () => { $('#curtain').classList.remove('open'); };
@@ -2539,13 +2829,6 @@ paintSrc();
 stats();
 mirror(false);
 go(location.hash.slice(1) || 'home', false);
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function () {});
-  });
-}
 </script>
 </body>
 </html>
