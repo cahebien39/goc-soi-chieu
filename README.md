@@ -1,8 +1,6 @@
 Bản quyền Tiếng Việt:
-🛡️ Quy định sử dụng web:
-Văn bản quy định sử dụng không gian trực tuyến này, nêu rõ phần thuộc về tác giả, phần thuộc về cộng đồng, phạm vi sao chép và nguyên tắc tôn trọng người khác.
 -----------
-KHÔNG GIAN WEB ĐƯỢC TẠO BỞI  © 2026
+KHÔNG GIAN WEB ĐƯỢC TẠO BỞI
 Cá Hề Dieu An
 Liên hệ: cahebien39@gmail.com 
 - Quy định này áp dụng cho việc truy cập, đọc nội dung, ghi chép và tương tác trên trang web. 
@@ -36,11 +34,8 @@ Liên hệ: cahebien39@gmail.com
 - Tôn trọng quyền tác giả: Mọi trích dẫn hoặc chia sẻ lại phần nội dung thuộc trang đều phải giữ đúng xuất xứ và không làm sai lệch ý nghĩa ban đầu.
 - Tôn trọng quyền riêng tư của người khác: Không thu thập, chụp lại, phát tán hoặc xâm phạm thông tin, hình ảnh hay ghi chép cá nhân của người khác khi sử dụng chung thiết bị hoặc không gian chia sẻ.
 - Quyền riêng tư nhật ký của bạn: Nội dung nhật ký bạn viết thuộc quyền sở hữu của bạn, chỉ lưu tạm trong phiên hiện tại của trình duyệt, không gửi lên máy chủ nào và sẽ tự xóa khi tải lại trang nếu bạn chưa tải bản sao lưu.
-
 ---------------------
 English Copyright:
-🛡️ Terms of Use:
-This document outlines the terms for using this online space, specifying what belongs to the author, what belongs to the public domain, the scope of permitted reproduction, and the principles for respecting others.
 -----------
 WEB SPACE CREATED BY © 2026
 Cá Hề Dieu An
