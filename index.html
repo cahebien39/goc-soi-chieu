@@ -455,7 +455,7 @@ h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 700; color: var(--ink); }
   background: linear-gradient(90deg, transparent, var(--b2), transparent);
 }
 
-/* ===== THANH TRẠNG THÁI PWA (CÀI ĐẶT & NGOẠI TUYẾN) ===== */
+/* ===== THANH TRẠNG THÁI PWA (GIAO DIỆN & NGOẠI TUYẾN) ===== */
 .pwa-bar {
   display: flex;
   align-items: center;
@@ -884,12 +884,6 @@ body.playing #mus-box { border-color: var(--b2); box-shadow: 0 10px 28px -8px va
   box-shadow: 0 8px 20px -12px var(--shadow);
 }
 
-.float-pill.install {
-  border-color: var(--b2);
-  background: linear-gradient(135deg, var(--f1), var(--gold-soft));
-  color: #1f192b;
-}
-
 /* ===== MÀN GIỚI THIỆU ===== */
 #curtain {
   position: fixed;
@@ -910,7 +904,7 @@ body.playing #mus-box { border-color: var(--b2); box-shadow: 0 10px 28px -8px va
 #curtain.open .cr { transform: translateX(102%); }
 .ci {
   position: relative;
-  max-width: min(610px, 100%);
+  max-width: min(660px, 100%);
   width: 100%;
   text-align: center;
   margin: auto;
@@ -1029,11 +1023,12 @@ button, select, .chip, .btn { touch-action: manipulation; }
     <span class="mirror-badge">✦ Không gian nội tâm</span>
     <h1 id="ct0">Góc Soi Chiếu</h1>
     <div class="by">Sáng tạo bởi <b>Cá Hề Dieu An</b></div>
-    <p class="lead c" style="margin-bottom:0">Nơi bạn tạm gác lại những vội vã bên ngoài để nhận diện, đối thoại và tích hợp những phần bóng tối của mình, không phán xét, không tự hành hạ.</p>
+    <p class="lead c" style="margin-bottom:0">Không gian thực hành Shadow Work và tự chăm sóc tinh thần hằng ngày.</p>
     <div class="pillars">
-      <div class="pillar"><b>◐ Cẩm nang Shadow Work</b>Quy trình 7 bước, thực hành buổi sáng, trước khi ngủ và trong các mối quan hệ.</div>
-      <div class="pillar"><b>◈ Gương Soi Cảm Xúc</b>Khi bạn viết, gương gọi tên cảm xúc, nhu cầu và điều nó muốn nói.</div>
-      <div class="pillar"><b>✦ 78 Thẻ Thấu Suốt</b>78 lá Tarot soi 78 kiểu bóng theo Jung, kèm 54 lá Self-Care và bài tập thở cơ hoành.</div>
+      <div class="pillar"><b>◐ Cẩm nang</b>Nguyên tắc, quy trình 7 bước và câu hỏi soi chiếu.</div>
+      <div class="pillar"><b>✦ 78 Thẻ Thấu Suốt</b>Rút thẻ 3D, trải 3 lá và gợi ý viết nhật ký.</div>
+      <div class="pillar"><b>✎ Nhật Ký &amp; Gương Soi</b>Ghi chép, gương soi cảm xúc và thở cơ hoành.</div>
+      <div class="pillar"><b>❀ Self-Care &amp; Kho</b>54 thói quen, kho lưu trữ phiên và nhạc nền.</div>
     </div>
     <button class="btn" id="open">✦ Bước vào không gian</button>
   </div>
@@ -1057,9 +1052,8 @@ button, select, .chip, .btn { touch-action: manipulation; }
     <div class="byw"><div class="by">Sáng tạo bởi <b>Cá Hề Dieu An</b></div></div>
     <div class="pwa-bar" aria-label="Trạng thái ứng dụng">
       <button type="button" class="chip" id="pwa-theme" title="Đổi giao diện Sáng / Tối">🌓 Giao diện</button>
-      <button type="button" class="chip" id="pwa-install-top" hidden>📲 Cài đặt ứng dụng</button>
     </div>
-    <p class="lead c">Chào bạn trở về với chính mình. Hãy dành một nhịp thở chậm để lắng nghe những điều đang âm thầm diễn ra bên trong, không vội phán xét, chỉ cần đủ dịu dàng để nhìn rõ.</p>
+    <p class="lead c">Không gian tĩnh lặng để quan sát cảm xúc và chăm sóc bản thân mỗi ngày.</p>
     <div class="cta">
       <button class="btn" data-pr="0">☀ Bắt đầu buổi sáng</button>
       <button class="btn ghost" data-pr="1">◐ Quy trình 7 bước</button>
@@ -1071,7 +1065,7 @@ button, select, .chip, .btn { touch-action: manipulation; }
   <!-- Trang 78 Thẻ Thấu Suốt -->
   <section class="tab" id="cards">
     <h2>✦ Thẻ Thấu Suốt</h2>
-    <p class="lead">78 lá Tarot là 78 tấm gương soi bóng tối. Mỗi lá mang một kiểu “bóng” trong tâm lý học Jung, kèm phần vàng ẩn bên trong, một câu hỏi để soi và một thực hành nhỏ.</p>
+    <p class="lead">78 lá bài soi chiếu bóng tối, phần vàng ẩn, câu hỏi gợi mở và thực hành nhỏ.</p>
     <div class="chips" id="cfilter">
       <button class="chip on" data-f="-1">Tất cả 78</button>
       <button class="chip" data-f="0">✦ Ẩn chính</button>
@@ -1157,8 +1151,8 @@ button, select, .chip, .btn { touch-action: manipulation; }
   <!-- Trang Self-Care -->
   <section class="tab" id="care">
     <h2>❀ Self-Care Book</h2>
-    <h3 style="margin:6px 0 4px">54 THÓI QUEN TẠO LẠI NĂNG LƯỢNG CHO THÂN - TÂM - TRÍ</h3>
-    <p class="lead">Lộ trình làm mới tâm trí và kích hoạt năng lượng nội tại mỗi ngày.</p>
+    <h3 style="margin:6px 0 4px">54 THÓI QUEN THÂN - TÂM - TRÍ</h3>
+    <p class="lead">Chọn kiểu trải hoặc tìm nhanh thói quen tự chăm sóc hằng ngày.</p>
     <p class="lbl">Chọn cách trải bài</p>
     <div class="chips" id="sp">
       <button class="chip on" data-n="1">1 lá · nhanh</button><button class="chip" data-n="3">3 lá · Chăm sóc linh hồn</button>
@@ -1182,13 +1176,13 @@ button, select, .chip, .btn { touch-action: manipulation; }
     </div>
     <div id="list"></div>
     <div class="row"><button class="btn sm ghost" id="exp">Tải bản sao lưu (.txt)</button></div>
-    <p class="lead" style="font-size:.86rem">Nhật ký chỉ lưu tạm thời trong phiên hiện tại và tự xóa khi tải lại trang để bảo vệ riêng tư. Hãy tải bản sao lưu nếu bạn muốn giữ lại.</p>
+    <p class="lead" style="font-size:.86rem">Lưu tạm trong phiên hiện tại; hãy tải bản sao lưu nếu cần giữ lại.</p>
   </section>
 
   <!-- Tab 6: Bản quyền & quy định sử dụng web -->
   <section class="tab ip-wrap" id="copyright">
     <h2>🛡️ Bản quyền &amp; quy định sử dụng web</h2>
-    <p class="lead">Văn bản quy định sử dụng không gian trực tuyến này, nêu rõ phần thuộc về tác giả, phần thuộc về cộng đồng, phạm vi sao chép và nguyên tắc tôn trọng người khác.</p>
+    <p class="lead">Quy định ngắn gọn về quyền tác giả, tri thức cộng đồng, phạm vi sao chép và quyền riêng tư.</p>
 
     <div class="ip-lang-bar" role="tablist" aria-label="Chọn ngôn ngữ văn bản quy định">
       <button type="button" class="chip on" data-ip-lang="vi">Tiếng Việt</button>
@@ -1329,37 +1323,11 @@ button, select, .chip, .btn { touch-action: manipulation; }
   </div>
 </div>
 
-<!-- Modal hướng dẫn cài đặt PWA (cho iOS Safari hoặc trình duyệt chưa hỗ trợ prompt tự động) -->
-<div class="mod" id="pwa-mod" hidden>
-  <div class="box">
-    <button class="x" id="pwa-mx" aria-label="Đóng">✕</button>
-    <div class="sc-slot">📲 Cài đặt Progressive Web App</div>
-    <h3>Thêm Góc Soi Chiếu vào màn hình chính</h3>
-    <p>Cài đặt ứng dụng giúp bạn mở nhanh toàn màn hình, không thanh địa chỉ trình duyệt và hoạt động mượt mà ngay cả khi ngoại tuyến:</p>
-    <div class="ip-box" style="margin:10px 0">
-      <h4>Trên iPhone / iPad (Safari)</h4>
-      <ul>
-        <li>Chạm vào biểu tượng <b>Chia sẻ (Share)</b> ở thanh dưới cùng của Safari.</li>
-        <li>Cuộn xuống và chọn <b>Thêm vào MH chính (Add to Home Screen)</b>.</li>
-        <li>Nhấn <b>Thêm (Add)</b> ở góc trên bên phải.</li>
-      </ul>
-    </div>
-    <div class="ip-box" style="margin:10px 0">
-      <h4>Trên Android / Chrome / Edge</h4>
-      <ul>
-        <li>Mở trình đơn <b>⋮ (ba chấm)</b> ở góc trên bên phải trình duyệt.</li>
-        <li>Chọn <b>Cài đặt ứng dụng (Install app)</b> hoặc <b>Thêm vào màn hình chính</b>.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <div id="toast" role="status"></div>
 
-<!-- Các nút nổi góc trái dưới: Màn giới thiệu & Cài đặt App PWA -->
+<!-- Nút nổi góc trái dưới: Màn giới thiệu -->
 <div class="float-left">
   <button id="reopen" class="float-pill">◈ Màn giới thiệu</button>
-  <button id="pwa-install" class="float-pill install" hidden>📲 Cài App</button>
 </div>
 
 <!-- Trình phát nhạc nền Web Audio -->
@@ -1618,13 +1586,13 @@ const PENTS = [
 ];
 
 const GROUPS = [
-  { n: 'Ẩn chính', f: 'Cổ mẫu', g: '✦', note: 'Ẩn chính · 22 cổ mẫu lớn của tâm thức: Persona, Bóng, Anima/Animus, Người Mẹ, Người Cha, Kẻ lừa… những lực nằm sau cách ta sống và yêu.' },
-  { n: 'Gậy', f: 'Lửa · Trực giác', g: '🔥', note: 'Gậy · Lửa · chức năng Trực giác: bóng tối của ý chí, cơn giận, tham vọng và nỗi sợ bắt đầu.' },
-  { n: 'Cốc', f: 'Nước · Cảm nhận', g: '💧', note: 'Cốc · Nước · chức năng Cảm nhận: bóng tối của cảm xúc, sự gắn bó, mất mát và xấu hổ.' },
-  { n: 'Kiếm', f: 'Khí · Tư duy', g: '🗡️', note: 'Kiếm · Khí · chức năng Tư duy: bóng tối của phán xét, lo âu, lý lẽ và lời nói.' },
-  { n: 'Xu', f: 'Đất · Giác quan', g: '🌱', note: 'Xu · Đất · chức năng Giác quan: bóng tối của tiền bạc, thân thể, công việc và giá trị bản thân.' }
+  { n: 'Ẩn chính', f: 'Cổ mẫu', g: '✦', note: 'Ẩn chính · 22 cổ mẫu lớn của tâm thức.' },
+  { n: 'Gậy', f: 'Lửa · Trực giác', g: '🔥', note: 'Gậy · Lửa · Trực giác: ý chí, phản ứng và khởi đầu.' },
+  { n: 'Cốc', f: 'Nước · Cảm nhận', g: '💧', note: 'Cốc · Nước · Cảm nhận: cảm xúc, gắn bó và tổn thương.' },
+  { n: 'Kiếm', f: 'Khí · Tư duy', g: '🗡️', note: 'Kiếm · Khí · Tư duy: suy nghĩ, phán xét và ranh giới.' },
+  { n: 'Xu', f: 'Đất · Giác quan', g: '🌱', note: 'Xu · Đất · Giác quan: thân thể, công việc và giá trị.' }
 ];
-const NOTE_ALL = '78 lá = 22 cổ mẫu của Ẩn chính + 56 lá thuộc bốn chức năng tâm lý của Jung: Trực giác, Cảm nhận, Tư duy, Giác quan.';
+const NOTE_ALL = '78 lá gồm 22 cổ mẫu Ẩn chính và 56 lá thuộc 4 nhóm Gậy, Cốc, Kiếm, Xu.';
 const RK = ['Át', 'Hai', 'Ba', 'Bốn', 'Năm', 'Sáu', 'Bảy', 'Tám', 'Chín', 'Mười', 'Thị Đồng', 'Hiệp Sĩ', 'Hoàng Hậu', 'Quốc Vương'];
 const RE = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Page', 'Knight', 'Queen', 'King'];
 const RS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'P', 'Kn', 'Q', 'K'];
@@ -1876,14 +1844,14 @@ const PR = [
 const li = a => '<ul>' + a.map(x => '<li>' + x + '</li>').join('') + '</ul>';
 const ol = a => '<ol>' + a.map(x => '<li>' + x + '</li>').join('') + '</ol>';
 const GUIDE = [
-  ['Shadow Work là gì?', '<p>Quá trình nhận diện, khám phá và làm việc với những phần tâm lý chưa được ý thức đầy đủ, thường bị che giấu hoặc không muốn thừa nhận:</p>' + li(['Ghen tị, kiêu ngạo, giận dữ, sợ hãi, phụ thuộc.', 'Nhu cầu được yêu thương, công nhận và chú ý.', 'Phẩm chất tích cực bị kìm hãm: tự tin, quyết đoán, sáng tạo, độc lập, lãnh đạo.', 'Ký ức, cảm xúc và phản ứng chưa được hiểu rõ.'])],
-  ['Mục tiêu thực hành', ol(['Nhìn thấy điều đang tồn tại bên trong.', 'Nhận diện những phản ứng vô thức.', 'Hiểu nhu cầu và nỗi sợ ẩn phía sau.', 'Phân biệt điều thuộc về mình và người khác.', 'Ngừng để phản ứng tự động điều khiển cuộc sống.', 'Phát triển những phẩm chất đang bị kìm hãm.', 'Chuyển nhận thức thành hành động có trách nhiệm.']) + '<p class="sc-note">Mục tiêu không phải là trở thành người không có cảm xúc tiêu cực.</p>'],
-  ['Nguyên tắc quan trọng', li(['<b>Nhìn thấy</b> không đồng nghĩa với đồng ý.', '<b>Chấp nhận</b> không đồng nghĩa với cho phép.', '<b>Hiểu nguyên nhân</b> không đồng nghĩa với biện minh.']) + '<p class="sc-note">Hiểu bóng tối của người khác không có nghĩa là phải chịu đựng hành vi gây hại.</p>'],
-  ['Quy trình 7 bước', ol(['Dừng lại và quan sát', 'Gọi tên bóng tối', 'Đối thoại với phần bóng tối', 'Khám phá nguồn gốc', 'Phân biệt phần của mình và của người khác', 'Tích hợp', 'Chuyển hóa thành hành động']) + '<div class="row"><button class="btn sm" data-pr="1">Thực hành trong Nhật ký</button></div>'],
-  ['Lịch thực hành hằng ngày', li(['<b>Buổi sáng</b> · đối thoại nội tâm, đặt ý định · 5–10 phút', '<b>Trong giao tiếp</b> · quan sát cảm xúc và phản ứng · tự nhiên', '<b>Khi có xung đột</b> · quy trình 7 bước · 5–15 phút', '<b>Gặp người gây khó chịu</b> · phóng chiếu và ranh giới · 3–5 phút', '<b>Trước khi ngủ</b> · nhật ký và tổng kết · 10–15 phút', '<b>Khi nhớ giấc mơ</b> · ghi hình ảnh và liên tưởng · 3–5 phút'])],
-  ['Nguyên tắc để có hiệu quả', ol(['Thành thật với chính mình nhưng không tự hành hạ.', 'Quan sát trước khi phán xét.', 'Không kết luận mọi phản ứng đều từ tuổi thơ.', 'Không biến mọi người khó chịu thành đối tượng phóng chiếu.', 'Không ép mình phải tha thứ hay khơi lại ký ức đau đớn.', 'Không tìm bóng tối trong mọi hành động bình thường.', 'Nhận diện cả phẩm chất tích cực bị kìm hãm.', 'Chuyển mỗi nhận thức thành một hành động cụ thể.', 'Quan sát thay đổi qua nhiều tuần, không chỉ một lần viết.'])],
-  ['Cam kết thực hành', li(['Không phủ nhận những phần mình chưa hiểu.', 'Không tự kết án vì có cảm xúc không đẹp.', 'Không dùng bóng tối để biện minh cho hành vi gây hại.', 'Không nhận trách nhiệm thay cho hành vi của người khác.', 'Dám nhìn nhận, dám sửa chữa, dám bảo vệ bản thân và phát triển phẩm chất tốt đẹp.']) + '<p class="q">Tôi không cần tiêu diệt bóng tối. Tôi cần nhận diện nó, hiểu nó, chịu trách nhiệm về nó và lựa chọn cách sống trưởng thành hơn.</p>'],
-  ['Lưu ý an toàn', '<p>Ứng dụng này không thay thế trị liệu. Nếu việc thực hành làm xuất hiện đau khổ quá mức, lo âu dâng cao, ký ức đau thương ùa về, ảnh hưởng đến sinh hoạt hoặc có ý nghĩ làm hại bản thân, hãy dừng lại và liên hệ người thân, chuyên gia hoặc đường dây hỗ trợ khẩn cấp ở nơi bạn sống.</p>']
+  ['Shadow Work là gì?', '<p>Nhận diện và làm việc với những cảm xúc, nhu cầu hoặc phản ứng chưa được chú ý:</p>' + li(['Ghen tị, giận dữ, sợ hãi, cầu toàn.', 'Nhu cầu được lắng nghe, kết nối hoặc công nhận.', 'Phẩm chất bị kìm nén: tự tin, ranh giới, sáng tạo.'])],
+  ['Mục tiêu thực hành', ol(['Nhận ra phản ứng bên trong.', 'Hiểu nhu cầu phía sau.', 'Phân biệt phần của mình và người khác.', 'Chuyển nhận thức thành hành động nhỏ.'])],
+  ['Nguyên tắc quan trọng', li(['<b>Nhìn thấy</b> không là đồng ý.', '<b>Chấp nhận</b> không là cho phép.', '<b>Hiểu nguyên nhân</b> không là biện minh.'])],
+  ['Quy trình 7 bước', ol(['Dừng lại &amp; quan sát', 'Gọi tên bóng tối', 'Đối thoại nội tâm', 'Khám phá nguồn gốc', 'Phân biệt trách nhiệm', 'Tích hợp', 'Hành động cụ thể']) + '<div class="row"><button class="btn sm" data-pr="1">Mở trong Nhật ký</button></div>'],
+  ['Nhịp thực hành', li(['<b>Sáng</b> · đặt ý định (5–10 phút)', '<b>Trong ngày</b> · quan sát phản ứng', '<b>Khi căng thẳng</b> · 7 bước (5–15 phút)', '<b>Trước khi ngủ</b> · tổng kết ngày (10 phút)'])],
+  ['Lưu ý hiệu quả', ol(['Thành thật nhưng không tự trách nặng nề.', 'Quan sát trước khi phán xét.', 'Chọn một hành động nhỏ, thực tế.', 'Theo dõi sự thay đổi qua từng tuần.'])],
+  ['Cam kết thực hành', li(['Không chối bỏ cảm xúc thật.', 'Không đổ lỗi hay tự làm tổn thương.', 'Chọn cách ứng xử trưởng thành và có ranh giới.'])],
+  ['Lưu ý an toàn', '<p>Công cụ tự thực hành, không thay thế trị liệu. Nếu thấy quá tải hoặc khó chịu kéo dài, hãy dừng lại và tìm hỗ trợ chuyên môn.</p>']
 ];
 
 /* ===== GƯƠNG SOI CẢM XÚC ===== */
@@ -2369,7 +2337,6 @@ $('#mod').onclick = e => { if (e.target.id === 'mod') $('#mod').hidden = true; }
 addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     $('#mod').hidden = true;
-    $('#pwa-mod').hidden = true;
   }
 });
 $('#mcont').onclick = () => {
@@ -2722,54 +2689,7 @@ function sparkle() {
   }
 }
 
-/* ===== TƯƠNG TÁC PWA: CÀI ĐẶT ỨNG DỤNG, GIAO DIỆN & TRẠNG THÁI MẠNG ===== */
-let deferredPrompt = null;
-const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-
-function updateInstallUI(show) {
-  const b1 = $('#pwa-install');
-  const b2 = $('#pwa-install-top');
-  if (b1) b1.hidden = !show;
-  if (b2) b2.hidden = !show;
-}
-
-if (!isStandalone) {
-  // Hiển thị nút cài đặt trên iOS hoặc các trình duyệt hỗ trợ hướng dẫn thủ công
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  if (isIOS) updateInstallUI(true);
-}
-
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  updateInstallUI(true);
-});
-
-window.addEventListener('appinstalled', () => {
-  deferredPrompt = null;
-  updateInstallUI(false);
-  toast('✦ Đã cài đặt Góc Soi Chiếu vào màn hình chính!');
-});
-
-async function handleInstallClick() {
-  if (deferredPrompt) {
-    try {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      if (outcome === 'accepted') updateInstallUI(false);
-      deferredPrompt = null;
-    } catch (e) {}
-  } else {
-    $('#pwa-mod').hidden = false;
-  }
-}
-
-$('#pwa-install').onclick = handleInstallClick;
-$('#pwa-install-top').onclick = handleInstallClick;
-$('#pwa-mx').onclick = () => { $('#pwa-mod').hidden = true; };
-$('#pwa-mod').onclick = e => { if (e.target.id === 'pwa-mod') $('#pwa-mod').hidden = true; };
-
-// Chuyển đổi giao diện Sáng / Tối & đồng bộ theme-color cho thanh trạng thái PWA
+/* ===== TƯƠNG TÁC PWA: GIAO DIỆN & TRẠNG THÁI MẠNG ===== */
 function applyTheme(t) {
   if (t === 'dark' || t === 'light') {
     document.documentElement.setAttribute('data-theme', t);
@@ -2793,7 +2713,6 @@ $('#pwa-theme').onclick = () => {
   chime('tab');
 };
 
-// Theo dõi kết nối mạng trực tuyến / ngoại tuyến (Offline-first indicator)
 function updateNetworkStatus() {
   const pill = $('#pwa-net');
   const txt = $('#pwa-net-txt');
