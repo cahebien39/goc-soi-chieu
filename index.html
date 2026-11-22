@@ -1,0 +1,2629 @@
+<!DOCTYPE html>
+<!--
+  ================================================================================
+  GÓC SOI CHIẾU · SHADOW WORK
+  Tác giả / Creator : CÁ HỀ DIEU AN
+  © 2026 CÁ HỀ DIEU AN. Bảo lưu quyền tác giả đối với ý tưởng & kiến trúc sản phẩm.
+
+  MINH ĐỊNH QUYỀN SỞ HỮU TRÍ TUỆ:
+  1. THUỘC QUYỀN TÁC GIẢ (CÁ HỀ DIEU AN):
+     - Ý tưởng khởi tạo, cấu trúc tổng thể và phương pháp kết hợp các học phần
+       (Cẩm nang Shadow Work, 78 Thẻ Thấu Suốt, Nhật ký, Gương Soi Cảm Xúc,
+       54 Thói quen Self-Care, Nhịp thở cơ hoành và Âm nhạc chữa lành).
+     - Thiết kế giao diện (UI/UX), ngôn ngữ trình bày, hệ thống tương tác và mã nguồn.
+  2. THUỘC SỞ HỮU TRÍ TUỆ CỘNG ĐỒNG (TRI THỨC CHUNG CỦA NHÂN LOẠI):
+     - Các nền tảng lý thuyết: Tâm lý học phân tích của Carl Gustav Jung (Bóng,
+       Persona, Anima/Animus...), biểu tượng Tarot, kỹ thuật Shadow Work, hơi thở
+       cơ hoành và chăm sóc bản thân. Tác giả không giữ độc quyền các tri thức này.
+  3. QUYỀN CỦA NGƯỜI DÙNG:
+     - Nội dung nhật ký bạn viết hoàn toàn thuộc quyền riêng tư và sở hữu của bạn.
+     - Được tự do học hỏi, thực hành, chia sẻ kiến thức cộng đồng; trích dẫn phần
+       trình bày vui lòng ghi rõ nguồn: "Góc Soi Chiếu · CÁ HỀ DIEU AN".
+     - Nghiêm cấm sao chép nguyên bản cấu trúc/thiết kế/mã nguồn để nhận là của mình
+       hoặc xóa/thay đổi tên tác giả CÁ HỀ DIEU AN.
+  ================================================================================
+-->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Góc Soi Chiếu · Shadow Work | Creator: CÁ HỀ DIEU AN</title>
+<meta name="author" content="CÁ HỀ DIEU AN">
+<meta name="creator" content="CÁ HỀ DIEU AN">
+<meta name="publisher" content="CÁ HỀ DIEU AN">
+<meta name="copyright" content="© 2026 CÁ HỀ DIEU AN. Ý tưởng xây dựng web, thiết kế và mã nguồn thuộc quyền tác giả; kiến thức nền thuộc sở hữu trí tuệ cộng đồng.">
+<meta name="description" content="Góc Soi Chiếu · Shadow Work — Sáng tạo bởi CÁ HỀ DIEU AN. Không gian thực hành tâm lý chiều sâu, 78 Thẻ Thấu Suốt, Gương Soi Cảm Xúc và Self-Care.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Góc Soi Chiếu · Shadow Work",
+  "inLanguage": "vi",
+  "applicationCategory": "HealthApplication",
+  "creator": {
+    "@type": "Person",
+    "name": "CÁ HỀ DIEU AN"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "CÁ HỀ DIEU AN"
+  },
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "CÁ HỀ DIEU AN"
+  },
+  "copyrightYear": 2026,
+  "copyrightNotice": "© 2026 CÁ HỀ DIEU AN. Ý tưởng xây dựng web, cấu trúc trải nghiệm, thiết kế giao diện và mã nguồn thuộc quyền tác giả; các kiến thức nền thuộc sở hữu trí tuệ cộng đồng."
+}
+</script>
+<meta name="theme-color" content="#282238">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"></noscript>
+<style>
+/* ===== BẢNG MÀU TRƯỞNG THÀNH, ẤM ÁP & ÁNH ĐÈN DỊU NHẸ ===== */
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #f8f4ed;
+  --bg2: #efe7dc;
+  --ink: #2b253b;
+  --soft: #635a78;
+  --card: rgba(255, 253, 249, .86);
+  --card2: rgba(249, 244, 236, .8);
+  --line: rgba(58, 47, 84, .12);
+  --acc: #decff0;
+  --acc2: #957bc2;
+  --gold: #cca049;
+  --gold-soft: #f6e7c2;
+  --sage: #739480;
+  --btn: #44356b;
+  --btnt: #fcf8f2;
+  --btnsh: rgba(52, 39, 86, .18);
+  --field: rgba(255, 254, 251, .95);
+  --warn: #f7e8c1;
+  --glow: rgba(149, 123, 194, .18);
+  --shadow: rgba(48, 38, 74, .1);
+  --nav: 64px;
+  --b1: #bca4de;
+  --b2: #dfb660;
+  --b3: #92ab9b;
+  --f1: rgba(255, 254, 251, .92);
+  --f2: rgba(247, 242, 253, .84);
+  --f3: rgba(252, 243, 223, .82);
+  --bgg: linear-gradient(145deg, #f9f5ee 0%, #f2ecf8 50%, #f9eed7 100%);
+  --btng: linear-gradient(130deg, #44356b 0%, #634c91 62%, #8267ad 100%);
+  --navg: linear-gradient(90deg, rgba(249, 245, 238, .97), rgba(246, 241, 252, .97) 50%, rgba(250, 242, 225, .97));
+  --hgrad: linear-gradient(105deg, #332654 0%, #7459a3 52%, #be8e34 100%);
+  --a1: rgba(174, 151, 217, .24);
+  --a2: rgba(226, 188, 109, .22);
+  --a3: rgba(130, 166, 144, .18);
+  --a4: rgba(240, 211, 153, .2);
+  --curtain-bg: linear-gradient(155deg, #f7f2ea 0%, #efe8f5 52%, #f7ead0 100%)
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #282238;
+    --bg2: #342b47;
+    --ink: #f6f2fa;
+    --soft: #c7bdd9;
+    --card: rgba(54, 45, 74, .86);
+    --card2: rgba(66, 55, 89, .82);
+    --line: rgba(246, 242, 250, .15);
+    --acc: #b9a0e0;
+    --acc2: #cbb4ed;
+    --gold: #e8c16c;
+    --gold-soft: #6e5932;
+    --sage: #95b8a2;
+    --btn: #ebd08c;
+    --btnt: #241c36;
+    --btnsh: rgba(15, 11, 26, .28);
+    --field: rgba(42, 35, 58, .92);
+    --warn: rgba(232, 193, 108, .22);
+    --glow: rgba(203, 180, 237, .18);
+    --shadow: rgba(15, 11, 26, .28);
+    --b1: #987ec4;
+    --b2: #e2ba64;
+    --b3: #7c9e89;
+    --f1: rgba(61, 51, 83, .92);
+    --f2: rgba(49, 40, 68, .92);
+    --f3: rgba(86, 70, 58, .62);
+    --bgg: linear-gradient(150deg, #251f33 0%, #332947 52%, #3d3240 100%);
+    --btng: linear-gradient(130deg, #e8c374 0%, #f3d999 65%, #fcf0ce 100%);
+    --navg: linear-gradient(90deg, rgba(44, 36, 62, .97), rgba(55, 45, 76, .97) 50%, rgba(63, 52, 58, .97));
+    --hgrad: linear-gradient(105deg, #fcf8ff 0%, #d7c5f2 52%, #f2cc77 100%);
+    --a1: rgba(152, 126, 196, .24);
+    --a2: rgba(226, 186, 100, .16);
+    --a3: rgba(124, 158, 137, .16);
+    --a4: rgba(232, 195, 116, .13);
+    --curtain-bg: linear-gradient(155deg, #262036 0%, #352b4a 52%, #403442 100%)
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #282238;
+  --bg2: #342b47;
+  --ink: #f6f2fa;
+  --soft: #c7bdd9;
+  --card: rgba(54, 45, 74, .86);
+  --card2: rgba(66, 55, 89, .82);
+  --line: rgba(246, 242, 250, .15);
+  --acc: #b9a0e0;
+  --acc2: #cbb4ed;
+  --gold: #e8c16c;
+  --gold-soft: #6e5932;
+  --sage: #95b8a2;
+  --btn: #ebd08c;
+  --btnt: #241c36;
+  --btnsh: rgba(15, 11, 26, .28);
+  --field: rgba(42, 35, 58, .92);
+  --warn: rgba(232, 193, 108, .22);
+  --glow: rgba(203, 180, 237, .18);
+  --shadow: rgba(15, 11, 26, .28);
+  --b1: #987ec4;
+  --b2: #e2ba64;
+  --b3: #7c9e89;
+  --f1: rgba(61, 51, 83, .92);
+  --f2: rgba(49, 40, 68, .92);
+  --f3: rgba(86, 70, 58, .62);
+  --bgg: linear-gradient(150deg, #251f33 0%, #332947 52%, #3d3240 100%);
+  --btng: linear-gradient(130deg, #e8c374 0%, #f3d999 65%, #fcf0ce 100%);
+  --navg: linear-gradient(90deg, rgba(44, 36, 62, .97), rgba(55, 45, 76, .97) 50%, rgba(63, 52, 58, .97));
+  --hgrad: linear-gradient(105deg, #fcf8ff 0%, #d7c5f2 52%, #f2cc77 100%);
+  --a1: rgba(152, 126, 196, .24);
+  --a2: rgba(226, 186, 100, .16);
+  --a3: rgba(124, 158, 137, .16);
+  --a4: rgba(232, 195, 116, .13);
+  --curtain-bg: linear-gradient(155deg, #262036 0%, #352b4a 52%, #403442 100%)
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+html {
+  height: 100%;
+  scroll-padding-top: calc(var(--nav) + env(safe-area-inset-top, 0px));
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: clamp(15px, .88rem + .25vw, 17px);
+  color: var(--ink);
+  background: var(--bg);
+  background-image: radial-gradient(65% 55% at 10% 8%, var(--a1), transparent 62%), radial-gradient(55% 48% at 92% 14%, var(--a2), transparent 62%), radial-gradient(58% 52% at 74% 96%, var(--a3), transparent 62%), radial-gradient(45% 45% at 8% 88%, var(--a4), transparent 62%), var(--bgg);
+  background-size: 130% 130%, 130% 130%, 130% 130%, 130% 130%, 100% 100%;
+  line-height: 1.72;
+  overflow-x: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body { background-attachment: fixed; animation: aur 34s ease-in-out infinite alternate; }
+}
+
+@keyframes aur {
+  to { background-position: 80% 45%, 15% 35%, 40% 10%, 70% 90%, 0 0; }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 25;
+  background: var(--navg);
+}
+
+/* ===== THANH ĐIỀU HƯỚNG ===== */
+nav {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  left: 0; right: 0;
+  z-index: 20;
+  height: var(--nav);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px max(16px, env(safe-area-inset-left, 0px)) 8px max(16px, env(safe-area-inset-right, 0px));
+  background: var(--navg);
+  border-bottom: 1px solid var(--line);
+}
+
+nav button {
+  flex: 0 1 168px;
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--soft);
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: color .22s, background .22s, transform .2s, box-shadow .22s;
+}
+
+nav button.on {
+  background: var(--btng);
+  color: var(--btnt);
+  font-weight: 700;
+  box-shadow: 0 6px 18px -6px var(--glow);
+}
+
+nav .n {
+  position: absolute;
+  top: -3px; right: 4px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--gold);
+  color: #1f192b;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 18px;
+  padding: 0 5px;
+}
+
+/* ===== VÙNG NỘI DUNG CHÍNH ===== */
+main {
+  position: relative;
+  max-width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: calc(var(--nav) + 18px) max(clamp(14px, 2.2vw, 24px), env(safe-area-inset-right, 0px)) 96px max(clamp(14px, 2.2vw, 24px), env(safe-area-inset-left, 0px));
+}
+
+.tab { display: none; }
+.tab.on { display: block; animation: te .3s ease-out; }
+@keyframes te { from { opacity: 0; transform: translateY(8px); } }
+
+h1, h2 {
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  margin: .2em 0;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  h1, h2 {
+    background: var(--hgrad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+h1 { font-size: clamp(1.8rem, 1.25rem + 1.8vw, 2.5rem); line-height: 1.18; }
+h2 { font-size: clamp(1.38rem, 1.08rem + .95vw, 1.75rem); line-height: 1.22; }
+h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 700; color: var(--ink); }
+
+.lead { color: var(--soft); margin: .35em 0 1.05em; max-width: 720px; font-size: .95rem; }
+.c { text-align: center; }
+.lead.c { margin-left: auto; margin-right: auto; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+  gap: clamp(12px, 1.3vw, 16px);
+}
+
+.box, .cardx {
+  position: relative;
+  border-radius: 20px;
+  padding: clamp(14px, 1.5vw, 18px) clamp(15px, 1.7vw, 20px);
+  border: 1.5px solid var(--line);
+  background: linear-gradient(148deg, var(--f1), var(--f2) 56%, var(--f3));
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .45) inset, 0 12px 24px -18px var(--shadow);
+  transition: transform .28s cubic-bezier(.22, 1, .36, 1), box-shadow .28s ease, border-color .28s ease;
+  overflow-wrap: anywhere;
+}
+
+.grid > .cardx:nth-child(even) {
+  background: linear-gradient(210deg, var(--f1), var(--f3) 58%, var(--f2));
+}
+
+.cardx::before {
+  content: "";
+  position: absolute;
+  left: 22px; right: 22px; top: 0;
+  height: 2.5px;
+  border-radius: 0 0 6px 6px;
+  background: linear-gradient(90deg, var(--acc2), var(--gold));
+}
+
+.cardx p, .cardx li { margin: .42em 0; font-size: .94rem; }
+.cardx ol, .cardx ul { padding-left: 20px; margin: 0; }
+
+.btn {
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: .92rem;
+  font-weight: 600;
+  padding: 10px 21px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--btng);
+  background-size: 180% 100%;
+  background-position: 0 0;
+  color: var(--btnt);
+  cursor: pointer;
+  transition: background-position .45s, transform .18s, box-shadow .22s;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 3px 0 var(--btnsh), 0 10px 20px -10px var(--glow);
+}
+
+.btn:active { transform: translateY(2px) scale(.99); box-shadow: 0 1px 0 var(--btnsh); }
+.btn.sm { padding: 6px 13px; font-size: .8rem; }
+.btn.ghost {
+  background: linear-gradient(135deg, var(--f1), var(--f2));
+  border: 1.5px solid var(--b1);
+  color: var(--ink);
+  box-shadow: none;
+}
+.btn.ghost:active { box-shadow: 0 8px 18px -12px var(--glow); transform: translateY(-1px); }
+
+:focus-visible { outline: 3px solid var(--acc2); outline-offset: 2px; }
+
+.row { display: flex; gap: 9px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+
+.chip {
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: .82rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--b1);
+  background: linear-gradient(135deg, var(--f1), var(--f3));
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform .2s cubic-bezier(.22, 1, .36, 1), box-shadow .2s;
+}
+
+.chip.on {
+  background: linear-gradient(135deg, var(--acc), var(--gold-soft));
+  border-color: transparent;
+  color: #1f192b;
+  font-weight: 700;
+  box-shadow: 0 6px 14px -6px var(--glow);
+}
+
+#deck { max-width: 740px; margin: 14px auto 0; justify-content: center; gap: 6px; }
+#deck .chip { min-width: 40px; height: 34px; padding: 0 7px; font-size: .8rem; }
+#deck .chip.g1 { border-color: rgba(214, 128, 88, .7); }
+#deck .chip.g2 { border-color: rgba(100, 150, 205, .7); }
+#deck .chip.g3 { border-color: rgba(149, 123, 194, .75); }
+#deck .chip.g4 { border-color: rgba(115, 148, 128, .8); }
+
+.lbl { margin: .65em 0 0; color: var(--soft); font-size: .82rem; font-weight: 700; letter-spacing: .02em; }
+.sc-slot { font-size: .74rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--soft); margin: 0 0 5px; }
+.sc-mant { font-weight: 600; color: var(--ink); }
+.q { font-style: italic; color: var(--soft); }
+.sc-note { font-size: .85rem; color: var(--soft); }
+.cta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 0 0 20px; }
+
+.editorial-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.15rem;
+  letter-spacing: .28em;
+}
+.editorial-mark span {
+  display: inline-block;
+  width: 42px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--b2), transparent);
+}
+
+/* ===== ĐỊNH DANH CREATOR & BẢO VỆ QUYỀN TÁC GIẢ ===== */
+.by {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--soft);
+  margin: 2px 0 8px;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card2);
+  opacity: .88;
+}
+.by b { font-family: "Lora", Georgia, serif; font-size: .82rem; letter-spacing: .14em; color: var(--ink); }
+.byw { text-align: center; }
+
+#curtain .by { font-size: .64rem; letter-spacing: .1em; padding: 3px 10px; margin: 2px 0 6px; opacity: .82; }
+#curtain .by b { font-size: .76rem; letter-spacing: .12em; }
+
+/* Bố cục tab Bản quyền & quy định sử dụng web */
+.ip-wrap { max-width: 840px; }
+.ip-body { padding: clamp(18px, 2.4vw, 26px); font-size: .92rem; line-height: 1.72; }
+.ip-body.cardx::before { display: none; }
+.ip-lang-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
+.ip-edition[hidden] { display: none; }
+.ip-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 15px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--field), var(--f3));
+  border: 1px solid var(--line);
+  margin: 0 0 14px;
+}
+.ip-hero .creator-tag { font-family: "Lora", Georgia, serif; font-size: 1.02rem; font-weight: 700; letter-spacing: .1em; color: var(--ink); }
+.ip-hero .ip-creator-lbl { color: var(--soft); }
+.ip-hero .ip-badge {
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--acc), var(--gold-soft));
+  color: #1f192b;
+}
+.ip-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; margin: 12px 0 14px; }
+.ip-box { padding: 13px 15px; border-radius: 14px; background: var(--field); border: 1px solid var(--line); }
+.ip-box h4 { margin: 0 0 6px; font-size: .92rem; font-weight: 700; color: var(--ink); }
+.ip-box ul { padding-left: 18px; margin: 4px 0 0; }
+.ip-box li { font-size: .88rem; margin: 4px 0; }
+.ip-sub-lbl { font-size: .82rem; font-weight: 700; color: var(--ink); margin: 8px 0 3px; }
+.ip-sec-title { font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--acc2); margin: 16px 0 6px; }
+.ip-list { padding-left: 20px; margin: 4px 0 12px; }
+.ip-list li { font-size: .9rem; margin: 5px 0; }
+.ip-privacy-note { color: var(--ink); font-size: .88rem; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.ip-privacy-label { color: var(--acc2); font-weight: 700; }
+
+/* ===== THẺ 3D ===== */
+.scene { perspective: 1200px; width: min(340px, 100%); height: clamp(330px, 50vh, 390px); margin: 10px auto; }
+.c3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform .85s cubic-bezier(.22, 1, .36, 1);
+  cursor: pointer;
+}
+.c3d.flip { transform: rotateY(180deg); }
+.face {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 24px;
+  padding: clamp(16px, 2.2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow-y: auto;
+  box-shadow: 0 16px 32px -14px var(--shadow);
+}
+.front {
+  transform: translateZ(1px);
+  background: radial-gradient(circle at 22% 18%, rgba(248, 229, 179, .55), transparent 52%), radial-gradient(circle at 85% 90%, rgba(184, 158, 224, .45), transparent 55%), linear-gradient(145deg, #d8c8f0, #f4e3b8);
+  color: #2b2047;
+  align-items: center;
+  font-size: 2.4rem;
+  border: 1.5px solid rgba(255, 255, 255, .65);
+}
+.front .card-sig { font-family: "Lora", Georgia, serif; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; opacity: .72; margin-top: 14px; }
+.back {
+  transform: rotateY(180deg) translateZ(1px);
+  background: radial-gradient(circle at 82% 10%, rgba(235, 196, 115, .26), transparent 48%), radial-gradient(circle at 12% 92%, rgba(184, 158, 224, .25), transparent 52%), linear-gradient(160deg, #372959, #574282);
+  border: 1.5px solid rgba(235, 196, 115, .35);
+}
+.kind { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f3d796; }
+.back h3 { margin: .3em 0; font-family: "Lora", Georgia, serif; font-size: 1.5rem; color: #fff8e6; }
+.back p { color: #f4ebd4; font-size: .93rem; }
+.back .q { color: #f5dc9e; }
+.back .btn { background: linear-gradient(135deg, #f2d38d, #e3b558); color: #261d3d; box-shadow: none; }
+#ctips { max-width: 600px; margin: 12px auto 0; }
+#cdetail { max-width: 600px; margin: 14px auto 0; }
+#cfilter { justify-content: center; }
+#cfnote { text-align: center; max-width: 620px; margin: 4px auto 10px; }
+#spread { display: grid; gap: 12px; max-width: 780px; margin: 14px auto 0; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+#spread[hidden], #cdetail[hidden] { display: none; }
+#spread h3 { margin: .1em 0 .2em; font-size: 1.08rem; }
+.dl { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--acc2); margin: 13px 0 0; }
+.cardx p.q { font-family: "Lora", Georgia, serif; font-style: italic; }
+.back .hint { font-size: .78rem; opacity: .85; margin-top: 12px; }
+
+/* ===== NHẬT KÝ & GƯƠNG SOI: 2 CỘT DỌC SONG SONG ===== */
+.j-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .82fr); gap: clamp(14px, 1.8vw, 22px); align-items: start; }
+.j-col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 22px;
+  padding: clamp(14px, 1.5vw, 18px);
+  border: 1.5px solid var(--line);
+  background: linear-gradient(150deg, var(--f1), var(--f2) 56%, var(--f3));
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .45) inset, 0 14px 28px -18px var(--shadow);
+}
+.j-col-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 7px; border-bottom: 1px solid var(--line); }
+.j-col-head h3 { margin: 0; font-family: "Lora", Georgia, serif; font-size: 1.06rem; font-weight: 600; color: var(--ink); }
+
+.ql { list-style: decimal; padding-left: 20px; margin: 7px 0; }
+.ql li { display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; margin: 6px 0; }
+.ql li span { flex: 1; }
+.ql li .btn { flex: none; }
+
+.say { margin-top: 9px; padding: 10px 13px; border-radius: 15px; background: linear-gradient(145deg, var(--field), var(--f3)); border: 1px dashed var(--b2); }
+.say p { white-space: pre-line; font-style: italic; margin: .25em 0 .5em; font-size: .88rem; }
+
+.prompt {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, var(--f1), var(--f2));
+  border: 1px solid var(--line);
+  font-style: italic;
+  font-size: .9rem;
+  margin-top: 6px;
+}
+
+.tools { display: flex; gap: 6px; margin: 6px 0 4px; flex-wrap: wrap; }
+.tools button {
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, var(--f1), var(--f3));
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform .15s, border-color .2s;
+}
+
+#ed {
+  min-height: clamp(200px, 30vh, 280px);
+  max-height: 52vh;
+  max-height: 52dvh;
+  overflow-y: auto;
+  padding: clamp(12px, 1.5vw, 16px);
+  border-radius: 18px;
+  border: 1.5px solid var(--b1);
+  background: var(--field);
+  outline: none;
+  font-size: .96rem;
+  line-height: 1.68;
+  overflow-wrap: anywhere;
+}
+#ed:empty::before { content: attr(data-ph); color: var(--soft); }
+#ed:focus { box-shadow: 0 0 0 4px var(--glow); }
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 13px;
+  border-radius: 13px;
+  background: var(--warn);
+  border: 1px solid var(--line);
+  margin: 2px 0;
+  font-size: .86rem;
+  font-weight: 600;
+}
+.banner button { border: 0; background: none; cursor: pointer; color: inherit; font-weight: 700; }
+.banner[hidden] { display: none; }
+#msg { color: var(--soft); font-size: .86rem; font-weight: 600; }
+
+/* Gương soi cảm xúc */
+.mirror-panel {
+  border-radius: 16px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--b1);
+  background: linear-gradient(155deg, var(--f1), var(--f2) 56%, var(--f3));
+  box-shadow: 0 10px 22px -16px var(--glow);
+}
+.mirror-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 700;
+  font-size: .84rem;
+}
+.mirror-title { display: inline-flex; align-items: center; gap: 6px; }
+.mirror-ico { width: 16px; height: 16px; flex: none; color: var(--acc2); }
+.dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); animation: pd 2.6s infinite; }
+@keyframes pd { 50% { transform: scale(1.25); opacity: .6; } }
+
+.mirror-badge, .m-tag, .tag {
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--acc), var(--gold-soft));
+  color: #1f192b;
+  display: inline-block;
+}
+.m-tag.sec { background: rgba(141, 115, 184, .16); color: var(--ink); }
+
+.mirror-section { background: linear-gradient(145deg, var(--field), var(--f3)); border: 1px solid var(--line); border-radius: 10px; padding: 5px 9px; margin-top: 4px; }
+.mirror-k { font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--soft); margin-bottom: 1px; }
+.mirror-v { font-size: .8rem; line-height: 1.34; }
+.mirror-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.mirror-q { margin-top: 6px; padding: 6px 9px; border-radius: 10px; border: 1px dashed var(--b2); font-size: .79rem; line-height: 1.34; font-style: italic; }
+
+.breath-card { border-radius: 16px; padding: 10px 12px; border: 1.5px solid var(--b1); background: linear-gradient(145deg, var(--f1), var(--f2)); }
+.breath-head { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.breath-head h4 { margin: 0; font-size: .84rem; font-weight: 700; }
+.breath-stage { display: flex; align-items: center; gap: 9px; margin: 6px 0; }
+.orb-wrap { width: 44px; height: 44px; flex: none; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(141, 115, 184, .12); }
+.breath-orb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff6db, #e5bd67 45%, #8d73b8);
+  position: relative;
+  will-change: transform;
+  box-shadow: 0 0 18px var(--glow);
+}
+.breath-orb::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 24px 4px var(--glow);
+  opacity: 0;
+  animation: glowp 4.5s ease-in-out infinite;
+}
+@keyframes glowp { 50% { opacity: 1; } }
+.breath-phase { font-weight: 700; color: var(--ink); font-size: .82rem; line-height: 1.3; }
+.breath-sub { font-size: .74rem; color: var(--soft); line-height: 1.3; }
+.breath-done {
+  margin-top: 5px;
+  padding: 5px 8px;
+  border-radius: 9px;
+  background: rgba(108, 139, 120, .16);
+  border: 1px solid rgba(108, 139, 120, .38);
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+/* ===== KHO LƯU TRỮ & MODAL ===== */
+.filters { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+.filters input, .filters select {
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: .9rem;
+  padding: 9px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--field);
+  color: var(--ink);
+  flex: 1;
+  min-width: 150px;
+}
+.entry { margin: 12px 0; }
+.entry .meta { font-size: .83rem; color: var(--soft); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.entry .pv { margin: 8px 0; font-size: .93rem; }
+
+.mod {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 45;
+  background: rgba(36, 29, 54, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.mod[hidden] { display: none; }
+.mod .box { max-width: 640px; width: 100%; max-height: 82vh; max-height: 82dvh; overflow: auto; position: relative; }
+.mod .box::before { display: none; }
+.x { position: absolute; top: 14px; right: 16px; border: 0; background: none; color: var(--ink); font-size: 1.25rem; cursor: pointer; }
+
+/* ===== ĐIỀU KHIỂN NHẠC & THÔNG BÁO ===== */
+#mus-box {
+  position: fixed;
+  right: 18px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 30;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--navg);
+  border: 1px solid var(--line);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: calc(100vw - 36px);
+  box-shadow: 0 10px 24px -12px var(--shadow);
+}
+body.playing #mus-box { border-color: var(--b2); box-shadow: 0 10px 28px -8px var(--glow); }
+#mus-box select, #mus {
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+#mus-box select option { background: var(--bg); color: var(--ink); }
+#mus { background: var(--btng); color: var(--btnt); }
+#vol { width: 70px; accent-color: var(--acc2); }
+
+#toast {
+  position: fixed;
+  bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translate(-50%, 16px);
+  z-index: 50;
+  background: var(--btng);
+  color: var(--btnt);
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: .86rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  box-shadow: 0 12px 24px -10px var(--shadow);
+}
+#toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+#reopen {
+  position: fixed;
+  left: 18px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 29;
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--navg);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 8px 20px -12px var(--shadow);
+}
+
+/* ===== MÀN GIỚI THIỆU ===== */
+#curtain {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+  transition: visibility .95s;
+}
+#curtain.open { visibility: hidden; pointer-events: none; }
+.ch { position: fixed; top: 0; bottom: 0; width: 50.5%; background: var(--curtain-bg); transition: transform .95s cubic-bezier(.77, 0, .175, 1); }
+.cl { left: 0; }
+.cr { right: 0; }
+#curtain.open .cl { transform: translateX(-102%); }
+#curtain.open .cr { transform: translateX(102%); }
+.ci {
+  position: relative;
+  max-width: min(610px, 100%);
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding: clamp(18px, 2.4vw, 26px);
+  border-radius: 24px;
+  border: 1.5px solid var(--line);
+  background: linear-gradient(148deg, var(--f1), var(--f2) 56%, var(--f3));
+  box-shadow: 0 24px 60px -18px var(--shadow);
+  transition: opacity .5s, transform .5s;
+}
+#curtain.open .ci { opacity: 0; transform: scale(.96); }
+.ci h1 { font-size: clamp(1.7rem, 2.6vw, 2.2rem); margin: 6px 0; }
+.pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; text-align: left; margin: 12px 0 16px; }
+.pillar { padding: 10px 13px; border-radius: 14px; background: linear-gradient(145deg, var(--field), var(--f3)); border: 1px solid var(--line); font-size: .82rem; line-height: 1.42; }
+.pillar b { display: block; color: var(--ink); margin-bottom: 2px; }
+
+/* ===== HIỆU ỨNG LƯU BÀI NHẸ NHÀNG ===== */
+@keyframes rise {
+  from { opacity: .9; transform: translate(0, 0) scale(.75); }
+  to { opacity: 0; transform: translate(var(--dx), -42vh) scale(1.1) rotate(16deg); }
+}
+.fx { position: fixed; bottom: 18%; font-size: clamp(16px, 2.4vw, 22px); pointer-events: none; z-index: 70; animation: rise 1.9s ease-out forwards; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--b1), var(--b2)); border-radius: 99px; }
+
+/* ===== TỐI ƯU CHO ANDROID / THIẾT BỊ CẢM ỨNG ===== */
+button, select, .chip, .btn { touch-action: manipulation; }
+
+@media (hover: hover) and (pointer: fine) {
+  body::before, nav, #mus-box { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+  .mod { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  nav button:hover { color: var(--ink); background: rgba(141, 115, 184, .1); transform: translateY(-1px); }
+  .cardx:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .55) inset, 0 20px 36px -16px var(--glow), 0 8px 20px -12px var(--shadow);
+  }
+  .btn:hover { background-position: 100% 0; transform: translateY(-2px); box-shadow: 0 5px 0 var(--btnsh), 0 14px 24px -10px var(--glow); }
+  .btn.ghost:hover { box-shadow: 0 8px 18px -12px var(--glow); transform: translateY(-1px); }
+  .back .btn:hover { box-shadow: none; }
+  .chip:hover { transform: translateY(-1px); box-shadow: 0 6px 14px -8px var(--glow); }
+  .chip.on:hover { box-shadow: 0 6px 14px -6px var(--glow); }
+  .tools button:hover { border-color: var(--acc2); transform: translateY(-1px); }
+}
+
+@media (pointer: coarse) {
+  .btn, .chip, .tools button, nav button, #mus, #mus-box select { min-height: 42px; }
+  .btn.sm { min-height: 36px; }
+  #deck .chip { height: 40px; }
+}
+
+@media (max-width: 860px) { .j-layout { grid-template-columns: 1fr; } }
+
+@media (max-width: 760px) {
+  nav { justify-content: flex-start; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  nav::-webkit-scrollbar { display: none; }
+  nav button { flex: 0 0 auto; padding: 9px 14px; }
+  nav .n { top: 2px; right: 2px; }
+  .filters input, .filters select { flex: 1 1 100%; }
+  .mod { padding: 12px; }
+  #deck .chip { min-width: 38px; }
+}
+
+@media (max-width: 620px) {
+  main { padding-bottom: 144px; }
+  #mus-box {
+    left: 12px; right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    max-width: none;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-radius: 22px;
+  }
+  #mus-box select { flex: 1; min-width: 0; text-overflow: ellipsis; }
+  #vol { width: 56px; }
+  #mus { white-space: nowrap; }
+  #reopen { bottom: calc(68px + env(safe-area-inset-bottom, 0px)); left: 12px; }
+  #toast { bottom: calc(118px + env(safe-area-inset-bottom, 0px)); max-width: 90vw; text-align: center; }
+  .cta .btn { flex: 1 1 100%; justify-content: center; }
+  .row .btn { flex: 0 1 auto; }
+  .pillars { grid-template-columns: 1fr; gap: 8px; margin: 10px 0 14px; }
+  .pillar { padding: 10px 12px; }
+  .ci { padding: 18px 15px; }
+  .scene { width: min(320px, 100%); }
+  .breath-stage { gap: 9px; }
+  .orb-wrap { width: 44px; height: 44px; }
+  .prompt { padding: 10px 13px; }
+}
+
+@media (max-width: 380px) {
+  nav button { font-size: 12px; padding: 8px 11px; }
+  .breath-stage { flex-direction: column; text-align: center; }
+  .tools button { flex: 1 1 auto; }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  :root { --nav: 50px; }
+  .scene { height: 310px; }
+  .ci { margin: 8px auto; }
+  #curtain { align-items: flex-start; }
+}
+
+@media (max-height: 700px) { .ci { padding: 14px 18px; } .pillars { margin: 8px 0 12px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .fx { display: none; }
+}
+
+/* ===== NÚT CÀI ĐẶT APP ANDROID (PWA INSTALL) ===== */
+#install-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--gold), #e6be6a);
+  color: #1f192b;
+  font-weight: 700;
+  box-shadow: 0 4px 14px -4px rgba(204, 160, 73, 0.45);
+}
+#install-btn[hidden] { display: none; }
+.android-guide-box {
+  margin-top: 14px;
+  padding: 12px 15px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, var(--field), var(--f3));
+  border: 1.5px dashed var(--b2);
+  text-align: left;
+  font-size: .85rem;
+  line-height: 1.55;
+}
+.android-guide-box b { color: var(--ink); }
+
+</style>
+</head>
+<body>
+<!-- Màn giới thiệu hai cánh mở -->
+<div id="curtain" role="dialog" aria-modal="true" aria-labelledby="ct0">
+  <div class="ch cl"></div><div class="ch cr"></div>
+  <div class="ci">
+    <span class="mirror-badge">✦ Không gian thấu hiểu nội tâm</span>
+    <h1 id="ct0">Góc Soi Chiếu</h1>
+    <div class="by">Sáng tạo bởi <b>Cá Hề Dieu An</b></div>
+    <p class="lead c" style="margin-bottom:0">Nơi bạn tạm gác lại những vội vã bên ngoài để nhận diện, đối thoại và tích hợp những phần bóng tối của mình, không phán xét, không tự hành hạ.</p>
+    <div class="pillars">
+      <div class="pillar"><b>◐ Cẩm nang Shadow Work</b>Quy trình 7 bước, thực hành buổi sáng, trước khi ngủ và trong các mối quan hệ.</div>
+      <div class="pillar"><b>◈ Gương Soi Cảm Xúc</b>Khi bạn viết, gương gọi tên cảm xúc, nhu cầu và điều nó muốn nói.</div>
+      <div class="pillar"><b>✦ 78 Thẻ Thấu Suốt</b>78 lá Tarot soi 78 kiểu bóng theo Jung, kèm 54 lá Self-Care và bài tập thở cơ hoành.</div>
+      <div class="pillar"><b>🎵 Âm nhạc mới</b>8 bài: piano bình minh, kalimba bên suối, lofi chill, guitar bên sóng biển, cùng piano ambient, drone và chuông gió.</div>
+    </div>
+    
+    <div class="android-guide-box" id="android-install-hint">
+      <b>📲 Cài đặt như App trên điện thoại Android:</b><br>
+      • Bấm nút <b>“Cài đặt App về máy”</b> bên dưới (hoặc mở menu <b>⋮</b> trên Chrome &rarr; chọn <b>Thêm vào Màn hình chính / Cài đặt ứng dụng</b>) để dùng toàn màn hình và hoạt động cả khi ngoại tuyến.
+      <div style="margin-top:8px;text-align:center">
+        <button type="button" class="btn sm" id="curtain-install-btn" hidden>📲 Cài đặt App về Android ngay</button>
+      </div>
+    </div>
+
+    <button class="btn" id="open">✦ Bước vào không gian</button>
+  </div>
+</div>
+
+<!-- Thanh điều hướng chính -->
+<nav id="nav" role="tablist">
+  <button data-t="home" class="on">◐ Cẩm nang</button>
+  <button data-t="cards">✦ Thẻ Thấu Suốt</button>
+  <button data-t="journal">✎ Nhật Ký</button>
+  <button data-t="care">❀ Self-Care</button>
+  <button data-t="archive">📖 Kho Lưu Trữ<span class="n" id="cnt" hidden></span></button>
+  <button data-t="copyright">🛡️ Quy định sử dụng</button>
+  <button id="install-btn" hidden aria-label="Cài đặt ứng dụng về điện thoại">📲 Cài App</button>
+</nav>
+
+<main>
+  <!-- Trang Cẩm nang -->
+  <section class="tab on" id="home">
+    <div class="editorial-mark" aria-hidden="true"><span></span>✦<span></span></div>
+    <h1 class="c">Góc Soi Chiếu</h1>
+    <div class="byw"><div class="by">Sáng tạo bởi <b>Cá Hề Dieu An</b></div></div>
+    <p class="lead c">Chào bạn trở về với chính mình. Hãy dành một nhịp thở chậm để lắng nghe những điều đang âm thầm diễn ra bên trong, không vội phán xét, chỉ cần đủ dịu dàng để nhìn rõ.</p>
+    <div class="cta">
+      <button class="btn" data-pr="0">☀ Bắt đầu buổi sáng</button>
+      <button class="btn ghost" data-pr="1">◐ Quy trình 7 bước</button>
+      <button class="btn ghost" data-pr="4">🌙 Tổng kết trước khi ngủ</button>
+    </div>
+    <div class="grid" id="guide"></div>
+  </section>
+
+  <!-- Trang 78 Thẻ Thấu Suốt -->
+  <section class="tab" id="cards">
+    <h2>✦ Thẻ Thấu Suốt</h2>
+    <p class="lead">78 lá Tarot là 78 tấm gương soi bóng tối. Mỗi lá mang một kiểu “bóng” trong tâm lý học Jung, kèm phần vàng ẩn bên trong, một câu hỏi để soi và một thực hành nhỏ.</p>
+    <div class="chips" id="cfilter">
+      <button class="chip on" data-f="-1">Tất cả 78</button>
+      <button class="chip" data-f="0">✦ Ẩn chính</button>
+      <button class="chip" data-f="1">🔥 Gậy</button>
+      <button class="chip" data-f="2">💧 Cốc</button>
+      <button class="chip" data-f="3">🗡️ Kiếm</button>
+      <button class="chip" data-f="4">🌱 Xu</button>
+    </div>
+    <p class="sc-note" id="cfnote"></p>
+    <div class="row" style="justify-content:center"><button class="btn" id="draw">Rút một thẻ</button><button class="btn ghost" id="draw3">Rút 3 lá soi bóng</button></div>
+    <div id="spread" hidden></div>
+    <div class="scene"><div class="c3d" id="c3d">
+      <div class="face front"><div>☾</div><p style="font-size:.96rem;font-weight:600;margin-top:10px">Chạm để lật thẻ</p><span class="card-sig">✦</span></div>
+      <div class="face back"><div class="kind" id="ck"></div><h3 id="ct"></h3><p id="cm"></p><p class="q" id="cq"></p><p class="hint">↓ Cuộn xuống để đọc tiếp</p></div>
+    </div></div>
+    <div id="cdetail" class="cardx" hidden></div>
+    <div id="ctips" class="cardx" hidden></div>
+    <div class="chips" id="deck"></div>
+  </section>
+
+  <!-- Trang Nhật Ký & Gương Soi -->
+  <section class="tab" id="journal">
+    <h2>✎ Nhật Ký &amp; Gương Soi</h2>
+    <div class="j-layout">
+      <div class="j-col j-left" aria-label="Nhật ký Shadow Work">
+        <div class="j-col-head">
+          <h3>✎ Nhật ký Shadow Work</h3>
+        </div>
+        <div id="srcb" class="banner" hidden><span id="srct"></span><button id="srcx" aria-label="Bỏ liên kết">✕</button></div>
+        <div id="edb" class="banner" hidden></div>
+        <p class="lbl" style="margin-top:0">1 · Chọn hành trình thực hành</p>
+        <div class="chips" id="pm"></div>
+        <div class="chips" id="ps"></div>
+        <div class="cardx" id="pc"></div>
+        <p class="lbl">2 · Bạn đang đối mặt với điều gì? (tùy chọn)</p>
+        <div class="chips" id="emo"></div>
+        <div class="prompt"><span id="pr"></span><button class="btn sm ghost" id="gen">Câu hỏi ngẫu nhiên</button></div>
+        <div class="tools">
+          <button type="button" data-c="bold" title="In đậm"><b>B</b></button>
+          <button type="button" data-c="italic" title="In nghiêng"><i>I</i></button>
+          <button type="button" data-c="insertUnorderedList">• Danh sách</button>
+          <button type="button" id="btn-breath-trigger">🌿 Thở cơ hoành</button>
+        </div>
+        <div id="ed" contenteditable="true" data-ph="Viết thật chậm và thật lòng nhé… không cần cầu kỳ hay chỉn chu, chỉ cần là những gì đang thật sự diễn ra bên trong bạn. Nhìn thấy không đồng nghĩa với đồng ý, hiểu nguyên nhân không đồng nghĩa với biện minh."></div>
+        <div class="row" style="margin-bottom:0"><button class="btn" id="save">Lưu Nhật Ký</button><button class="btn ghost" id="clr">Làm trống</button><span id="msg" role="status"></span></div>
+        <div class="row" id="nx" hidden></div>
+        <p class="sc-note" style="margin:0">Hãy chuyển mỗi nhận thức thành một hành động cụ thể, và quan sát sự thay đổi qua nhiều tuần. Nếu việc thực hành khiến bạn đau khổ quá mức hoặc ảnh hưởng đến sinh hoạt, hãy dừng lại và tìm sự hỗ trợ chuyên môn.</p>
+      </div>
+      <aside class="j-col j-right" aria-label="Gương soi cảm xúc">
+        <div class="j-col-head">
+          <h3 class="mirror-title">
+            <svg class="mirror-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <ellipse cx="12" cy="9.5" rx="6" ry="7.5"/>
+              <path d="M9.5 6.5c.8-1 2-1.5 3.3-1.5"/>
+              <line x1="12" y1="17" x2="12" y2="21.5"/>
+              <line x1="8.8" y1="21.5" x2="15.2" y2="21.5"/>
+            </svg>
+            <span>Gương soi cảm xúc</span>
+          </h3>
+        </div>
+        <div class="mirror-panel">
+          <div class="mirror-head">
+            <span class="mirror-title"><span class="dot"></span><span>Phản chiếu</span></span>
+            <span class="mirror-badge" id="m-state">Đang chờ</span>
+          </div>
+          <div class="mirror-section"><div class="mirror-k">Cảm xúc</div><div class="mirror-v" id="m-what"></div><div class="mirror-chips" id="m-tags"></div></div>
+          <div class="mirror-section"><div class="mirror-k">Nhu cầu</div><div class="mirror-v" id="m-need"></div></div>
+          <div class="mirror-section"><div class="mirror-k">Điều muốn nói</div><div class="mirror-v" id="m-want"></div></div>
+          <div class="mirror-q" id="m-reflect"></div>
+          <div class="row" style="margin:6px 0 0"><button type="button" class="btn sm ghost" id="m-insert-q">✍️ Chèn câu hỏi</button><button type="button" class="btn sm ghost" id="m-deep-scan">🔍 Soi sâu</button></div>
+        </div>
+        <div class="breath-card" id="breath-widget">
+          <div class="breath-head"><h4>🌿 Thở cơ hoành</h4><span style="font-size:.74rem;color:var(--soft);font-weight:700" id="b-round">0 / 3 nhịp</span></div>
+          <div class="breath-stage"><div class="orb-wrap"><div class="breath-orb" id="b-orb"></div></div>
+            <div><div class="breath-phase" id="b-phase">Sẵn sàng</div><div class="breath-sub" id="b-sub">Hít 4s · giữ 2s · thở 6s</div></div></div>
+          <div class="row" style="margin:2px 0 0"><button type="button" class="btn sm" id="b-start">▶ Bắt đầu</button><button type="button" class="btn sm ghost" id="b-stop" hidden>⏹ Dừng</button></div>
+          <div class="breath-done" id="b-done" hidden></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Trang Self-Care -->
+  <section class="tab" id="care">
+    <h2>❀ Self-Care Book</h2>
+    <h3 style="margin:6px 0 4px">54 THÓI QUEN TẠO LẠI NĂNG LƯỢNG CHO THÂN - TÂM - TRÍ</h3>
+    <p class="lead">Lộ trình làm mới tâm trí và kích hoạt năng lượng nội tại mỗi ngày.</p>
+    <p class="lbl">Chọn cách trải bài</p>
+    <div class="chips" id="sp">
+      <button class="chip on" data-n="1">1 lá · nhanh</button><button class="chip" data-n="3">3 lá · Chăm sóc linh hồn</button>
+      <button class="chip" data-n="4">4 lá · Vòng tròn nữ thần</button><button class="chip" data-n="8">8 lá · Nghi thức mặt trăng</button>
+    </div>
+    <div class="row"><button class="btn" id="spdraw">Rút bài</button><button class="btn ghost" id="spclr">Xóa kết quả</button></div>
+    <div class="grid" id="spres"></div>
+    <h3 style="margin:22px 0 6px">Tất cả các lá bài (54)</h3>
+    <div class="filters"><input id="scq" placeholder="Tìm lá bài, ví dụ: nước, thiền…"></div>
+    <div class="chips" id="scall"></div>
+    <p class="sc-note">Nội dung mang tính tự chăm sóc và gợi ý tinh thần, không thay thế tư vấn hay điều trị y tế. Với triệu chứng sức khỏe nghiêm trọng, hãy hỏi ý kiến chuyên gia y tế.</p>
+  </section>
+
+  <!-- Trang Kho Lưu Trữ -->
+  <section class="tab" id="archive">
+    <h2>📖 Kho Lưu Trữ</h2>
+    <div class="filters">
+      <input id="q" placeholder="Tìm trong nhật ký…"><select id="fe"></select>
+      <select id="fs"><option value="">Mọi nguồn</option><option value="practice">Từ Cẩm nang</option><option value="card">Từ Thẻ</option><option value="care">Từ Self-Care</option><option value="free">Viết tự do</option></select>
+      <input type="date" id="fd">
+    </div>
+    <div id="list"></div>
+    <div class="row"><button class="btn sm ghost" id="exp">Tải bản sao lưu (.txt)</button></div>
+    <p class="lead" style="font-size:.86rem">Nhật ký chỉ lưu tạm thời trong phiên hiện tại và tự xóa khi tải lại trang để bảo vệ riêng tư. Hãy tải bản sao lưu nếu bạn muốn giữ lại.</p>
+  </section>
+
+  <!-- Tab 6: Bản quyền & quy định sử dụng web (2 bản ngôn ngữ tách biệt) -->
+  <section class="tab ip-wrap" id="copyright">
+    <h2>🛡️ Bản quyền &amp; quy định sử dụng web</h2>
+    <p class="lead">Văn bản quy định sử dụng không gian trực tuyến này, nêu rõ phần thuộc về tác giả, phần thuộc về cộng đồng, phạm vi sao chép và nguyên tắc tôn trọng người khác.</p>
+
+    <div class="ip-lang-bar" role="tablist" aria-label="Chọn ngôn ngữ văn bản quy định">
+      <button type="button" class="chip on" data-ip-lang="vi">Tiếng Việt</button>
+      <button type="button" class="chip" data-ip-lang="en">English</button>
+    </div>
+
+    <!-- Bản Tiếng Việt -->
+    <article class="cardx ip-body ip-edition" id="ip-vi">
+      <div class="ip-hero">
+        <div>
+          <div class="sc-slot ip-creator-lbl" style="margin-bottom:2px">Không gian Web được tạo bởi</div>
+          <div class="creator-tag">Cá Hề Dieu An</div>
+          <div class="sc-note" style="margin:4px 0 0">Liên hệ: <a href="mailto:cahebien39@gmail.com" style="color:inherit;text-decoration:underline">cahebien39@gmail.com</a></div>
+        </div>
+        <span class="ip-badge">© 2026</span>
+      </div>
+
+      <p style="margin-top:0">Quy định này áp dụng cho việc truy cập, đọc nội dung, ghi chép và tương tác trên trang web. Khi sử dụng trang, người dùng đồng ý tôn trọng quyền tác giả và quyền riêng tư của người khác.</p>
+
+      <div class="ip-split">
+        <div class="ip-box">
+          <h4>Điều 1 · Phần thuộc về tác giả</h4>
+          <ul>
+            <li>Ý tưởng xây dựng trang web và cách kết nối các mục thực hành thành một hệ thống thống nhất.</li>
+            <li>Thiết kế giao diện, bố cục, màu sắc, cách trình bày, hiệu ứng và toàn bộ mã nguồn của trang.</li>
+            <li>Các câu hỏi gợi ý, khung đối thoại, lời dẫn và văn bản được soạn thảo riêng cho trang web này.</li>
+          </ul>
+        </div>
+
+        <div class="ip-box">
+          <h4>Điều 2 · Phần thuộc về cộng đồng</h4>
+          <ul>
+            <li>Các nền tảng kiến thức chung như tâm lý học phân tích của Carl Gustav Jung (Bóng, Persona...), biểu tượng Tarot, phương pháp Shadow Work, hơi thở cơ hoành và các thói quen tự chăm sóc bản thân.</li>
+            <li>Những kiến thức nền này thuộc về tri thức chung của cộng đồng; không giữ độc quyền đối với bản thân các khái niệm nền tảng đó.</li>
+          </ul>
+          <div class="ip-sub-lbl">Các sách, tài liệu được sử dụng cho Web:</div>
+          <ul>
+            <li>Carl Jung Thăm Dò Tiềm Thức</li>
+            <li>Carl Jung Con Người và Biểu Tượng</li>
+            <li>Tarot 78 độ Minh Triết</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ip-sec-title">Điều 3 · Những điều được copy</div>
+      <ul class="ip-list">
+        <li>Sử dụng trang web cho mục đích tìm hiểu cá nhân, ghi chép nhật ký riêng và thực hành hằng ngày.</li>
+        <li>Chia sẻ đường dẫn trang web hoặc trao đổi các kiến thức chung về Shadow Work, Tarot và tự chăm sóc bản thân.</li>
+        <li>Copy hoặc trích dẫn ngắn gọn một phần nội dung chữ để học tập, nghiên cứu hoặc chia sẻ phi lợi nhuận, với điều kiện giữ nguyên thông tin bản quyền và ghi rõ nguồn trang.</li>
+      </ul>
+
+      <div class="ip-sec-title">Điều 4 · Những điều không được copy</div>
+      <ul class="ip-list">
+        <li>Copy toàn bộ hoặc một phần quan trọng mã nguồn, giao diện hoặc cấu trúc trang để sao chép thành bản sao tương tự.</li>
+        <li>Copy nội dung, mã nguồn hoặc sản phẩm từ trang web đem kinh doanh, buôn bán, thu phí hoặc sử dụng cho mục đích thương mại dưới bất kỳ hình thức nào.</li>
+        <li>Mạo danh tác giả, xóa bỏ, che giấu, chỉnh sửa hoặc thay đổi thông tin người tạo ra không gian web này dưới bất kỳ hình thức nào.</li>
+      </ul>
+
+      <div class="ip-sec-title">Điều 5 · Tôn trọng quyền tác giả và quyền riêng tư</div>
+      <ul class="ip-list">
+        <li><b>Tôn trọng quyền tác giả:</b> Mọi trích dẫn hoặc chia sẻ lại phần nội dung thuộc trang đều phải giữ đúng xuất xứ và không làm sai lệch ý nghĩa ban đầu.</li>
+        <li><b>Tôn trọng quyền riêng tư của người khác:</b> Không thu thập, chụp lại, phát tán hoặc xâm phạm thông tin, hình ảnh hay ghi chép cá nhân của người khác khi sử dụng chung thiết bị hoặc không gian chia sẻ.</li>
+      </ul>
+
+      <p class="ip-privacy-note" style="margin-bottom:0"><span class="ip-privacy-label">Quyền riêng tư nhật ký của bạn:</span> Nội dung nhật ký bạn viết thuộc quyền sở hữu của bạn, chỉ lưu tạm trong phiên hiện tại của trình duyệt, không gửi lên máy chủ nào và sẽ tự xóa khi tải lại trang nếu bạn chưa tải bản sao lưu.</p>
+    </article>
+
+    <!-- Bản Tiếng Anh -->
+    <article class="cardx ip-body ip-edition" id="ip-en" hidden>
+      <div class="ip-hero">
+        <div>
+          <div class="sc-slot ip-creator-lbl" style="margin-bottom:2px">Không gian Web được tạo bởi</div>
+          <div class="creator-tag">Cá Hề Dieu An</div>
+          <div class="sc-note" style="margin:4px 0 0">Contact: <a href="mailto:cahebien39@gmail.com" style="color:inherit;text-decoration:underline">cahebien39@gmail.com</a></div>
+        </div>
+        <span class="ip-badge">© 2026</span>
+      </div>
+
+      <p style="margin-top:0">These terms govern how this online space is used for personal reflection, note-taking, and interaction. By using this site, users agree to respect copyright and the privacy of others.</p>
+
+      <div class="ip-split">
+        <div class="ip-box">
+          <h4>Section 1 · Parts Belonging to the Author</h4>
+          <ul>
+            <li>The concept of building this web space and how its practice modules are arranged together.</li>
+            <li>The visual design, layout, color palette, presentation, interactions, and full source code of the site.</li>
+            <li>The prompts, dialogue templates, guidance notes, and wording written specifically for this application.</li>
+          </ul>
+        </div>
+
+        <div class="ip-box">
+          <h4>Section 2 · Parts Belonging to the Community</h4>
+          <ul>
+            <li>Foundational concepts from Carl Gustav Jung's analytical psychology (such as the Shadow and Persona), traditional Tarot symbolism, Shadow Work methods, diaphragmatic breathing, and general self-care habits.</li>
+            <li>These shared foundations belong to the community; no exclusive claim is made over those underlying concepts themselves.</li>
+          </ul>
+          <div class="ip-sub-lbl">Books and reference materials used for the Web:</div>
+          <ul>
+            <li>Carl Jung Thăm Dò Tiềm Thức</li>
+            <li>Carl Jung Con Người và Biểu Tượng</li>
+            <li>Tarot 78 độ Minh Triết</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ip-sec-title">Section 3 · What You May Copy</div>
+      <ul class="ip-list">
+        <li>Use the website for personal study, private note-taking, and daily self-practice.</li>
+        <li>Share the link to the site or discuss general concepts around Shadow Work, Tarot, and self-care with others.</li>
+        <li>Copy or quote short passages of text for study, reference, or non-commercial sharing, provided you keep the copyright notice intact and credit the site.</li>
+      </ul>
+
+      <div class="ip-sec-title">Section 4 · What You May Not Copy</div>
+      <ul class="ip-list">
+        <li>Copy all or a substantial part of the source code, design, or site structure to create a duplicate or lookalike version.</li>
+        <li>Copy content, code, or materials from this site for business, commercial use, resale, or paid distribution in any form.</li>
+        <li>Impersonate the creator, or remove, hide, alter, or replace the creator attribution in any form.</li>
+      </ul>
+
+      <div class="ip-sec-title">Section 5 · Respect for Copyright and Privacy</div>
+      <ul class="ip-list">
+        <li><b>Respect for copyright:</b> Any permitted quote or share must preserve accurate attribution and not distort the original text.</li>
+        <li><b>Respect for others' privacy:</b> Do not collect, capture, expose, or intrude upon another person's personal information, notes, or boundaries on shared devices or shared spaces.</li>
+      </ul>
+
+      <p class="ip-privacy-note" style="margin-bottom:0"><span class="ip-privacy-label">Your journal privacy:</span> Anything you write in your journal belongs to you, remains only in your current browser session, is not sent to any server, and is cleared upon reload unless you download a backup.</p>
+    </article>
+  </section>
+</main>
+
+<!-- Modal xem chi tiết bài viết -->
+<div class="mod" id="mod" hidden>
+  <div class="box">
+    <button class="x" id="mx" aria-label="Đóng">✕</button>
+    <div id="mh" class="meta"></div>
+    <div id="mb"></div>
+    <div class="row"><button class="btn sm" id="mcont">Viết tiếp từ bài này</button></div>
+  </div>
+</div>
+
+<div id="toast" role="status"></div>
+<button id="reopen">◈ Màn giới thiệu</button>
+
+<!-- Trình phát nhạc nền Web Audio -->
+<div id="mus-box">
+  <select id="mus-select" aria-label="Chọn âm thanh">
+    <optgroup label="Tươi mới &amp; thư giãn">
+      <option value="4">🌅 Bình Minh · Piano Tươi Sáng</option>
+      <option value="5">🍃 Suối Xanh · Kalimba</option>
+      <option value="6">☁️ Mây Hồng · Lofi Chill</option>
+      <option value="7">🌊 Biển Sớm · Guitar &amp; Sóng</option>
+    </optgroup>
+    <optgroup label="Ambient sâu lắng">
+      <option value="0">🌙 Đêm Trăng · Piano Ambient</option>
+      <option value="1">🌲 Rừng Sương · Guitar Arpeggio</option>
+      <option value="2">🌌 Tinh Vân · Drone Pad</option>
+      <option value="3">🎐 Chuông Gió &amp; Mưa Nhẹ</option>
+    </optgroup>
+  </select>
+  <input type="range" id="vol" min="0" max="1" step=".01" aria-label="Âm lượng">
+  <button id="mus" aria-label="Bật hoặc tắt nhạc"><span id="mt">▶ Phát nhạc</span></button>
+</div>
+
+<script>
+// Tiện ích chọn phần tử DOM và thoát ký tự HTML an toàn
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+// Trạng thái phiên làm việc tạm thời trong bộ nhớ và biến âm thanh Web Audio
+let mem = [];
+let S = { emo: '', src: null, editing: null, card: null, pm: 0, ps: 0, lastMirrorQ: '' };
+let ac = null, bus, master, NB, tm = null, nx = 0, st = 0, bellCtx = null;
+const LITE = (navigator.hardwareConcurrency || 4) <= 4 || (navigator.deviceMemory || 4) <= 3;
+
+function mkCtx() {
+  const C = window.AudioContext || window.webkitAudioContext;
+  try { return new C({ latencyHint: 'playback' }); } catch (e) { return new C(); }
+}
+
+const entries = () => mem;
+const save_ = a => { mem = a; stats(); };
+
+function toast(m) {
+  const e = $('#toast');
+  e.textContent = m;
+  e.classList.add('show');
+  clearTimeout(e._t);
+  e._t = setTimeout(() => e.classList.remove('show'), 2800);
+}
+
+/* ===== 78 THẺ THẤU SUỐT ===== */
+const TH = [
+  ['Tức giận', 'một ranh giới vừa bị vượt qua', 'sức mạnh để bảo vệ điều quan trọng'],
+  ['Đố kỵ', 'một khát vọng bạn chưa dám nhận', 'động lực và gu thẩm mỹ của chính bạn'],
+  ['Tội lỗi', 'một giá trị bạn đang muốn giữ', 'lương tâm và tinh thần chịu trách nhiệm'],
+  ['Sợ bị bỏ rơi', 'nhu cầu được gắn kết và an toàn', 'khả năng yêu thương sâu sắc'],
+  ['Xấu hổ', 'nhu cầu được chấp nhận trọn vẹn', 'sự nhạy cảm và khiêm tốn thật'],
+  ['Che giấu bản thân', 'nhu cầu được an toàn khi là chính mình', 'sự kín đáo và chiều sâu'],
+  ['Kiểm soát', 'nỗi sợ hỗn loạn đang cần được xoa dịu', 'năng lực tổ chức và dẫn dắt'],
+  ['Cầu toàn', 'nỗi sợ bị chê hoặc bị từ chối', 'tiêu chuẩn cao và sự tận tâm'],
+  ['Phán xét', 'một giá trị bạn đang bảo vệ', 'con mắt phân biệt sắc sảo'],
+  ['Tự ti', 'nhu cầu được thấy giá trị của mình', 'sự khiêm nhường và khả năng học hỏi'],
+  ['Kiêu hãnh', 'nhu cầu được công nhận', 'lòng tự trọng lành mạnh'],
+  ['Mất mát', 'nỗi buồn chưa được phép khóc', 'khả năng trân trọng và gắn bó'],
+  ['Phụ thuộc', 'nhu cầu được nâng đỡ', 'khả năng kết nối và tin cậy']
+];
+
+const MAJ = [
+  ["Gã Khờ","The Fool","Puer Aeternus · Đứa trẻ vĩnh cửu",5,"Bạn nói “tôi tự do” để khỏi phải cam kết, kết thúc hay chịu hậu quả. Mỗi khi mọi thứ trở nên nghiêm túc, phần trẻ con trong bạn lại lặng lẽ chạy sang nơi khác.","Sự tự phát, niềm tin vào cuộc sống và dũng khí bắt đầu lại.","Điều gì bạn đang gọi là “tự do” nhưng thật ra là né một cam kết đang chờ bạn?","Chọn một việc dang dở nhỏ và hoàn thành nó trong 20 phút hôm nay, không đổi ý giữa chừng."],
+  ["Nhà Ảo Thuật","The Magician","Kẻ thao túng · Quyền năng tách khỏi lương tâm",6,"Khi biết mình có sức ảnh hưởng, bạn dễ khéo léo dẫn người khác theo ý mình rồi gọi đó là “giúp họ nhìn rõ”. Quyền năng bị cắt khỏi sự trung thực sẽ biến thành chiêu trò.","Ý chí rõ ràng và năng lực biến ý tưởng thành hiện thực hữu ích.","Lần gần nhất bạn hướng người khác tới điều mình muốn mà không nói thẳng là khi nào?","Hôm nay hãy xin điều bạn cần bằng một câu nói thẳng, không vòng vo, không gợi ý ngầm."],
+  ["Nữ Tư Tế","The High Priestess","Bóng Im lặng · Biết mà không nói",5,"Bạn cảm nhận được rất nhiều nhưng giữ kín, sợ nói ra sẽ bị hiểu sai hoặc bị cười. Im lặng thành nơi trú ẩn, và dần dần bạn ngừng tin cả cảm nhận của chính mình.","Trực giác sâu và khả năng chờ đến đúng lúc.","Điều gì bạn đã biết từ lâu nhưng chưa dám nói thành lời, kể cả với chính mình?","Viết ba dòng bắt đầu bằng “Tôi biết rằng…”, không sửa, không giải thích."],
+  ["Nữ Hoàng","The Empress","Người Mẹ Nuốt Chửng · Cho đi để giữ chặt",12,"Tình thương của bạn có lúc thành sự bao bọc quá mức: lo thay, làm thay, giữ người ta ở gần. Bạn cho nhiều để được cần đến, và khó chịu khi ai đó không cần mình nữa.","Sự nuôi dưỡng thật, nguồn sống dồi dào và niềm vui của thân thể.","Khi giúp ai đó, bạn đang đáp ứng nhu cầu của họ hay nỗi sợ bị bỏ lại của bạn?","Hỏi một người thân: “Bạn cần gì từ mình?” rồi chỉ làm đúng điều họ nói."],
+  ["Hoàng Đế","The Emperor","Người Cha Độc Đoán · Trật tự bằng nỗi sợ",6,"Bạn dựng luật lệ, kế hoạch và quyền quyết định thật chặt để khỏi đối diện với bất định. Người xung quanh dần im lặng và tuân theo, còn bạn cô đơn trên chiếc ngai của mình.","Cấu trúc ổn định, ranh giới rõ ràng và khả năng bảo vệ người khác.","Nếu bạn buông một quy tắc cứng nhắc, điều tồi tệ nhất bạn tưởng tượng sẽ xảy ra là gì?","Chọn một quyết định nhỏ và để người khác quyết định, rồi quan sát cảm giác của bạn."],
+  ["Giáo Hoàng","The Hierophant","Siêu ngã cứng nhắc · Giọng nói của “phải”",8,"Bên trong bạn có một vị giáo huấn nghiêm khắc mang giọng cha mẹ, trường lớp, xã hội: “đúng là thế này, sai là thế kia”. Bạn phán xét mình và người khác theo những luật vay mượn.","Truyền thống, sự học nghiêm túc và khả năng truyền lại tri thức.","Câu “tôi phải…” nào trong bạn nghe giống giọng của người khác hơn là giọng của bạn?","Liệt kê ba chữ “phải” của bạn, rồi viết lại thành “tôi chọn” hoặc “tôi không còn chọn”."],
+  ["Cặp Đôi","The Lovers","Phóng chiếu Anima/Animus · Yêu hình bóng của mình",1,"Bạn gắn lên người kia hình mẫu của phần nội tâm chưa nhận, rồi ghen, thất vọng hay say mê vì chính hình ảnh đó. Ta yêu và ghét ở người khác điều mình chưa gặp ở mình.","Khả năng yêu trọn vẹn và hợp nhất những phần đối lập trong mình.","Phẩm chất nào ở người bạn ngưỡng mộ hoặc ghen tị đang chờ bạn nhận lại cho chính mình?","Viết tên một người bạn thấy cuốn hút và ba phẩm chất của họ. Chọn một, làm nó thật nhỏ hôm nay."],
+  ["Cỗ Xe","The Chariot","Persona Chiến Thắng · Chiếc mặt nạ thành đạt",7,"Bạn lái cuộc đời bằng ý chí và hình ảnh thành công, giữ mọi thứ đồng đều, không để lộ kẽ hở. Phần mệt mỏi, hoài nghi và mềm yếu bị bỏ lại phía sau cỗ xe.","Kỷ luật, định hướng và sức mạnh để đi đến đích.","Phần nào trong bạn phải ngồi im phía sau để hình ảnh thành công của bạn chạy được?","Hôm nay nói với một người tin cậy một điều bạn chưa ổn, thay vì nói “mình ổn”."],
+  ["Sức Mạnh","Strength","Con Thú Bị Nén · Cơn giận chưa được gọi tên",0,"Bạn giữ mình bình tĩnh, mềm mỏng, “trưởng thành”, nhưng bản năng và cơn giận chỉ bị nén xuống. Chúng thoát ra bằng mỉa mai, kiệt sức hoặc những cơn bùng nổ ngoài ý muốn.","Sức mạnh dịu dàng: cảm được bản năng mà vẫn chọn cách hành xử.","Điều gì khiến bạn giận mà bạn vẫn mỉm cười cho qua? Cơ thể bạn giữ nó ở đâu?","Đặt tay lên vùng cơ thể đang căng, thở chậm 6 nhịp và nói thầm: “Mình đang giận, và điều đó được phép”."],
+  ["Ẩn Sĩ","The Hermit","Rút lui phòng vệ · Rời trước khi bị rời",3,"Bạn lui vào một mình và gọi đó là cần không gian, trong khi thật ra bạn rời trước để khỏi bị rời. Càng cô độc, bạn càng tin rằng không ai thật sự hiểu hay ở lại.","Chiều sâu nội tâm, trí tuệ tĩnh lặng và khả năng dẫn đường cho người khác.","Rút lui để hồi sức và rút lui vì sợ bị tổn thương khác nhau thế nào trong bạn?","Nhắn cho ai đó một câu ngắn: “Mình cần yên tĩnh một chút, nhưng mình vẫn ở đây”."],
+  ["Bánh Xe Số Phận","Wheel of Fortune","Tâm thế Nạn nhân · “Số mình nó thế”",9,"Bạn gán mọi biến cố cho số phận, hoàn cảnh hay người khác để khỏi thấy phần lựa chọn của mình. Cảm giác bất lực quen đến mức bạn thôi tìm cách xoay bánh xe.","Biết buông điều ngoài tầm kiểm soát và nhận ra mô thức lặp lại của mình.","Trong chuyện bạn hay than “số mình thế”, có phần nhỏ nào bạn thật sự có quyền chọn?","Viết một tình huống hay lặp lại, rồi gạch dưới một hành động nhỏ bạn có thể làm khác lần này."],
+  ["Công Lý","Justice","Quan Tòa Nội Tâm · Cân đo không thương xót",8,"Bạn luôn tính đúng sai, ai nợ ai, mình đã làm đủ chưa. Công bằng bị biến thành vũ khí, và sai lầm của bạn hay của người khác đều không có đường quay về.","Sự trung thực, trách nhiệm với lựa chọn của mình và con mắt công tâm.","Bạn đang giữ một bản án nào chưa đóng với chính mình hoặc với ai đó?","Viết bản án bạn đang giữ, rồi thêm một đoạn “tình tiết giảm nhẹ” cho người bị kết án."],
+  ["Người Treo","The Hanged Man","Kẻ Tử Đạo · Hy sinh để khỏi mang lỗi",2,"Bạn chịu thiệt, chịu đựng và chờ ai đó nhìn thấy sự hy sinh của mình. Phía sau là cảm giác tội lỗi khi chọn cho bản thân, nên bạn chỉ cho phép mình nghỉ khi đã kiệt sức.","Khả năng buông, nhìn mọi thứ từ một góc khác và hiến dâng có ý thức.","Điều gì bạn đang chịu đựng với hy vọng được ghi nhận, thay vì nói rõ điều mình cần?","Dừng một việc “đáng ra phải làm” hôm nay và để yên 30 phút mà không viện cớ."],
+  ["Cái Chết","Death","Bám Víu Cái Cũ · Từ chối kết thúc",11,"Bạn giữ một mối quan hệ, vai trò hay hình ảnh bản thân đã hết sức sống, vì tang lễ nghe còn đáng sợ hơn sự ngột ngạt. Nỗi buồn chưa được khóc nên cứ hoãn mãi.","Khả năng khép lại, thanh lọc và mở chỗ cho điều mới sinh ra.","Điều gì trong đời bạn đã chết rồi mà bạn vẫn chưa cho phép mình làm lễ tiễn?","Viết một lá thư tạm biệt (không gửi) cho điều bạn cần buông, rồi đọc to một lần."],
+  ["Tiết Chế","Temperance","Hòa giải giả · Nén giận trong vẻ hòa nhã",0,"Bạn đứng giữa mọi xung đột, nhường nhịn, làm dịu, “miễn là êm”. Nhưng nhu cầu và ranh giới thật bị pha loãng đến mức không ai biết bạn muốn gì.","Sự cân bằng thật, khả năng nối hai phía mà không đánh mất mình.","Lần gần nhất bạn nói “sao cũng được” trong khi bên trong có một câu trả lời rõ ràng là khi nào?","Chọn một thứ nhỏ (món ăn, giờ hẹn) và nói rõ lựa chọn của bạn trước người khác."],
+  ["Ác Quỷ","The Devil","Bóng Gốc · Nô lệ của ham muốn",12,"Có thứ bạn biết là không tốt nhưng vẫn lặp lại: một mối quan hệ, thói quen, màn hình, đồ ăn. Sợi xích không khóa chặt; bạn bám vào đó để khỏi chạm vào khoảng trống bên dưới.","Sinh lực thô, khoái cảm của thân thể và sự trung thực về ham muốn.","Bạn quay lại thứ gì mỗi khi thấy trống rỗng? Nó đang giúp bạn tránh cảm giác nào?","Khi thôi thúc xuất hiện, chờ 10 phút, viết ra bạn đang cảm thấy gì rồi mới quyết định."],
+  ["Tòa Tháp","The Tower","Lạm Phát Bản Ngã · Kiêu ngạo trước khi sụp",10,"Bạn dựng một hình ảnh “mình biết hết, mình đúng” cao đến mức không còn nghe được góp ý. Khi lớp vỏ nứt, bạn thấy như bị sỉ nhục và dựng lại ngay thay vì học.","Sự thật được giải phóng và nền móng thật hơn sau khi lớp vỏ sụp.","Niềm tin nào về bản thân bạn bảo vệ quyết liệt đến mức không dám kiểm lại?","Hỏi một người tin cậy: “Điều gì ở mình mà bạn nghĩ mình chưa thấy?” rồi chỉ lắng nghe."],
+  ["Ngôi Sao","The Star","Phần Bị Phơi Trần · Xấu hổ vì dễ tổn thương",4,"Khi không còn lớp vỏ nào, bạn thấy mình trần trụi và cho rằng sự mong manh là đáng xấu hổ. Bạn che nó bằng nụ cười, sự bận rộn hoặc lạnh nhạt, rồi nghĩ không ai chấp nhận con người thật.","Sự chân thật, hy vọng nhẹ nhàng và khả năng chữa lành cho người khác.","Phần nào của bạn mà bạn tin rằng lộ ra là sẽ bị rời bỏ?","Chia sẻ một điều nhỏ, thật và hơi dễ tổn thương với một người an toàn."],
+  ["Mặt Trăng","The Moon","Phóng chiếu & Lo âu · Ảo ảnh của đêm",3,"Trong bóng tối của điều chưa biết, trí tưởng tượng lấp chỗ trống bằng những kịch bản đáng sợ. Bạn đọc nỗi sợ của mình lên khuôn mặt người khác và tin đó là sự thật về họ.","Trí tưởng tượng, giấc mơ và trực giác được bóng tối dẫn đường.","Câu chuyện đáng sợ nào bạn đang tin mà chưa kiểm chứng? Bằng chứng thật nằm ở đâu?","Viết nỗi lo ra, cạnh nó ghi hai cột: “Sự kiện thật” và “Điều mình tưởng tượng”."],
+  ["Mặt Trời","The Sun","Lạc quan độc hại · Chỉ chịu nhìn ánh sáng",10,"Bạn luôn tươi, luôn “tích cực” để được yêu mến, và gạt mọi cảm xúc nặng nề đi như thể chúng làm hỏng buổi tiệc. Ánh sáng không có bóng chỉ phẳng lì, và bạn dần xa những người cần nghe bạn thật.","Niềm vui thật, sự ấm áp và sức sống lan sang người khác.","Lần cuối bạn cho phép mình buồn mà không vội “nhìn mặt tích cực” là khi nào?","Ghi ra một cảm xúc nặng bạn vừa gạt đi và cho nó năm phút chỗ ngồi."],
+  ["Phán Xét","Judgement","Tự Kết Án · Không thể tha cho mình",2,"Có một quá khứ bạn chưa tha cho mình. Tiếng gọi thức tỉnh vang lên nhưng bạn nghe thành bản án, nên thà ở yên trong tội lỗi quen thuộc còn hơn bước ra và sống khác.","Sự thức tỉnh, lòng tha thứ và quyền được bắt đầu lại.","Bạn sẽ nói gì với người bạn mắc đúng lỗi như bạn, và vì sao không nói điều đó với mình?","Viết một lời tha thứ ngắn cho bản thân về một chuyện cụ thể, rồi đọc to."],
+  ["Thế Giới","The World","Hoàn hảo giả · Sợ hoàn tất",7,"Bạn gần xong rồi cứ chỉnh thêm, hoãn bước cuối vì sợ bị đánh giá, hoặc vì kết thúc nghĩa là hết cái cớ “mình đang cố”. Sự trọn vẹn bị đổi lấy sự dở dang an toàn.","Cảm giác trọn vẹn, hợp nhất các mặt đối lập và niềm vui được trình diễn.","Bạn đang gắng thêm điều gì chỉ để tránh phải gọi nó là “xong”?","Chọn một việc gần xong, đặt hạn trong 24 giờ và đưa cho một người xem dù “chưa hoàn hảo”."]
+];
+
+const WANDS = [
+  ["Tia Lửa Bị Dập · Sợ bắt đầu",9,"Ý tưởng bừng lên, rồi một giọng nhỏ nói “bạn đâu đủ giỏi”. Bạn tự dập lửa trước khi ai kịp thấy và gọi đó là thực tế.","Cảm hứng thô, sức sáng tạo và dũng khí bắt đầu.","Ý tưởng nào bạn đã tự dập trước khi cho nó cơ hội cháy?","Làm bản nháp xấu của ý tưởng đó trong 10 phút, chỉ để không ai thấy."],
+  ["Giấu Tiềm Năng · Cầm thế giới mà không bước",5,"Bạn đứng trên lâu đài của mình nhìn xa, lên kế hoạch mãi và giữ mọi lựa chọn mở. Tiềm năng được cất kỹ như bí mật an toàn để khỏi thử và thấy giới hạn.","Tầm nhìn xa và khả năng cân nhắc chiến lược.","Bạn đang giữ “mọi khả năng” để khỏi phải chọn và có thể thất bại ở điều nào?","Chọn một hướng và làm bước nhỏ nhất đầu tiên ngay hôm nay."],
+  ["Chờ Đợi Thụ Động · Đứng ngóng tàu về",3,"Bạn gửi hy vọng ra xa rồi đứng chờ một lời hồi đáp, một cơ hội, một người. Mỗi ngày trôi qua lo âu lớn thêm vì bạn thấy mình chưa được chọn.","Tầm nhìn xa và sự kiên nhẫn có chủ đích.","Bạn đang chờ ai “chọn” mình trong chuyện gì mà bạn có thể chủ động bước tới?","Gửi một tin nhắn hoặc nộp một đơn mà bạn vẫn chờ người khác khởi xướng."],
+  ["Thuộc Về Giả · Vui để được chấp nhận",12,"Bạn có mặt ở mọi buổi tụ họp, hòa theo mọi người để thuộc về, rồi mệt vì phải đóng vai người dễ mến. Sự thân thuộc phụ thuộc vào việc bạn không đổi khác.","Niềm vui cộng đồng và cảm giác thuộc về thật sự.","Bạn đang đóng vai gì trong nhóm để được giữ chỗ? Nếu ngừng, bạn sợ điều gì?","Nhẹ nhàng từ chối một lời mời bạn không thật sự muốn nhận trong tuần này."],
+  ["Ganh Đua · Ai cũng cầm gậy",1,"Bạn so mình với mọi người và thấy họ như đối thủ. Thay vì nhận ghen tị, bạn công kích, giành giật hoặc làm mọi thứ ồn lên để khỏi thấy mình tụt lại.","Tinh thần thi đua lành mạnh và động lực nâng cấp bản thân.","Ai khiến bạn muốn “hơn”? Họ có điều gì bạn thật sự khao khát?","Viết tên người bạn ghen tị và điều bạn muốn cho chính mình từ họ."],
+  ["Nghiện Ánh Nhìn · Chiến thắng để được thương",10,"Thành tựu cho bạn cảm giác được yêu, nên bạn luôn cần khán giả. Không có tiếng vỗ tay, bạn thấy trống rỗng; thành công càng cao, nỗi sợ rơi xuống càng nặng.","Niềm tự hào chính đáng và khả năng truyền cảm hứng.","Nếu không ai biết bạn đã làm được điều này, nó còn đáng với bạn không?","Làm một việc tốt hôm nay và không kể cho ai."],
+  ["Phòng Thủ Hung Hăng · Đứng trên đồi",0,"Bạn luôn thấy mình bị tấn công nên đứng sẵn tư thế phản công, nhất là trước góp ý. Cơn giận là hàng rào, và phía sau nó là cảm giác không được phép yếu.","Khả năng giữ ranh giới và đứng vững cho điều mình tin.","Điều gì vừa chạm vào bạn khiến bạn giơ gậy lên ngay? Nó chạm vào vết nào?","Khi muốn cãi lại, hít một hơi và hỏi: “Mình đang bảo vệ điều gì?”"],
+  ["Chạy Trốn Bằng Bận Rộn · Né khoảng lặng",6,"Mọi thứ bay nhanh: lịch kín, tin nhắn dồn dập, việc nối việc. Bạn kiểm soát cảm giác bằng tốc độ, vì nếu dừng lại, điều chưa nói sẽ bắt kịp bạn.","Năng lượng, hiệu suất và khả năng hành động nhanh khi cần.","Nếu lịch của bạn trống một buổi chiều, cảm giác nào sẽ tìm đến?","Chừa 15 phút trống, không điện thoại, chỉ ngồi với bất cứ điều gì xuất hiện."],
+  ["Người Lính Bị Thương · Cảnh giác quá mức",3,"Bạn từng bị tổn thương và từ đó giữ cảnh giác, đoán trước mọi đòn đánh, khó tin ai. Tấm khiên che bạn khỏi đau nhưng cũng chắn luôn những người muốn lại gần.","Sự bền bỉ, kinh nghiệm sống và trực giác về nguy hiểm.","Vết thương cũ nào đang khiến bạn nhìn người mới như kẻ có thể làm đau mình?","Với một người an toàn, thử tin họ thêm một điều nhỏ và quan sát điều gì xảy ra."],
+  ["Người Gánh Vác · Mang hết về mình",2,"Bạn nhận thêm việc, thêm trách nhiệm, thêm kỳ vọng vì thấy có lỗi nếu từ chối. Gánh nặng được gọi là “trách nhiệm”, trong khi gốc là nỗi sợ làm người khác thất vọng.","Tinh thần trách nhiệm và khả năng làm việc bền bỉ.","Trong những thứ đang gánh, thứ nào thật sự không phải của bạn?","Chọn một việc để trao lại, hoãn hoặc từ chối trong tuần này."],
+  ["Khoe Hào Hứng · Cần chứng minh",9,"Bạn hào hứng bắt đầu nhiều thứ và cần người thấy mình giỏi. Dưới đó là nỗi sợ mình chưa đủ, nên bạn chứng minh liên tục thay vì kiên nhẫn học.","Nhiệt tình, tò mò và khát khao khám phá.","Bạn đang cố chứng minh điều gì, và với ai?","Chọn một kỹ năng và dành 15 phút tập mà không cho ai biết."],
+  ["Bốc Đồng Nóng Nảy · Lao đi rồi mới nghĩ",0,"Bạn hành động và nói khi đang nóng, rồi mới nhận hậu quả. Cơn giận cho bạn cảm giác sống động nên khó dừng, còn người xung quanh học cách tránh bạn.","Lòng dũng cảm, nhiệt huyết và sức bật.","Câu nào bạn từng nói lúc nóng mà đến giờ vẫn muốn rút lại? Điều gì khi đó khiến bạn bùng lên?","Đặt quy tắc 10 hơi thở trước khi phản ứng với điều làm bạn giận hôm nay."],
+  ["Quyến Rũ Ghen Tuông · Quyền lực qua sức hút",1,"Bạn tỏa sáng, nhưng ngầm so sánh và không chịu được ai sáng hơn. Ghen tị hiện ra dưới dạng chê nhẹ, loại trừ, hoặc làm người khác nhỏ lại để mình lớn.","Sức hút thật, sự tự tin và khả năng truyền lửa.","Khi ai đó nổi bật hơn bạn, câu nào bạn nói thầm về họ, và nó nói gì về bạn?","Chân thành khen một người bạn thấy “đe dọa”, rồi để ý cơ thể mình."],
+  ["Bạo Chúa Lôi Cuốn · Tầm nhìn nghiền người",0,"Bạn có tầm nhìn và sức hút nhưng không chấp nhận bị cản. Khi ai chậm, bạn nổi giận, nói to, ép tiến độ; người khác theo bạn vì sợ nhiều hơn vì tin.","Lãnh đạo thật, tầm nhìn và khả năng khơi dậy niềm tin.","Người xung quanh đi theo bạn vì tin hay vì sợ? Bạn có dám hỏi họ không?","Trong cuộc trao đổi tới, hỏi ý kiến người ít nói nhất và để họ nói trọn."]
+];
+
+const CUPS = [
+  ["Trái Tim Đóng Kín · Tê liệt cảm xúc",4,"Chiếc cốc đầy nhưng bạn đậy nắp lại, vì cảm nhiều khiến bạn thấy mình yếu đuối hoặc lố bịch. Cuộc sống mất vị và bạn không rõ mình đang cảm thấy gì.","Khả năng yêu, đồng cảm và tiếp nhận.","Cảm xúc nào bạn sẽ thấy xấu hổ nếu người khác biết?","Ba lần trong hôm nay tự hỏi: “Mình đang cảm gì?” và đặt đúng một từ."],
+  ["Hòa Tan Vào Nhau · Mất mình trong quan hệ",12,"Bạn hòa vào người kia đến mức không phân biệt được nhu cầu của hai người. Bạn gọi đó là tình yêu sâu, nhưng thật ra bạn sợ khoảng cách giữa hai người.","Sự gần gũi sâu sắc và khả năng chia sẻ.","Trong mối quan hệ này, sở thích hay ý kiến nào của bạn đã biến mất mà không ai yêu cầu?","Làm một việc chỉ dành cho bạn trong tuần này và nói với người ấy mà không xin phép."],
+  ["Vòng Tròn Phe Nhóm · Gắn kết bằng chê bai",8,"Bạn thấy gần gũi nhất khi cả nhóm cùng nói xấu ai đó. Phán xét người ngoài khiến nhóm ấm lên, nhưng bạn cũng biết mình sẽ là người tiếp theo khi vắng mặt.","Tình bạn, niềm vui chung và sự nâng đỡ lẫn nhau.","Khi nói xấu ai đó, bạn đang tránh nhìn điều gì ở chính mình?","Lần tới buổi trò chuyện chuyển sang chê ai đó, thử đổi chủ đề một lần."],
+  ["Chán Chường · Từ chối món quà",11,"Có điều tốt đang được trao nhưng bạn không nhận vì mắt còn nhìn vào điều đã mất. Sự chán nản thường là nỗi buồn chưa khóc, nên mọi thứ mới đều thấy vô vị.","Sự chiêm nghiệm và khả năng thẩm định điều gì thật sự quan trọng.","Món quà nào đang được đưa tới mà bạn lờ đi? Nó nhắc bạn đến mất mát nào?","Nhận một điều tốt hôm nay (lời khen, lời mời, bữa ăn) chỉ bằng “cảm ơn”."],
+  ["Chôn Mình Trong Tiếc Nuối · Nhìn ly đổ",11,"Bạn nhìn mãi ba chiếc cốc đổ mà quên hai chiếc còn đứng. Nỗi đau chưa được tiễn khiến bạn trách mình, trách người và ở yên trong đó như một cách trung thành với điều đã mất.","Khả năng đau và thương tiếc để rồi đi tiếp.","Nếu quay lại nhìn hai chiếc cốc còn đứng, bạn thấy gì ở đó?","Viết ba điều vẫn còn lại với bạn sau mất mát này."],
+  ["Hoài Niệm · Mắc kẹt trong tuổi thơ",3,"Bạn sống bằng ký ức, tìm lại cảm giác an toàn của ngày xưa trong những mối quan hệ hôm nay. Đứa trẻ trong bạn vẫn chờ ai đó đến đón, nên bạn dễ bám và dễ tổn thương.","Sự ngây thơ, niềm vui và lòng thương cảm với bản thân nhỏ bé.","Đứa trẻ trong bạn từng cần điều gì mà không nhận được? Hôm nay bạn trao được phần nào?","Dành 10 phút làm một việc khiến đứa trẻ trong bạn thấy được thương (nghe bài cũ, vẽ, ăn món xưa)."],
+  ["Mơ Mộng Né Thực Tế · Quá nhiều lựa chọn",5,"Bạn mơ về nhiều khả năng đẹp đẽ nên không chọn gì. Trí tưởng tượng thành chỗ ẩn: trong mơ bạn luôn hoàn hảo, ngoài đời không phải lộ phần chưa hoàn hảo.","Trí tưởng tượng giàu và khả năng nhìn thấy điều chưa có.","Giấc mơ nào bạn giữ mãi trong đầu vì thử ngoài đời sẽ phải thấy giới hạn?","Chọn một ước mơ, viết bước thực tế nhỏ nhất rồi làm nó trong 24 giờ."],
+  ["Bỏ Đi Không Lời · Trốn sự gần gũi",11,"Khi chạm đến độ sâu, bạn lặng lẽ rời đi mà không nói, vì ở lại nghĩa là đối diện nỗi buồn. Bạn giữ ý nghĩ “phải đi tìm điều gì hơn” để khỏi ngồi với mất mát.","Dũng khí rời bỏ điều không còn đúng và tìm ý nghĩa sâu hơn.","Bạn đang rời bỏ điều gì vì nó không còn hợp, hay vì ở lại buộc bạn phải cảm nhận?","Trước khi rời một việc hay một người, viết ra điều bạn chưa nói và điều bạn sợ cảm nhận."],
+  ["Thỏa Mãn Phô Trương · Đền bù bằng hưởng thụ",10,"Bạn cho thấy mình đủ đầy và hạnh phúc, nhưng bên trong cần được xác nhận liên tục. Ăn, mua, khoe trở thành cách lấp chỗ trống mà lời khen chỉ lấp được một lúc.","Biết tận hưởng và trân trọng điều mình đã có.","Điều gì khiến bạn cần người khác thấy mình đang hạnh phúc?","Tận hưởng một điều nhỏ hôm nay mà không chụp hình, không kể."],
+  ["Gia Đình Hoàn Hảo Giả · Hạnh phúc để trưng",7,"Bạn giữ hình ảnh gia đình, đôi lứa, nhóm bạn hạnh phúc hoàn hảo. Mọi xung đột bị nuốt vào, và nỗi sợ ai đó phá vỡ bức tranh khiến bạn kiểm soát cả những điều không thuộc về mình.","Tình thân thật, sự gắn kết và niềm vui giản dị bên người thân.","Điều gì trong “bức tranh đẹp” của bạn chưa dám nói thành lời?","Nói một điều khó nói, nhẹ nhàng và đúng lúc, với một người thân."],
+  ["Nhạy Cảm Thành Vũ Khí · Tổn thương để đứng trên",4,"Bạn nhạy cảm và hay bị đau, rồi giữ nỗi đau đó như bằng chứng bạn “tốt hơn” người đã làm tổn thương bạn. Nhưng bạn cũng xấu hổ vì mình dễ khóc nên giấu đi.","Sự nhạy cảm, trí tưởng tượng và dịu dàng.","Nỗi buồn nào bạn xấu hổ khi cảm thấy, và ai từng dạy bạn rằng khóc là yếu?","Cho phép mình khóc hoặc thở dài thật lâu một lần hôm nay, ở nơi riêng tư."],
+  ["Lãng Mạn Tô Vẽ · Yêu hình ảnh hơn con người",1,"Bạn say mê hình ảnh lý tưởng về tình yêu hay về một người ở xa, và khi thực tế kém lung linh thì thấy ghen tị với chuyện tình của người khác. Bạn yêu giấc mơ hơn người thật.","Sự lãng mạn, khả năng cho đi và lòng sùng kính vẻ đẹp.","Bạn đang yêu con người thật hay hình mẫu mà bạn đã vẽ ra cho họ?","Viết ba điều thật về người ấy hoặc về điều bạn theo đuổi, không kèm lý tưởng hóa."],
+  ["Miếng Bọt Biển Cảm Xúc · Mất ranh giới",12,"Bạn thấm cảm xúc của người khác và gọi đó là đồng cảm, nhưng kết quả là kiệt sức và lẫn lộn đâu là cảm xúc của mình. Bạn cần người cần mình để thấy mình có giá trị.","Đồng cảm sâu, trực giác cảm xúc và khả năng nâng đỡ.","Cảm xúc nào trong hôm nay thật sự là của bạn, và cảm xúc nào bạn nhặt từ người khác?","Sau một cuộc trò chuyện nặng, rửa tay hoặc ra ngoài hít thở và nói: “Phần này không phải của mình”."],
+  ["Đóng Băng Cảm Xúc · Điềm tĩnh giả",6,"Bạn giữ vẻ điềm tĩnh, hiểu chuyện và chu đáo, trong khi bên trong cảm xúc bị khóa lại. Khi bị đe dọa, bạn kiểm soát người khác bằng im lặng, thái độ hoặc những lời dịu dàng có gai.","Sự trưởng thành cảm xúc, ổn định và khả năng chứa đựng người khác.","Khi cảm xúc quá lớn, bạn kiểm soát nó hay kiểm soát những người làm nó dâng lên?","Gọi tên đúng một cảm xúc bạn đang giấu với người tin cậy: “Mình đang thấy…”"]
+];
+
+const SWORDS = [
+  ["Sự Thật Như Dao · Thẳng thắn gây thương",8,"Bạn tin mình “chỉ nói sự thật”, nhưng lời của bạn sắc đến mức người nghe bị cắt. Đằng sau, sự đúng đắn là cách để đứng trên và khỏi phải cảm nhận.","Sự rõ ràng, trung thực và khả năng nhìn xuyên ảo tưởng.","Lần gần nhất bạn dùng sự đúng để thắng người khác thay vì để hiểu họ là khi nào?","Trước khi nói điều khó, hỏi: “Điều này có đúng, có cần và có tử tế không?”"],
+  ["Bịt Mắt Né Chọn · Phủ nhận để khỏi mất",5,"Bạn bịt mắt và khoanh tay để khỏi chọn, vì mỗi lựa chọn là một mất mát. Sự im lặng nhìn như bình thản, nhưng bên trong là giằng co kéo dài.","Khả năng tĩnh lại để cân nhắc kỹ trước khi chọn.","Sự thật nào bạn đang tránh nhìn để không phải chọn?","Bỏ khăn bịt mắt: ghi hai lựa chọn và ghi cảm giác của cơ thể với từng lựa chọn."],
+  ["Nhai Lại Tổn Thương · Vết đâm nằm trong đầu",11,"Bạn nhớ mãi một lần bị phản bội hay từ chối, kể lại trong đầu như xoáy sâu vết dao. Nỗi đau chưa được khóc biến thành cay đắng và thêm một lớp phòng thủ.","Khả năng đau thật và để vết thương liền từ bên trong.","Câu chuyện đau nào bạn kể đi kể lại, và cuối câu chuyện bạn luôn là người thế nào?","Đặt tay lên ngực và cho nỗi đau 5 phút không phân tích, chỉ cảm."],
+  ["Trốn Trong Nghỉ Ngơi · Tách rời khỏi cảm giác",4,"Bạn gọi sự rút lui là “cần nghỉ”, nhưng thực ra là tê đi và tách khỏi cảm giác vì xấu hổ về điều mình đã hoặc chưa làm. Nghỉ thật hồi sức; trốn thì càng nghỉ càng nặng.","Sự tĩnh tại và khả năng phục hồi thực thụ.","Bạn đang nghỉ để hồi sức hay đang tránh một cảm giác?","Thở chậm 3 nhịp, hỏi “Mình đang tránh điều gì?” rồi nghỉ thật, không điện thoại."],
+  ["Thắng Hèn Mọn · Hạ người để lên",1,"Bạn thắng tranh luận, thắng người khác, nhưng để lại họ tổn thương. Chiến thắng cho bạn cảm giác an toàn trước nỗi sợ thua kém, và bạn ghen với cả những người không hề tranh với bạn.","Tinh thần cạnh tranh và biết khi nào đáng chiến, khi nào nên buông.","Ai đã “thua” khi bạn thắng, và bạn thật sự muốn điều gì từ chiến thắng đó?","Lần tới trong một tranh luận, thử nói: “Bạn có điểm đúng ở chỗ…”"],
+  ["Mang Hành Lý Rời Đi · Chạy khỏi tội lỗi",2,"Bạn đổi nhà, đổi việc, đổi người để bỏ lại tội lỗi, nhưng hành lý vẫn nằm trong thuyền cùng bạn. Chuyến đi êm ả chỉ là sự lặng đi trước khi chuyện cũ lặp lại.","Khả năng chuyển hóa và đi tiếp một cách có ý thức.","Bạn đang mang theo điều gì từ nơi cũ mà chưa dám nhìn?","Viết ba dòng “điều tôi mang theo” và ba dòng “điều tôi sẵn sàng đặt xuống”."],
+  ["Lén Lút · Hội chứng kẻ mạo danh",5,"Bạn xoay xở bằng mánh nhỏ, nói một nửa sự thật hoặc làm lén vì không tin mình xứng đáng nếu làm công khai. Bạn sống với nỗi sợ bị phát hiện là kẻ giả.","Sự khéo léo, chiến lược và biết bảo vệ bản thân.","Điều gì bạn đang giấu vì sợ người khác sẽ thấy bạn “không đủ”?","Chọn một nửa sự thật nhỏ và nói trọn nó với một người an toàn."],
+  ["Tự Trói Bằng Suy Nghĩ · Cái bẫy “không thể”",9,"Bạn bị bịt mắt, quấn dây, nhưng không ai giữ bạn lại: những câu “tôi không thể”, “chẳng ích gì” tự dựng nên bức tường. Đó là cách an toàn để khỏi thử rồi thất bại.","Khả năng nhìn ra cấu trúc suy nghĩ và tự tháo nó.","Câu “tôi không thể…” nào của bạn chưa bao giờ được thử kiểm chứng?","Viết “tôi không thể…”, rồi đổi thành “tôi chưa biết cách… và bước đầu tiên là…”"],
+  ["Đêm Lo Âu · Tự trách trong bóng tối",2,"Nửa đêm bạn tua lại mọi lỗi lầm và những điều “lẽ ra”. Tâm trí biến tội nhỏ thành bản án lớn, và nỗi đau cảm càng nặng khi bạn ở một mình.","Lương tâm tỉnh táo và mong muốn làm điều đúng.","Điều gì bạn tự trách đêm qua, và nếu một người bạn kể với bạn, bạn sẽ nói gì với họ?","Trước khi ngủ, viết nỗi lo ra giấy và ghi: “Sáng mai mình sẽ nghĩ tiếp”."],
+  ["Kịch Bản Nạn Nhân · Đáy của bi kịch",9,"Mọi thứ sụp cùng lúc và bạn nằm xuống. Nhưng đôi khi “đáy” thành bản sắc: bạn là người luôn chịu thiệt, và buông vai nạn nhân nghĩa là phải đứng dậy chịu trách nhiệm.","Sự kết thúc rõ ràng và cơ hội khởi đầu lại từ thật.","Câu chuyện “ai cũng bỏ rơi tôi” mang lại cho bạn điều gì, và lấy đi của bạn điều gì?","Viết lại câu chuyện đau của bạn ở ngôi thứ ba, rồi thêm đoạn kết nơi nhân vật đứng dậy."],
+  ["Chỉ Trích Tò Mò · Sắc sảo để che sợ",8,"Bạn nhanh mắt, nhanh miệng, thấy lỗi của mọi người và bình luận về nó. Sự sắc sảo che sự bất an: nếu bạn nói trước, sẽ không ai kịp phán xét bạn.","Trí tò mò, sự nhanh nhạy và tinh thần thẳng thắn.","Gần đây bạn đang phán xét ai, và điều đó chạm vào nỗi sợ nào của bạn?","Đổi mỗi lời chê hôm nay thành một câu hỏi tò mò."],
+  ["Lý Lẽ Hung Hăng · Biện luận thay cho giận",0,"Bạn lao vào tranh luận như một đòn tấn công, dùng logic để áp đảo và không nghe. Cơn giận núp sau lý lẽ, và người đối diện thấy mình bị đánh chứ không được trao đổi.","Sự quyết đoán, nhanh trí và dũng khí bảo vệ điều đúng.","Khi tranh cãi, bạn muốn đúng hay muốn được hiểu?","Trước khi phản bác, tóm tắt lại ý người kia cho đến khi họ nói “đúng rồi”."],
+  ["Nữ Hoàng Lạnh · Chua cay phòng thủ",11,"Bạn đã chịu mất mát và quyết không để ai làm đau mình nữa. Trí tuệ và sự mỉa mai là áo giáp, nhưng bạn cô đơn trong sự độc lập chính mình dựng nên.","Sự sáng suốt, ranh giới rõ và trí tuệ có trái tim.","Nỗi buồn nào đứng sau lớp lạnh lùng bạn mặc để không ai lại gần?","Cho một người an toàn thấy một chút ấm áp thật của bạn hôm nay."],
+  ["Quan Tòa Vô Cảm · Quyền lực bằng lý lẽ",6,"Bạn đặt lý trí lên trên mọi cảm xúc và dùng quy tắc, số liệu để giữ mọi thứ trong tầm tay. Khi người khác khóc hay bối rối, bạn đưa giải pháp thay vì ở bên họ.","Phán đoán công bằng, tư duy rõ ràng và chuẩn mực đạo đức.","Khi ai đó đau, bạn sửa họ hay ở bên họ?","Lần tới khi ai chia sẻ nỗi buồn, đừng khuyên, chỉ nói: “Mình đang nghe bạn đây”."]
+];
+
+const PENTS = [
+  ["Tâm Lý Khan Hiếm · Giá trị đo bằng thứ cầm được",1,"Bạn nhìn cơ hội như thứ khan hiếm sắp bị người khác lấy mất. Nỗi lo thiếu khiến bạn thèm thứ người khác có và so sánh tài sản, thời gian, thành quả.","Biết nhận cơ hội thật và gieo hạt vào đất tốt.","Bạn thèm điều gì mà người khác có? Phía sau nó là nhu cầu thật nào của bạn?","Viết 3 thứ bạn đang có mà ai đó có thể đang ao ước."],
+  ["Quá Tải Xoay Xở · Giữ mọi thứ không rơi",7,"Bạn tung hứng việc, tiền, các mối quan hệ và gật đầu “mình lo được hết”. Cầu toàn bắt bạn không được để rơi quả nào, nên không bao giờ được nghỉ.","Khả năng thích nghi và linh hoạt giữa nhiều nhu cầu.","Nếu để rơi một quả bóng hôm nay, bạn chọn quả nào, và điều đó nói gì về điều quan trọng với bạn?","Xóa hoặc dời một việc khỏi danh sách hôm nay, không áy náy."],
+  ["Làm Để Được Chấm Điểm · Cần người duyệt",7,"Bạn làm rất tốt nhưng chỉ yên tâm khi người khác khen. Không có người chấm, bạn không tự đánh giá được công sức của mình và sửa mãi cho đến khi mệt.","Tay nghề, sự tận tâm và khả năng hợp tác.","Với công việc bạn tự hào nhất, ai là người tự hào: bạn hay người khác?","Kết thúc một việc khi thấy “đủ tốt” và tự ghi: “Mình hài lòng vì…”"],
+  ["Ôm Giữ · Kiểm soát vì sợ mất",6,"Bạn giữ tiền, thời gian, cảm xúc và con người trong tầm tay vì buông là mất. Sự an toàn thành nhà tù, và những người gần bạn thấy mình bị giữ chặt.","Biết giữ gìn, tích lũy và xây nền vững.","Điều gì bạn đang ôm chặt đến mức nó không thở được? Nếu mất nó, bạn sợ điều gì?","Cho đi một thứ nhỏ (thời gian, tiền, đồ vật) mà bạn thường giữ lại."],
+  ["Xấu Hổ Vì Thiếu · Không dám xin giúp",4,"Bạn đi qua tuyết lạnh, ngang cửa sổ sáng đèn mà không gõ cửa. Thiếu thốn khiến bạn xấu hổ, nên bạn tự cô lập thay vì nhờ giúp.","Sự khiêm nhường và khả năng nhận nâng đỡ.","Bạn đang cần sự giúp đỡ nào mà vẫn chưa gõ cửa vì sợ bị đánh giá?","Nhờ một người một việc nhỏ hôm nay và nói “cảm ơn” khi họ giúp."],
+  ["Cho Để Kiểm Soát · Ân huệ có điều kiện",10,"Bạn cho đi hào phóng nhưng ngầm cần được nhớ ơn, kính trọng hoặc vâng lời. Món quà thành sợi dây, và bạn đứng ở thế người trên để khỏi thấy mình cũng cần ai.","Sự hào phóng thật và khả năng chia sẻ nguồn lực.","Bạn cho đi mà không mong đợi gì, hay có một hóa đơn vô hình đi kèm?","Cho một thứ nhỏ ẩn danh, hoặc cho mà không chờ lời cảm ơn."],
+  ["Sốt Ruột Với Quá Trình · Chê thành quả",8,"Bạn đầu tư công sức rồi nhìn kết quả bằng ánh mắt khắt khe: “chưa đủ, quá chậm”. Bạn phán xét mình nặng hơn người khác và khó tin rằng mọi thứ cần thời gian để lớn.","Biết đánh giá thực tế và kiên nhẫn với quá trình.","Nếu một người bạn có đúng tiến độ này, bạn có chê họ như chê mình không?","Ghi 3 điều đã tiến bộ so với 3 tháng trước, dù nhỏ."],
+  ["Nghiện Làm Việc · Hoàn hảo để chứng minh",7,"Bạn mài giũa kỹ năng không ngừng, và công việc là nơi bạn thấy mình có giá trị. Nghỉ ngơi làm bạn lo, và các mối quan hệ nhường chỗ cho danh sách việc không bao giờ hết.","Sự thành thạo, kỷ luật và niềm tự hào từ tay nghề.","Nếu hôm nay bạn không làm gì, giá trị của bạn là bao nhiêu?","Dừng việc đúng giờ đã định và làm một việc vô ích cho vui."],
+  ["Lồng Vàng Độc Lập · Không cần ai",3,"Bạn tự lo mọi thứ, đẹp đẽ, ổn định, và nói mình không cần ai. Độc lập là giáp: cần ai nghĩa là có thể bị bỏ rơi, nên bạn rời trước một bước.","Sự tự chủ và khả năng tự nuôi dưỡng bản thân.","Nếu thừa nhận mình cần ai đó, bạn sợ điều gì sẽ xảy ra?","Nói với một người: “Mình muốn có bạn ở đây” và xem bạn cảm thấy gì."],
+  ["Di Sản Gia Đình · Sống theo kỳ vọng thừa kế",12,"Bạn mang những mô thức, nghề nghiệp, hôn nhân mà gia đình kỳ vọng, và sợ rời chúng thì mất chỗ thuộc về. Bạn trung thành với kịch bản của người đi trước thay vì kịch bản của mình.","Gốc rễ, truyền thống và sự nâng đỡ của gia tộc.","Phần nào trong cuộc sống là của gia đình, phần nào thật sự là của bạn?","Chọn một kỳ vọng gia đình bạn đang mang và hỏi: “Nó còn phục vụ mình không?”"],
+  ["Mơ Mà Không Làm · Sợ thất bại thật",9,"Bạn nghiên cứu, lên kế hoạch, ngắm nghía nhưng không bắt tay. Học thêm một khóa nữa an toàn hơn hành động, vì thử thật là phơi giá trị của mình ra.","Sự kiên nhẫn học hỏi và biết biến ý tưởng thành thực tế.","Bạn đang “chuẩn bị” điều gì quá lâu so với việc bắt đầu?","Làm bản thử đầu tiên, dù xấu, trong 25 phút."],
+  ["Đúng Bổn Phận Vì Sợ Có Lỗi · Không dám nghỉ",2,"Bạn chăm chỉ, đáng tin, đúng giờ, nhưng làm vì sợ có lỗi nếu nghỉ. Thói quen thành cái cớ để khỏi nhìn nhu cầu bên trong, và niềm vui bị coi là phần thưởng chưa xứng đáng.","Sự đáng tin, bền bỉ và tinh thần trách nhiệm.","Bạn có cho phép mình nghỉ khi chưa “kiếm” được nó không?","Nghỉ 30 phút hôm nay mà không cần lý do và không bù lại."],
+  ["Nuôi Dưỡng Người Khác Bỏ Quên Mình · Kiệt sức",4,"Bạn chăm lo mọi người: bữa ăn, nhà cửa, cảm xúc của họ, còn bản thân là người cuối cùng được nhận. Sâu xa là cảm giác mình không xứng được chăm sóc nên bạn xấu hổ khi cần.","Sự ấm áp thực tế và khả năng làm nơi trú ẩn.","Nếu bạn là người đầu tiên được chăm sóc hôm nay, điều gì sẽ khác?","Làm một việc chăm sóc bản thân trước khi chăm sóc bất kỳ ai."],
+  ["Tham Quyền Tích Sản · Giá trị bằng địa vị",10,"Bạn đo giá trị mình bằng của cải, chức danh, nhà cửa. Thành công là thật, nhưng nỗi sợ mất đi khiến bạn khó yên và nhìn xuống những người “chưa làm nên trò trống”.","Sự thịnh vượng, nền tảng vững chắc và khả năng bảo trợ người khác.","Nếu mất hết địa vị, bạn còn là ai?","Giúp ai đó một việc không đem lại lợi ích gì và không để ai biết."]
+];
+
+const GROUPS = [
+  { n: 'Ẩn chính', f: 'Cổ mẫu', g: '✦', note: 'Ẩn chính · 22 cổ mẫu lớn của tâm thức: Persona, Bóng, Anima/Animus, Người Mẹ, Người Cha, Kẻ lừa… những lực nằm sau cách ta sống và yêu.' },
+  { n: 'Gậy', f: 'Lửa · Trực giác', g: '🔥', note: 'Gậy · Lửa · chức năng Trực giác: bóng tối của ý chí, cơn giận, tham vọng và nỗi sợ bắt đầu.' },
+  { n: 'Cốc', f: 'Nước · Cảm nhận', g: '💧', note: 'Cốc · Nước · chức năng Cảm nhận: bóng tối của cảm xúc, sự gắn bó, mất mát và xấu hổ.' },
+  { n: 'Kiếm', f: 'Khí · Tư duy', g: '🗡️', note: 'Kiếm · Khí · chức năng Tư duy: bóng tối của phán xét, lo âu, lý lẽ và lời nói.' },
+  { n: 'Xu', f: 'Đất · Giác quan', g: '🌱', note: 'Xu · Đất · chức năng Giác quan: bóng tối của tiền bạc, thân thể, công việc và giá trị bản thân.' }
+];
+const NOTE_ALL = '78 lá = 22 cổ mẫu của Ẩn chính + 56 lá thuộc bốn chức năng tâm lý của Jung: Trực giác, Cảm nhận, Tư duy, Giác quan.';
+const RK = ['Át', 'Hai', 'Ba', 'Bốn', 'Năm', 'Sáu', 'Bảy', 'Tám', 'Chín', 'Mười', 'Thị Đồng', 'Hiệp Sĩ', 'Hoàng Hậu', 'Quốc Vương'];
+const RE = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Page', 'Knight', 'Queen', 'King'];
+const RS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'P', 'Kn', 'Q', 'K'];
+const SE = ['Wands', 'Cups', 'Swords', 'Pentacles'];
+const CARDS = [];
+MAJ.forEach((r, i) => CARDS.push({ grp: 0, n: r[0], en: r[1], sh: r[2], th: r[3], m: r[4], g: r[5], q: r[6], a: r[7], lb: String(i), glyph: '✦' }));
+[WANDS, CUPS, SWORDS, PENTS].forEach((arr, si) => arr.forEach((r, i) => CARDS.push({ grp: si + 1, n: RK[i] + ' ' + GROUPS[si + 1].n, en: RE[i] + ' of ' + SE[si], sh: r[0], th: r[1], m: r[2], g: r[3], q: r[4], a: r[5], lb: RS[i], glyph: GROUPS[si + 1].g })));
+
+/* ===== 54 SELF-CARE ===== */
+const SC = [
+  ['Thiết Lập Tư Duy Dòng Chảy Tiền Bạc', 'Rà soát chi tiêu trong tuần, cắt bớt 1 khoản không cần thiết và lên kế hoạch tối ưu nguồn thu.', 'Tôi làm chủ tài chính và cởi mở trước mọi cơ hội tạo ra giá trị.', 'Bài học lớn nhất về tiền bạc bạn nhận được từ gia đình là gì?'],
+  ['Đặt Lịch Cho Khoảng Lặng', 'Ngắt mạng xã hội 30 phút. Không làm việc, không nhạc có lời, chỉ quan sát cảm xúc.', 'Ở một mình là lúc tôi nạp lại nguồn năng lượng nguyên bản.', 'Cảm giác đầu tiên xuất hiện khi bạn ở một mình trong yên lặng là gì?'],
+  ['Đánh Thức Giác Quan Bằng Mùi Hương', 'Chọn một mùi hương bạn thích và dành 1 phút chỉ để hít thở sâu.', 'Tôi thưởng thức từng khoảnh khắc hiện tại qua các giác quan.', 'Mùi hương nào khiến bạn an tâm và thư thái nhất?'],
+  ['3 Phút Nút Tạm Dừng', 'Khi quá tải, nhắm mắt 3 phút, đặt tay lên tim và không cố xử lý suy nghĩ nào.', 'Trong sự tĩnh lặng, tôi tìm thấy câu trả lời sáng suốt nhất.', 'Ngay lúc này, điều gì làm tâm trí bạn phân tâm nhiều nhất?'],
+  ['Nâng Cấp Nghi Thức Chăm Sóc Diện Mạo', 'Biến việc rửa mặt, skincare mỗi tối thành khoảng thời gian nâng niu thay vì làm cho xong.', 'Tôi tôn trọng và tự tin với phiên bản tự nhiên nhất của mình.', 'Bạn có thể làm gì để thói quen chăm sóc buổi sáng hào hứng hơn?'],
+  ['Thử Thách Sức Bền Thể Chất', 'Một bài tập ngắn vượt giới hạn thường ngày (plank thêm 30s, chống đẩy thêm 5 lần).', 'Cơ thể tôi dẻo dai, tinh thần tôi vững vàng trước mọi thử thách.', 'Lần gần nhất bạn tự hào về thể lực của mình là khi nào?'],
+  ['Xả Áp Lực Bằng Việc Viết Và Giải Phóng', 'Viết hết bức bối ra giấy nháp rồi xé nhỏ hoặc tiêu hủy an toàn để báo hiệu buông bỏ.', 'Tôi chủ động khép lại quá khứ và sẵn sàng cho khởi đầu mới.', 'Căng thẳng nào đang chiếm bộ nhớ mà bạn sẵn sàng loại bỏ hôm nay?'],
+  ['Giải Trói Giọng Nói Nội Tại', 'Ngân giọng tự do trong phòng riêng để khai thông vùng cổ họng.', 'Tôi tự tin thể hiện góc nhìn chân thật của mình.', 'Rào cản nào khiến bạn ngần ngại nói ra quan điểm thật?'],
+  ['Tối Giản Không Gian Sống', 'Dọn sạch mặt bàn hoặc góc giường. Môi trường gọn gàng làm dịu tâm trí.', 'Không gian ngăn nắp tạo đà cho tư duy sáng rõ.', 'Khu vực nào trong phòng cần được sắp xếp lại hôm nay?'],
+  ['Thanh Lọc Năng Lượng Tiêu Cực', 'Tắm nước muối ấm hoặc ngâm chân cuối ngày để gột rửa áp lực tích tụ.', 'Năng lượng của tôi luôn sạch sẽ, tích cực.', 'Thói quen nào đang vô tình rút cạn năng lượng của bạn mỗi ngày?'],
+  ['Neo Năng Lượng Từ Khoáng Vật', 'Đặt một viên đá tự nhiên hoặc vật gốm lên bàn làm việc để nhắc về sự kiên định.', 'Tôi giữ điềm tĩnh và vững chắc trước mọi biến động.', 'Bạn đang cần thêm sự điềm tĩnh hay sự quyết đoán?'],
+  ['Thắp Sáng Cảm Hứng Hành Động', 'Thắp một ngọn nến nhỏ khi bắt đầu làm việc, nhìn ngọn lửa 30 giây để lấy tập trung.', 'Ngọn lửa đam mê trong tôi luôn cháy sáng.', 'Ý tưởng nào đang chờ bạn thổi bùng bằng hành động?'],
+  ['Chạm Vào Thiên Nhiên (Earthing)', 'Đi chân trần trên cỏ hoặc mặt đất 10 phút (chọn nơi sạch, an toàn).', 'Tôi cân bằng và vững vàng khi hòa nhịp cùng tự nhiên.', 'Đã bao lâu bạn chưa thư thái ở ngoài trời?'],
+  ['Học Hỏi Từ Bài Học Dòng Họ', 'Suy ngẫm về một phẩm chất tốt đẹp thừa hưởng từ cha mẹ hoặc thế hệ trước.', 'Tôi kế thừa giá trị tốt đẹp và kiến tạo di sản của riêng mình.', 'Thói quen tích cực nào từ gia đình bạn muốn duy trì?'],
+  ['Kích Hoạt Trung Tâm Sáng Tạo', 'Brainstorm những ý tưởng táo bạo nhất mà không phán xét tính khả thi.', 'Tiềm năng sáng tạo của tôi là vô hạn.', 'Dự án nào bạn muốn thử nếu không sợ thất bại?'],
+  ['Sắp Đặt Góc Nạp Năng Lượng', 'Tạo một góc nhỏ chỉ chứa vật mang lại niềm vui: sách hay, chậu cây, ảnh kỷ niệm.', 'Tôi luôn có một không gian nội tâm yên tĩnh để trở về.', 'Điều gì trong góc riêng sẽ giúp bạn thấy được vỗ về nhất?'],
+  ['Sáng Tạo Không Quy Chuẩn', 'Nguệch ngoạc, tô màu hoặc gấp giấy, không quan tâm đẹp hay xấu.', 'Tôi tự do bộc lộ cảm xúc mà không cần sự phê duyệt bên ngoài.', 'Điều gì thường ngăn bạn thử một bộ môn nghệ thuật mới?'],
+  ['Giải Phóng Cơ Thể Bằng Chuyển Động', 'Bật nhạc sôi động và vận động tự do 5 phút, thả lỏng các nhóm cơ.', 'Tôi xả bỏ áp lực qua từng chuyển động.', 'Cơ thể bạn thay đổi thế nào trước và sau khi vận động tự do?'],
+  ['Bài Tập Thở Cơ Hoành (Thở Bụng Sâu)', 'Đặt 1 tay lên bụng, hít sâu qua mũi 4s để bụng phình lên, giữ nhẹ 2s, thở chậm qua miệng 6s để bụng xẹp xuống. Lặp lại 5 nhịp.', 'Mỗi nhịp thở cơ hoành đánh thức sự an toàn sâu bên trong cơ thể.', 'Hơi thở của bạn lúc này đang ở ngực trên hay xuống sâu vùng bụng?'],
+  ['Uống Một Ly Nước Ấm Chánh Niệm', 'Rót ly nước ấm, uống từng ngụm chậm và cảm nhận dòng nước lan tỏa.', 'Tôi yêu thương cơ thể từ những điều giản dị nhất.', 'Hôm nay bạn đã lắng nghe nhu cầu nước của cơ thể chưa?'],
+  ['Thành Thật Với Cảm Xúc', 'Dành 5 phút thừa nhận cảm xúc thật mà không cố thay đổi hay chối bỏ.', 'Cảm xúc của tôi là hợp lệ và tôi đón nhận chúng.', 'Cảm xúc nào đang hiện diện rõ nhất lúc này?'],
+  ['Viết Lời Tri Ơn Cơ Thể', 'Viết 3 điều biết ơn đôi chân, đôi tay hay trái tim vì đã làm việc cho bạn mỗi ngày.', 'Tôi biết ơn cơ thể kỳ diệu đã đồng hành cùng mình.', 'Bộ phận nào cần được bạn chăm sóc nhiều hơn hôm nay?'],
+  ['Tạo Ranh Giới Lành Mạnh', 'Nói “Không” với một yêu cầu không phù hợp hoặc không đóng góp cho sự phát triển của bạn.', 'Ranh giới bảo vệ năng lượng và sự bình an của tôi.', 'Bạn đang gánh trách nhiệm nào không thực sự thuộc về mình?'],
+  ['Nạp Vitamin D Tự Nhiên', 'Đứng dưới nắng sáng 10-15 phút (tránh nắng gắt, chú ý bảo vệ da).', 'Ánh nắng nuôi dưỡng tinh thần tươi sáng trong tôi.', 'Thời điểm nào trong ngày bạn nhiều năng lượng nhất?'],
+  ['Tẩy Tế Bào Chết Cho Da', 'Dùng sản phẩm dịu nhẹ chăm sóc da, hỗ trợ lưu thông máu. Thử trước trên vùng da nhỏ.', 'Tôi liên tục làm mới bản thân và rũ bỏ điều đã cũ.', 'Bạn muốn gột rửa thói quen cũ nào để bắt đầu điều mới?'],
+  ['Nghe Âm Thanh 528Hz', 'Bật nhạc nền 528Hz khi nghỉ ngơi để thư giãn (cảm giác dễ chịu mang tính cá nhân).', 'Năng lượng của tôi hòa hợp với nhịp chữa lành.', 'Âm thanh nào làm tâm trí bạn dịu lại ngay?'],
+  ['Giảm Tải Đèn Màn Hình', 'Tắt thiết bị điện tử 1 giờ trước khi ngủ, thay bằng đọc sách hoặc ngâm chân.', 'Tôi chủ động tạo điều kiện cho giấc ngủ sâu.', 'Thói quen tốt trước khi ngủ nào bạn muốn thiết lập?'],
+  ['Nói Lời Yêu Thương Với Chính Mình', 'Nhìn vào gương, mỉm cười và nói: “Tôi yêu thương và chấp nhận bản thân trọn vẹn”.', 'Tôi là người bạn đồng hành trung thành nhất của chính mình.', 'Điều gì ở bản thân khiến bạn mỉm cười khi nhớ đến?'],
+  ['Thưởng Thức Bữa Ăn Chánh Niệm', 'Một bữa ăn không điện thoại, nhai kỹ và cảm nhận trọn vẹn hương vị.', 'Tôi trân trọng từng nguồn dinh dưỡng nuôi cơ thể.', 'Món ăn nào cho bạn cảm giác ấm áp và được chăm sóc?'],
+  ['Dọn Dẹp Thư Mục Điện Thoại', 'Xóa ảnh chụp màn hình cũ, ứng dụng không dùng và tin nhắn rác.', 'Tôi giải phóng bộ nhớ để đón trải nghiệm mới.', 'File hoặc thông tin cũ nào bạn cần buông để nhẹ hơn?'],
+  ['Tự Thưởng Một Món Quà Nhỏ', 'Mua cho mình một bông hoa, món ngon hoặc quyển sách bạn thích từ lâu.', 'Tôi xứng đáng nhận những điều tuyệt vời và ngọt ngào.', 'Món quà nhỏ nào làm ngày hôm nay rạng rỡ hơn?'],
+  ['Tập Kéo Giãn Cơ Thể', 'Dành 10 phút kéo giãn cột sống và khớp xương, dừng khi thấy đau.', 'Cơ thể tôi linh hoạt, tràn đầy sức sống.', 'Vùng cơ nào đang căng cứng nhất?'],
+  ['Học Một Điều Mới Trong 15 Phút', 'Đọc bài viết, nghe podcast hoặc xem video về chủ đề bạn tò mò.', 'Tư duy của tôi luôn mở rộng đón tri thức mới.', 'Chủ đề nào bạn luôn muốn khám phá nhưng chưa có thời gian?'],
+  ['Kết Nối Với Một Người Bạn Cũ', 'Gửi tin nhắn hỏi thăm chân thành đến một người bạn lâu năm bạn trân trọng.', 'Tôi nuôi dưỡng những mối quan hệ chân thành và sâu sắc.', 'Ai là người bạn đang nghĩ đến với tình cảm ấm áp nhất?'],
+  ['Lên Danh Sách 5 Điều Biết Ơn', 'Viết 5 điều nhỏ bé khiến bạn thấy may mắn hôm nay.', 'Lòng biết ơn mở ra cánh cửa của sự sung túc.', 'Điều nhỏ bé nào vừa làm bạn ấm lòng?'],
+  ['Ngắm Nhìn Bầu Trời', 'Dành 5 phút quan sát mây trôi hoặc sao đêm mà không suy nghĩ.', 'Tôi thả mình vào sự bao la của tự nhiên.', 'Bầu trời hôm nay gợi cho bạn cảm giác gì?'],
+  ['Kế Hoạch Ước Mơ (Vision Board)', 'Sưu tầm hình ảnh tượng trưng cho mục tiêu tương lai và dán vào một trang sổ.', 'Tôi chủ động kiến tạo bức tranh cuộc đời mình mong muốn.', 'Hình ảnh nào đại diện cho phong cách sống bạn hướng tới?'],
+  ['Uống Một Ly Trà Thảo Mộc', 'Pha trà cúc, bạc hà hoặc gừng và thưởng thức sự ấm áp lan tỏa (lưu ý nếu bạn đang dùng thuốc hoặc có bệnh nền).', 'Tôi xoa dịu tâm trí bằng những điều tự nhiên, thuần khiết.', 'Loại trà nào mang lại cho bạn sự dễ chịu nhất?'],
+  ['Giúp Đỡ Ai Đó Không Cần Đáp Đền', 'Một hành động tử tế nhỏ: nhường đường, giữ cửa hoặc mỉm cười với ai đó.', 'Sự tử tế của tôi lan tỏa niềm vui.', 'Hành động tử tế gần nhất bạn nhận được từ ai?'],
+  ['Đọc Một Chương Sách Thay Vì Lướt Mạng', 'Dành 20 phút buổi tối cho một cuốn sách phát triển bản thân hoặc văn học.', 'Trí tuệ của tôi được bồi đắp qua từng trang sách.', 'Cuốn sách nào đã thay đổi góc nhìn của bạn nhiều nhất?'],
+  ['Nói Lời Cảm Ơn Ai Đó', 'Gửi lời cảm ơn chân thành đến người đã giúp bạn dù việc nhỏ nhất.', 'Tôi trân trọng mọi sự hỗ trợ trên đường mình đi.', 'Bạn muốn gửi lời cảm ơn đến ai nhất lúc này?'],
+  ['Thả Lỏng Vai Và Hàm', 'Chủ động hạ vai, thả lỏng cơ hàm và mỉm cười nhẹ.', 'Tôi buông bỏ mọi gánh nặng và thả lỏng trọn vẹn.', 'Bài tập nào giúp bạn thả lỏng nhanh nhất?'],
+  ['Lập Danh Sách Ưu Tiên Cho Ngày', 'Viết 3 việc quan trọng nhất thay vì một danh sách dài dằng dặc.', 'Tôi dồn năng lượng vào điều thực sự quan trọng.', 'Việc quan trọng nhất cần hoàn thành hôm nay là gì?'],
+  ['Tự Khen Một Thành Tựu Nhỏ', 'Ghi nhận nỗ lực dù chỉ là dậy đúng giờ hay xong một việc nhỏ.', 'Tôi tự hào về từng bước tiến nhỏ của mình.', 'Thành tựu nhỏ nào hôm nay bạn muốn ghi nhận?'],
+  ['Tắm Dưới Vòi Sen Có Chú Ý', 'Cảm nhận dòng nước ấm chảy qua da và hình dung nó rửa trôi mệt mỏi.', 'Nước mang đi ưu phiền và trả lại tôi sự tươi mới.', 'Điều gì khiến bạn thư thái nhất khi tắm?'],
+  ['Đi Dạo Không Mang Điện Thoại', 'Đi dạo 15 phút quanh khu nhà, quan sát cây cối và con người.', 'Tôi hiện diện trọn vẹn trong từng bước chân.', 'Điều thú vị nhất bạn quan sát được hôm nay là gì?'],
+  ['Thay Ga Giường Mới', 'Trải bộ ga sạch, thơm để chuẩn bị cho giấc ngủ êm.', 'Không gian nghỉ ngơi sạch sẽ mang lại bình yên cho tâm trí.', 'Màu ga giường nào khiến bạn thư giãn nhất?'],
+  ['Ghi Lại Ý Tưởng Chợt Đến', 'Mang theo sổ nhỏ và ghi lại mọi suy nghĩ, ý tưởng thú vị phát sinh.', 'Tôi trân trọng mọi hạt giống sáng tạo trong tâm trí.', 'Ý tưởng nào gần đây khiến bạn hứng thú nhất?'],
+  ['Bảo Vệ Năng Lượng Nhãn Quan', 'Hạn chế tin tức tiêu cực hoặc drama mạng xã hội trong 24 giờ.', 'Tôi chọn thông tin lành mạnh để nuôi dưỡng tâm hồn.', 'Nguồn thông tin nào bạn nên hạn chế để giữ bình an?'],
+  ['Thử Một Tuyến Đường Mới', 'Đi làm hoặc đi dạo bằng con đường khác thường ngày để khơi gợi sự tò mò.', 'Tôi cởi mở khám phá những góc nhìn mới.', 'Thử điều mới mang lại cho bạn nguồn năng lượng gì?'],
+  ['Mua Bông Hoa Yêu Thích', 'Trang trí góc làm việc bằng một cành hoa tươi.', 'Vẻ đẹp thiên nhiên mang niềm vui mới cho không gian của tôi.', 'Loại hoa nào luôn làm bạn mỉm cười?'],
+  ['Ghi Lại 3 Ước Mơ Lớn', 'Viết 3 điều bạn muốn đạt trong 3 năm tới với niềm tin mạnh mẽ.', 'Tôi tin vào khả năng biến ước mơ thành hiện thực.', 'Ước mơ nào truyền cảm hứng mạnh nhất cho bạn lúc này?'],
+  ['Nghe Nhạc Không Lời Khi Làm Việc', 'Bật nhạc cổ điển, lo-fi hoặc tiếng mưa để tăng tập trung.', 'Âm nhạc đưa tâm trí tôi vào dòng chảy hiệu quả.', 'Giai điệu nào giúp bạn tập trung nhất?'],
+  ['Mỉm Cười Với Chính Mình Trong Gương', 'Mỗi lần đi qua gương, mỉm cười và gật đầu tự tin với chính mình.', 'Tôi yêu quý và hân hoan với sự hiện diện của mình.', 'Nụ cười của bạn mang lại cảm xúc gì cho bạn hôm nay?']
+];
+
+const RT = [
+  [18, 22, 17, 41], [51, 34, 36, 27], [20, 6, 40, 43], [33, 27, 3, 15],
+  [27, 53, 43, 21], [7, 20, 14, 16], [18, 41, 1, 8], [43, 16, 42, 27],
+  [34, 38, 35, 48], [43, 27, 21, 5], [40, 38, 13, 34], [20, 6, 37, 44],
+  [1, 22, 15, 10]
+];
+
+/* ===== CẨM NANG THỰC HÀNH ===== */
+const PR = [
+  {
+    n: 'Buổi sáng', ic: '☀', time: '5–10 phút',
+    goal: 'Nhận diện trạng thái tâm lý và những điều đang diễn ra bên trong trước khi bắt đầu ngày mới.',
+    subs: [{
+      n: '10 câu hỏi buổi sáng',
+      qs: [
+        'Sáng nay tôi đang cảm thấy thế nào?',
+        'Tôi có đang mang theo cảm xúc nào từ hôm qua?',
+        'Tôi đang lo lắng điều gì?',
+        'Tôi đang né tránh điều gì?',
+        'Tôi đang mong đợi điều gì ở người khác?',
+        'Tôi có đang cần sự công nhận từ ai?',
+        'Tôi có điều gì chưa dám thừa nhận?',
+        'Hôm nay tôi muốn thể hiện phẩm chất nào?',
+        'Tôi cần đặt giới hạn ở đâu?',
+        'Hôm nay tôi muốn phản ứng có ý thức thay vì phản ứng tự động trong tình huống nào?'
+      ]
+    }]
+  },
+  {
+    n: 'Quy trình 7 bước', ic: '◐', time: '5–15 phút khi cảm xúc mạnh',
+    goal: 'Dùng mỗi khi có một cảm xúc mạnh, một tình huống khó chịu hoặc một phản ứng khiến bạn không hiểu chính mình.',
+    subs: [
+      {
+        n: 'Bước 1', t: 'Dừng lại và quan sát',
+        qs: ['Chuyện gì vừa xảy ra?', 'Tôi đang cảm thấy điều gì? Cảm xúc nào đang mạnh nhất?', 'Cơ thể tôi đang phản ứng ra sao?', 'Tôi đang muốn làm gì ngay lúc này?', 'Tôi đang muốn tấn công, bỏ chạy, im lặng, giải thích hay kiểm soát?'],
+        say: 'Ví dụ: một đồng nghiệp được khen, bạn muốn tìm lỗi của họ.\n“Tôi đang cảm thấy ghen tị. Tôi có nhu cầu được công nhận. Tôi đang khó chịu vì người khác nhận được điều mà tôi cũng mong muốn.”',
+        note: 'Đừng phản ứng ngay và đừng vội phán xét bản thân. Chỉ cần nhận diện đúng cảm xúc đã là một bước quan trọng.'
+      },
+      {
+        n: 'Bước 2', t: 'Gọi tên bóng tối',
+        qs: ['Khuynh hướng nào đang xuất hiện? (ghen tị, muốn kiểm soát, cảm thấy mình vượt trội, sợ bị bỏ rơi, muốn trả đũa, muốn được chú ý, né tránh trách nhiệm, sợ người khác giỏi hơn mình)', 'Hoàn thành câu: “Tôi đang…” một cách cụ thể nhất.'],
+        note: 'Tránh những câu chung chung như “tôi có năng lượng xấu” hay “tôi không tốt”. Càng gọi tên cụ thể, bạn càng dễ hiểu điều đang xảy ra.'
+      },
+      {
+        n: 'Bước 3', t: 'Đối thoại với phần bóng tối',
+        qs: ['Bạn xuất hiện để làm gì?', 'Bạn đang cố bảo vệ tôi khỏi điều gì?', 'Bạn sợ điều gì sẽ xảy ra nếu không hành động?', 'Bạn đang muốn tôi nhận được điều gì?', 'Bạn đang cố tránh cho tôi cảm giác nào?', 'Bạn xuất hiện trong những hoàn cảnh nào?', 'Tôi đã từng cảm thấy như vậy ở đâu?', 'Tôi có đang lặp lại một phản ứng cũ?', 'Tôi thực sự cần điều gì?', 'Có cách nào đáp ứng nhu cầu này mà không gây hại cho tôi hoặc người khác?'],
+        say: 'Ví dụ đối thoại với sự ghen tị:\n“Tại sao tôi ghen tị?” “Vì tôi muốn được công nhận.”\n“Tại sao cần được công nhận?” “Vì tôi sợ mình không đủ giỏi.”\n“Điều tôi thực sự cần?” “Xây dựng năng lực và giá trị bản thân thay vì liên tục so sánh.”',
+        note: 'Đây là phần quan trọng nhất. Những câu trả lời trong đối thoại là giả thuyết để khám phá, không phải bằng chứng chắc chắn về ký ức hay nguyên nhân tâm lý.'
+      },
+      {
+        n: 'Bước 4', t: 'Khám phá nguồn gốc',
+        qs: ['Tôi đã phản ứng như thế này từ bao giờ?', 'Tôi từng trải qua tình huống tương tự chưa?', 'Gia đình có ảnh hưởng đến cách tôi phản ứng không?', 'Tôi học cách ứng xử này từ ai?', 'Tôi có đang dùng một cơ chế tự bảo vệ cũ?', 'Cách phản ứng này từng giúp tôi điều gì?', 'Hiện tại nó đang gây ra hậu quả gì?'],
+        note: 'Không cần ép bản thân tìm một ký ức tuổi thơ cho mọi cảm xúc. Đôi khi nguồn gốc chỉ là một niềm tin hình thành trong quá trình trưởng thành.'
+      },
+      {
+        n: 'Bước 5', t: 'Phân biệt phần của mình và của người khác',
+        qs: ['Sự thật: điều gì thực sự đã xảy ra?', 'Diễn giải: tôi đang suy nghĩ và tưởng tượng điều gì về sự việc?', 'Trách nhiệm: phần nào của tôi (nỗi sợ, nhu cầu, cách xử lý bất an)? Phần nào là hành vi thực tế của họ?'],
+        say: 'Ví dụ: người khác không trả lời tin nhắn.\nSự thật: họ chưa trả lời.\nDiễn giải: tôi nghĩ họ không tôn trọng mình.\nPhần của tôi: nỗi sợ bị bỏ rơi, cách xử lý sự bất an.\nPhần của họ: trách nhiệm giao tiếp và thái độ thực tế.',
+        note: 'Đừng kết luận mọi sự khó chịu đều là phóng chiếu. Người khác cũng có thể thực sự cư xử thiếu tôn trọng.'
+      },
+      {
+        n: 'Bước 6', t: 'Tích hợp',
+        qs: ['Tôi cần học điều gì từ cảm xúc này?', 'Tôi cần phát triển phẩm chất nào?', 'Tôi cần thay đổi hành vi nào?', 'Tôi có thể dùng năng lượng này theo cách tích cực ra sao?', 'Tôi cần đặt giới hạn nào?', 'Tôi cần chấp nhận điều gì?', 'Tôi cần từ bỏ niềm tin nào?'],
+        say: 'Ghen tị → phát triển năng lực.\nTức giận → xây dựng ranh giới.\nKiêu ngạo → phát triển sự khiêm nhường.\nSợ hãi → phát triển lòng can đảm.\nNhu cầu kiểm soát → học tin tưởng và tôn trọng tự do.\nNhu cầu được công nhận → xây dựng giá trị nội tại.'
+      },
+      {
+        n: 'Bước 7', t: 'Chuyển hóa thành hành động',
+        qs: ['Hành động cụ thể, nhỏ và làm được của tôi là gì?', 'Khi nào và ở đâu tôi sẽ làm?'],
+        say: 'Thay vì “Tôi cần yêu bản thân hơn”, hãy viết:\n“Ngày mai tôi sẽ từ chối một yêu cầu mà mình không có khả năng đáp ứng.”\nThay vì “Tôi cần tự tin”, hãy viết:\n“Tôi sẽ chủ động phát biểu ý kiến trong cuộc họp tiếp theo.”',
+        note: 'Kết thúc mỗi lần Shadow Work bằng một hành động cụ thể.'
+      }
+    ]
+  },
+  {
+    n: 'Tình huống', ic: '🗣', time: '3–15 phút',
+    goal: 'Chọn tình huống bạn đang gặp, trả lời các câu hỏi rồi đọc lời đối thoại dành cho bạn.',
+    subs: [
+      {
+        n: 'Khi giao tiếp',
+        qs: ['Phản ứng mạnh hơn mức sự việc: vì sao lời nói ấy tác động mạnh đến tôi? Tôi cảm thấy bị xúc phạm hay bị đánh giá?', 'Liên tục muốn chứng minh mình đúng: tôi đang tìm sự thật hay bảo vệ cái tôi?', 'Phán xét quá nhanh: tôi đang phán xét hành vi hay kết luận về cả con người? Tôi có từng có khuynh hướng tương tự?', 'Không dám nói không: tôi sợ điều gì nếu từ chối? Tôi có xem sự thất vọng của người khác là trách nhiệm của mình?', 'Muốn kiểm soát cuộc trò chuyện: tôi có đang lắng nghe thật sự? Tôi có thể chấp nhận người khác không đồng ý?'],
+        say: 'Thay vì “Bạn lúc nào cũng sai!”, hãy nói:\n“Tôi đang không đồng ý với điều này. Tôi muốn hiểu rõ hơn cách bạn nhìn nhận vấn đề.”\nThay vì “Bạn chẳng bao giờ quan tâm đến tôi!”:\n“Tôi cảm thấy buồn khi không nhận được phản hồi. Tôi muốn chúng ta trao đổi rõ hơn.”\nThay vì “Được rồi, sao cũng được!”:\n“Tôi không thực sự thoải mái với quyết định này. Tôi muốn nói rõ điều mình đang nghĩ.”'
+      },
+      {
+        n: 'Khi tức giận',
+        qs: ['Tôi đang tức giận vì điều gì?', 'Ranh giới nào của tôi vừa bị xâm phạm?', 'Tôi đang tức giận về sự việc hiện tại hay một trải nghiệm cũ?', 'Tôi muốn đối phương hiểu điều gì?', 'Tôi đang muốn bảo vệ mình hay muốn trừng phạt họ?', 'Tôi có thể diễn đạt sự tức giận mà không xúc phạm không?', 'Tôi cần làm gì để bảo vệ ranh giới?'],
+        say: 'Tôi cho phép mình tức giận.\nTôi không cần giả vờ rằng mọi thứ đều ổn.\nNhưng tôi không cần dùng sự tức giận để làm tổn thương người khác.\nTôi sẽ xác định điều mình không chấp nhận và nói rõ giới hạn.'
+      },
+      {
+        n: 'Khi ghen tị',
+        qs: ['Tôi đang ghen tị với ai?', 'Họ có điều gì mà tôi mong muốn?', 'Tôi có đang phủ nhận thành công của họ?', 'Tôi có đang so sánh bản thân một cách bất công?', 'Tôi có đang không dám thừa nhận tham vọng?', 'Tôi thực sự muốn đạt được điều gì?', 'Tôi có thể học điều gì từ họ?', 'Tôi sẽ làm gì để tiến gần hơn tới mục tiêu?'],
+        say: 'Tôi không cần hạ thấp người khác để cảm thấy mình có giá trị.\nThành công của họ không đồng nghĩa với thất bại của tôi.\nSự ghen tị đang cho tôi biết có điều gì đó tôi mong muốn.\nTôi sẽ biến điều đó thành hành động phát triển bản thân.'
+      },
+      {
+        n: 'Khi bị chỉ trích',
+        qs: ['Lời chỉ trích có phần nào đúng?', 'Có bằng chứng nào ủng hộ điều họ nói?', 'Tôi khó chịu vì nội dung hay vì cách họ nói?', 'Tôi có đang bảo vệ hình ảnh hoàn hảo?', 'Tôi có thể tiếp nhận phản hồi mà không tự hạ thấp mình?', 'Có điều gì cần sửa chữa?', 'Có điều gì cần từ chối vì là sự xúc phạm hoặc đánh giá thiếu căn cứ?'],
+        say: 'Tôi không cần phải đúng trong mọi tình huống.\nTôi có thể tiếp nhận điều đúng mà không tự kết án.\nTôi cũng có thể từ chối điều không đúng mà không cần nổi giận.\nGiá trị của tôi không phụ thuộc hoàn toàn vào lời đánh giá của người khác.'
+      },
+      {
+        n: 'Khi thấy bị bỏ rơi',
+        qs: ['Tôi đang thực sự bị bỏ rơi hay đang sợ bị bỏ rơi?', 'Điều gì khiến tôi diễn giải sự việc theo hướng tiêu cực?', 'Tôi có đang cần người khác liên tục xác nhận tình cảm?', 'Tôi có đang phụ thuộc cảm xúc?', 'Tôi có thể tự chăm sóc cảm xúc của mình như thế nào?', 'Tôi cần giao tiếp nhu cầu gì?', 'Tôi có đang duy trì một mối quan hệ thiếu sự đáp lại?'],
+        say: 'Tôi có nhu cầu được yêu thương và quan tâm. Điều đó bình thường.\nNhưng tôi không cần đánh mất bản thân để giữ một người.\nTôi có thể bày tỏ nhu cầu, quan sát cách họ đáp lại và lựa chọn điều phù hợp với mình.'
+      },
+      {
+        n: 'Khi thấy mình vượt trội',
+        qs: ['Tôi có đang xem thường người khác?', 'Tôi có cần chứng minh mình thông minh?', 'Tôi có khó tiếp nhận lời góp ý?', 'Tôi có đang sợ bị xem là bình thường?', 'Tôi có đang nhầm lẫn giữa giá trị bản thân và thành tích?', 'Tôi có thể tự tin mà không hạ thấp ai?', 'Tôi có thể học hỏi từ người khác?'],
+        say: 'Tôi không cần nhỏ bé để trở nên khiêm nhường.\nTôi cũng không cần làm người khác nhỏ bé để cảm thấy mình lớn hơn.\nTôi có thể tự tin về năng lực và vẫn giữ sự tôn trọng.'
+      },
+      {
+        n: 'Khi muốn kiểm soát',
+        qs: ['Tôi đang muốn kiểm soát điều gì?', 'Tôi sợ điều gì nếu không kiểm soát?', 'Tôi có đang nhầm lẫn giữa yêu thương và sở hữu?', 'Điều gì thực sự nằm trong quyền kiểm soát của tôi?', 'Điều gì thuộc quyền lựa chọn của người khác?', 'Tôi có thể giao tiếp thay vì áp đặt không?'],
+        say: 'Tôi có thể kiểm soát lựa chọn và hành động của mình.\nTôi không có quyền sở hữu suy nghĩ, cảm xúc và cuộc đời của người khác.\nTôi có thể yêu thương mà không kiểm soát.'
+      }
+    ]
+  },
+  {
+    n: 'Các mối quan hệ', ic: '🤝', time: '3–10 phút',
+    goal: 'Dùng khi gặp một người khiến bạn phản ứng mạnh, dù là khó chịu, ngưỡng mộ hay bị đối xử không lành mạnh.',
+    subs: [
+      {
+        n: 'Người khiến mình khó chịu',
+        qs: ['Tôi không thích điều gì ở họ?', 'Đó là hành vi cụ thể hay đánh giá chủ quan?', 'Tôi có từng hành xử tương tự?', 'Tôi có đang phóng chiếu một phần mình lên họ?', 'Họ có thực sự vượt qua ranh giới của tôi?', 'Tôi cần học điều gì từ phản ứng này?', 'Tôi cần làm gì để bảo vệ mình?']
+      },
+      {
+        n: 'Người mình ngưỡng mộ',
+        qs: ['Tôi ngưỡng mộ phẩm chất nào?', 'Tôi có phẩm chất ấy nhưng chưa dám thể hiện?', 'Tôi đang tự giới hạn mình ở đâu?', 'Tôi có đang ghen tị với sự tự do hoặc tự tin của họ?', 'Tôi có thể học hỏi điều gì?'],
+        note: 'Đôi khi những phẩm chất bạn ngưỡng mộ ở người khác chính là khả năng bạn chưa cho phép mình phát triển.'
+      },
+      {
+        n: 'Bị thao túng hoặc đối xử không lành mạnh',
+        qs: ['Tôi có đang nhận trách nhiệm cho cảm xúc của người khác?', 'Tôi có đang sợ họ giận?', 'Tôi có đang phải giải thích liên tục để được đối xử tử tế?', 'Tôi có đang từ bỏ nhu cầu của mình?', 'Tôi có đang hợp thức hóa hành vi gây tổn thương vì thương cảm quá khứ của họ?', 'Ranh giới nào cần được thiết lập?', 'Tôi có cần giảm tiếp xúc hoặc rời khỏi mối quan hệ?'],
+        note: 'Hiểu bóng tối của người khác không có nghĩa là phải mang bóng tối ấy vào cuộc đời mình. Bạn có thể cảm thông nhưng vẫn có giới hạn.'
+      }
+    ]
+  },
+  {
+    n: 'Trước khi ngủ', ic: '🌙', time: '10–15 phút',
+    goal: 'Tổng kết những gì đã xảy ra trong ngày.',
+    subs: [
+      {
+        n: 'Tổng kết ngày',
+        qs: ['Hôm nay tình huống nào khiến tôi phản ứng mạnh nhất?', 'Tôi đã cảm thấy gì?', 'Tôi có hành động theo cảm xúc tự động không?', 'Tôi có phán xét ai quá mức?', 'Tôi có ghen tị với ai?', 'Tôi có cố gắng kiểm soát ai?', 'Tôi có làm tổn thương ai?', 'Tôi có né tránh một cuộc đối thoại cần thiết?', 'Hôm nay tôi đã thể hiện phẩm chất tích cực nào?', 'Tôi nhận ra điều gì về bản thân?', 'Tôi cần sửa chữa điều gì?', 'Ngày mai tôi sẽ thay đổi một hành động nào?']
+      },
+      {
+        n: 'Bài tập giấc mơ',
+        qs: ['Những hình ảnh nổi bật là gì?', 'Nhân vật nào xuất hiện?', 'Không gian và bối cảnh ra sao?', 'Cảm xúc mạnh nhất là gì?', 'Điều gì khiến bạn chú ý?', 'Hình ảnh nào gợi liên tưởng đến cuộc sống hiện tại?', 'Bạn có liên tưởng cá nhân nào với biểu tượng đó?'],
+        note: 'Đừng áp đặt một ý nghĩa cố định cho mọi biểu tượng. Nước không nhất thiết luôn là cảm xúc, ngôi nhà không nhất thiết luôn là bản thân. Hãy bắt đầu từ liên tưởng và trải nghiệm của chính người nằm mơ.'
+      }
+    ]
+  },
+  {
+    n: 'Đối thoại với bản thân', ic: '💬', time: '5–10 phút',
+    goal: 'Dùng cấu trúc này khi cảm xúc mạnh xuất hiện: chèn khung hội thoại và điền vào chỗ trống.',
+    subs: [{
+      n: 'Mẫu hội thoại',
+      qs: ['Tôi hiện tại: Tôi đang cảm thấy…', 'Phần cảm xúc: Tôi xuất hiện vì…', 'Tôi hiện tại: Bạn đang cố bảo vệ tôi khỏi điều gì?', 'Phần cảm xúc: Tôi sợ rằng…', 'Tôi hiện tại: Bạn thực sự cần điều gì?', 'Phần cảm xúc: Tôi cần…', 'Tôi hiện tại: Có cách nào đáp ứng nhu cầu đó lành mạnh hơn không?', 'Phần cảm xúc: Có thể…', 'Tôi hiện tại: Tôi ghi nhận cảm xúc này. Nhưng tôi sẽ chịu trách nhiệm về hành động của mình.'],
+      say: 'Ví dụ:\nTôi hiện tại: Tôi đang rất tức giận.\nPhần giận dữ: Vì bạn cứ để người khác vượt qua giới hạn.\nTôi hiện tại: Bạn muốn điều gì?\nPhần giận dữ: Tôi muốn được tôn trọng.\nTôi hiện tại: Tôi có thể làm gì?\nPhần giận dữ: Hãy nói rõ điều mình không chấp nhận.\nTôi hiện tại: Tôi sẽ bảo vệ ranh giới mà không xúc phạm người khác.',
+      note: 'Đây là bài tập tưởng tượng có chủ đích để khám phá cảm xúc, không phải bằng chứng rằng bên trong bạn có những nhân cách độc lập.'
+    }]
+  },
+  {
+    n: 'Ngày bận rộn', ic: '⚡', time: '3 phút',
+    goal: 'Bài tập tối thiểu khi không có thời gian. Chỉ cần duy trì sự quan sát đều đặn và trung thực.',
+    subs: [{
+      n: '5 câu tối thiểu',
+      qs: ['Hôm nay tôi cảm thấy gì?', 'Điều gì khiến tôi phản ứng mạnh nhất?', 'Tôi đã nhận ra điều gì về bản thân?', 'Điều gì thuộc trách nhiệm của tôi?', 'Ngày mai tôi sẽ hành động khác ở đâu?']
+    }]
+  },
+  {
+    n: '30 câu hỏi', ic: '❓', time: 'chọn 3–5 câu mỗi ngày',
+    goal: 'Mỗi ngày chọn 3–5 câu, không cần trả lời hết.',
+    subs: [
+      { n: 'A · Nhận diện', qs: ['Tôi đang cảm thấy gì nhưng chưa dám thừa nhận?', 'Tôi đang cố chứng minh điều gì?', 'Tôi đang sợ người khác phát hiện điều gì?', 'Tôi đang duy trì hình ảnh nào?', 'Tôi đang né tránh sự thật nào?'] },
+      { n: 'B · Khám phá', qs: ['Tại sao tôi lại phản ứng như vậy?', 'Tôi đang muốn bảo vệ điều gì?', 'Tôi sợ điều gì nhất trong tình huống này?', 'Tôi đang tìm kiếm điều gì từ người khác?', 'Tôi có đang lặp lại một mẫu hình cũ?'] },
+      { n: 'C · Phóng chiếu', qs: ['Tôi thường phán xét điều gì ở người khác?', 'Tôi có từng biểu hiện điều đó không?', 'Tôi đang ngưỡng mộ phẩm chất nào?', 'Tôi có đang phủ nhận phẩm chất tương tự ở mình?', 'Tôi có đang nhìn người khác qua những kỳ vọng của mình?'] },
+      { n: 'D · Trách nhiệm', qs: ['Điều gì thực sự thuộc về tôi?', 'Điều gì không thuộc trách nhiệm của tôi?', 'Tôi có đang đổ lỗi?', 'Tôi có cần xin lỗi hoặc sửa chữa?', 'Tôi có cần đặt giới hạn?'] },
+      { n: 'E · Tích hợp', qs: ['Tôi cần chấp nhận điều gì?', 'Tôi cần thay đổi hành vi nào?', 'Tôi cần phát triển phẩm chất nào?', 'Tôi có thể sử dụng năng lượng này theo hướng tích cực ra sao?', 'Tôi cần ngừng làm điều gì?'] },
+      { n: 'F · Trưởng thành', qs: ['Tôi muốn trở thành người như thế nào?', 'Tôi đang sống theo giá trị của mình hay theo kỳ vọng của người khác?', 'Tôi có thể mạnh mẽ mà không trở nên tàn nhẫn?', 'Tôi có thể yêu thương mà không đánh mất bản thân?', 'Hôm nay tôi có thể làm một việc gì khác với thói quen cũ?'] }
+    ]
+  }
+];
+
+/* ===== TRANG CẨM NANG ===== */
+const li = a => '<ul>' + a.map(x => '<li>' + x + '</li>').join('') + '</ul>';
+const ol = a => '<ol>' + a.map(x => '<li>' + x + '</li>').join('') + '</ol>';
+const GUIDE = [
+  ['Shadow Work là gì?', '<p>Quá trình nhận diện, khám phá và làm việc với những phần tâm lý chưa được ý thức đầy đủ, thường bị che giấu hoặc không muốn thừa nhận:</p>' + li(['Ghen tị, kiêu ngạo, giận dữ, sợ hãi, phụ thuộc.', 'Nhu cầu được yêu thương, công nhận và chú ý.', 'Phẩm chất tích cực bị kìm hãm: tự tin, quyết đoán, sáng tạo, độc lập, lãnh đạo.', 'Ký ức, cảm xúc và phản ứng chưa được hiểu rõ.'])],
+  ['Mục tiêu thực hành', ol(['Nhìn thấy điều đang tồn tại bên trong.', 'Nhận diện những phản ứng vô thức.', 'Hiểu nhu cầu và nỗi sợ ẩn phía sau.', 'Phân biệt điều thuộc về mình và người khác.', 'Ngừng để phản ứng tự động điều khiển cuộc sống.', 'Phát triển những phẩm chất đang bị kìm hãm.', 'Chuyển nhận thức thành hành động có trách nhiệm.']) + '<p class="sc-note">Mục tiêu không phải là trở thành người không có cảm xúc tiêu cực.</p>'],
+  ['Nguyên tắc quan trọng', li(['<b>Nhìn thấy</b> không đồng nghĩa với đồng ý.', '<b>Chấp nhận</b> không đồng nghĩa với cho phép.', '<b>Hiểu nguyên nhân</b> không đồng nghĩa với biện minh.']) + '<p class="sc-note">Hiểu bóng tối của người khác không có nghĩa là phải chịu đựng hành vi gây hại.</p>'],
+  ['Quy trình 7 bước', ol(['Dừng lại và quan sát', 'Gọi tên bóng tối', 'Đối thoại với phần bóng tối', 'Khám phá nguồn gốc', 'Phân biệt phần của mình và của người khác', 'Tích hợp', 'Chuyển hóa thành hành động']) + '<div class="row"><button class="btn sm" data-pr="1">Thực hành trong Nhật ký</button></div>'],
+  ['Lịch thực hành hằng ngày', li(['<b>Buổi sáng</b> · đối thoại nội tâm, đặt ý định · 5–10 phút', '<b>Trong giao tiếp</b> · quan sát cảm xúc và phản ứng · tự nhiên', '<b>Khi có xung đột</b> · quy trình 7 bước · 5–15 phút', '<b>Gặp người gây khó chịu</b> · phóng chiếu và ranh giới · 3–5 phút', '<b>Trước khi ngủ</b> · nhật ký và tổng kết · 10–15 phút', '<b>Khi nhớ giấc mơ</b> · ghi hình ảnh và liên tưởng · 3–5 phút'])],
+  ['Nguyên tắc để có hiệu quả', ol(['Thành thật với chính mình nhưng không tự hành hạ.', 'Quan sát trước khi phán xét.', 'Không kết luận mọi phản ứng đều từ tuổi thơ.', 'Không biến mọi người khó chịu thành đối tượng phóng chiếu.', 'Không ép mình phải tha thứ hay khơi lại ký ức đau đớn.', 'Không tìm bóng tối trong mọi hành động bình thường.', 'Nhận diện cả phẩm chất tích cực bị kìm hãm.', 'Chuyển mỗi nhận thức thành một hành động cụ thể.', 'Quan sát thay đổi qua nhiều tuần, không chỉ một lần viết.'])],
+  ['Cam kết thực hành', li(['Không phủ nhận những phần mình chưa hiểu.', 'Không tự kết án vì có cảm xúc không đẹp.', 'Không dùng bóng tối để biện minh cho hành vi gây hại.', 'Không nhận trách nhiệm thay cho hành vi của người khác.', 'Dám nhìn nhận, dám sửa chữa, dám bảo vệ bản thân và phát triển phẩm chất tốt đẹp.']) + '<p class="q">Tôi không cần tiêu diệt bóng tối. Tôi cần nhận diện nó, hiểu nó, chịu trách nhiệm về nó và lựa chọn cách sống trưởng thành hơn.</p>'],
+  ['Lưu ý an toàn', '<p>Ứng dụng này không thay thế trị liệu. Nếu việc thực hành làm xuất hiện đau khổ quá mức, lo âu dâng cao, ký ức đau thương ùa về, ảnh hưởng đến sinh hoạt hoặc có ý nghĩ làm hại bản thân, hãy dừng lại và liên hệ người thân, chuyên gia hoặc đường dây hỗ trợ khẩn cấp ở nơi bạn sống.</p>']
+];
+
+/* ===== GƯƠNG SOI CẢM XÚC ===== */
+const MIRROR_DB = [
+  { name: 'Tức giận', keys: ['tức', 'giận', 'bực', 'cáu', 'điên', 'ức chế', 'khó chịu', 'bất công', 'xúc phạm', 'vô lý', 'ghét', 'nóng', 'bùng nổ', 'không tôn trọng', 'coi thường'], what: 'Giới hạn hoặc giá trị vừa bị chạm tới.', need: 'Ranh giới rõ và khoảng hạ nhiệt.', want: 'Muốn bảo vệ mình bình tĩnh.', qs: ['Điều gì chạm vào giới hạn của bạn?', 'Cần làm gì nhỏ nhất để tự bảo vệ mình?'] },
+  { name: 'Đố kỵ', keys: ['ghen', 'đố kỵ', 'so sánh', 'thua kém', 'người ta', 'thành công hơn', 'may mắn hơn', 'ghen tị', 'không bằng', 'chạnh lòng'], what: 'Tín hiệu cho thấy khát vọng chưa dám nhận.', need: 'Ghi nhận nhịp đi riêng của bản thân.', want: 'Muốn biến so sánh thành mục tiêu riêng.', qs: ['Điều gì ở họ khiến bạn chú ý nhất?', 'Bạn khao khát điều gì nếu không so sánh?'] },
+  { name: 'Tội lỗi', keys: ['tội lỗi', 'hối hận', 'lỗi của tôi', 'giá như', 'trách mình', 'xin lỗi', 'ân hận', 'sai lầm', 'đáng lẽ', 'không nên', 'tự trách', 'dằn vặt'], what: 'Lương tâm nhắc về giá trị bạn coi trọng.', need: 'Tha thứ cho mình và rút kinh nghiệm.', want: 'Muốn sửa chữa hoặc bước tiếp.', qs: ['Bạn có thể rút ra điều gì từ việc này?', 'Đâu là điều cần buông để bớt tự trách?'] },
+  { name: 'Sợ bị bỏ rơi', keys: ['bỏ rơi', 'cô đơn', 'một mình', 'lạc lõng', 'không ai hiểu', 'xa cách', 'lạnh nhạt', 'mất kết nối', 'rời bỏ', 'trống trải', 'bơ vơ', 'không ai quan tâm'], what: 'Chông chênh khi sợ mất kết nối.', need: 'Sự ấm áp và chỗ dựa từ chính mình.', want: 'Muốn được trấn an rằng mình không bỏ rơi mình.', qs: ['Điều gì xoa dịu cảm giác này?', 'Bạn tự nâng đỡ mình bằng cách nào?'] },
+  { name: 'Xấu hổ / Tự ti', keys: ['xấu hổ', 'tự ti', 'kém cỏi', 'vô dụng', 'thất bại', 'nhục', 'không xứng đáng', 'yếu kém', 'ngu ngốc', 'ghét bản thân', 'mất mặt', 'chẳng làm được gì'], what: 'Sợ chưa đủ tốt hoặc dễ bị đánh giá.', need: 'Chấp nhận khuyết điểm, không hạ thấp mình.', want: 'Muốn được nhìn nhận công bằng hơn.', qs: ['Lời chê bai ấy có đúng toàn bộ không?', 'Bạn sẽ nói gì dịu dàng với chính mình?'] },
+  { name: 'Che giấu', keys: ['giấu', 'đeo mặt nạ', 'giả vờ', 'không dám nói', 'im lặng', 'kìm nén', 'nuốt vào trong', 'gồng', 'cười gượng', 'bí mật', 'khép kín', 'sợ bị đánh giá'], what: 'Cảm xúc đang kìm nén sau lớp vỏ bọc.', need: 'Không gian an toàn để nói thật.', want: 'Muốn được thở và gọi đúng tên.', qs: ['Điều thật nhất bạn đang giấu là gì?', 'Việc kìm nén tốn bao nhiêu sức của bạn?'] },
+  { name: 'Lo âu / Kiểm soát', keys: ['lo âu', 'lo lắng', 'sợ hãi', 'bất an', 'kiểm soát', 'hoảng', 'áp lực', 'quá tải', 'rối bời', 'căng thẳng', 'stress', 'mệt mỏi', 'kiệt sức', 'tương lai', 'sợ sai'], what: 'Cảnh giác trước điều chưa chắc chắn.', need: 'Thả lỏng cơ thể và chọn việc vừa sức.', want: 'Muốn tìm lại cảm giác an toàn.', qs: ['1 việc nhỏ nhất bạn làm được hôm nay?', 'Cơ thể đang gồng ở đâu? Thả lỏng nhé.'] },
+  { name: 'Cầu toàn', keys: ['cầu toàn', 'hoàn hảo', 'chưa đủ tốt', 'phải làm được', 'kỳ vọng', 'sai sót', 'chỉ trích', 'khắt khe', 'tự ép', 'quá sức', 'tiêu chuẩn', 'thất vọng về mình'], what: 'Áp lực tự đặt mức quá cao để tránh bị chê.', need: 'Cho phép mình làm ở mức “đủ tốt”.', want: 'Muốn thành công nhưng cần giữ bình an.', qs: ['Nếu chỉ làm 80% sức thì sao?', 'Nỗ lực nào hôm nay chưa được ghi nhận?'] },
+  { name: 'Buồn bã', keys: ['buồn', 'khóc', 'nước mắt', 'mất mát', 'nhớ', 'tiếc nuối', 'đau lòng', 'tan vỡ', 'chia tay', 'ra đi', 'tổn thương', 'nặng lòng', 'trống vắng', 'hụt hẫng', 'nghẹn'], what: 'Nhịp thương tiếc cho điều có ý nghĩa.', need: 'Sự dịu dàng, không ép mình vui ngay.', want: 'Muốn được lắng nghe và xoa dịu.', qs: ['Điều gì vẫn quý giá với bạn lúc này?', 'Cách chăm sóc nhẹ nào hợp với bạn?'] },
+  { name: 'Bình yên / Biết ơn', keys: ['vui', 'hạnh phúc', 'biết ơn', 'nhẹ nhõm', 'bình yên', 'ấm áp', 'hy vọng', 'tự hào', 'thoải mái', 'thư giãn', 'tích cực', 'mỉm cười', 'yêu thương', 'trân trọng'], what: 'Trạng thái hài hòa, nhẹ nhõm và kết nối.', need: 'Giữ lại cảm giác này làm điểm tựa.', want: 'Muốn bạn tận hưởng trọn vẹn hiện tại.', qs: ['Điều gì tạo nên sự nhẹ nhõm này?', 'Bạn muốn cảm ơn điều gì ở mình?'] }
+];
+
+/* ===== ĐIỀU HƯỚNG & BẢO TOÀN DẤU ẤN CREATOR ===== */
+const NAMES = ['home', 'cards', 'journal', 'care', 'archive', 'copyright'];
+const CREDIT = Object.freeze({
+  name: 'CÁ HỀ DIEU AN',
+  year: 2026,
+  scope: 'Ý tưởng xây dựng web, cấu trúc trải nghiệm, thiết kế giao diện & mã nguồn thuộc quyền tác giả; kiến thức nền thuộc sở hữu trí tuệ cộng đồng.'
+});
+
+function go(n, push = true) {
+  try {
+    if (!NAMES.includes(n)) n = 'home';
+    $$('nav button').forEach(b => b.classList.toggle('on', b.dataset.t === n));
+    $$('.tab').forEach(s => {
+      if (s.id === n) {
+        s.classList.remove('on');
+        void s.offsetWidth;
+        s.classList.add('on');
+      } else {
+        s.classList.remove('on');
+      }
+    });
+    if (n === 'archive') renderList();
+    if (n === 'journal') mirror(false);
+    if (push && location.hash !== '#' + n) history.replaceState(null, '', '#' + n);
+    scrollTo(0, 0);
+    chime('tab');
+  } catch (e) {}
+}
+
+$$('nav button').forEach(b => { b.onclick = () => go(b.dataset.t); });
+addEventListener('hashchange', () => go(location.hash.slice(1), false));
+document.addEventListener('click', e => {
+  const g = e.target.closest('[data-go]');
+  if (g) go(g.dataset.go);
+  if (e.target.closest('.ip-jump')) go('copyright');
+  const ipLangBtn = e.target.closest('[data-ip-lang]');
+  if (ipLangBtn) {
+    const lang = ipLangBtn.dataset.ipLang;
+    $$('[data-ip-lang]').forEach(b => b.classList.toggle('on', b.dataset.ipLang === lang));
+    $('#ip-vi').hidden = lang !== 'vi';
+    $('#ip-en').hidden = lang !== 'en';
+    chime('tab');
+  }
+});
+
+/* ===== TRANG CẨM NANG ===== */
+const GI = ['☾', '👁', '✦', '◐', '🗓', '❀', '♡', '🛡'];
+$('#guide').innerHTML = GUIDE.map((g, i) => `<div class="cardx"><h3>${GI[i]} ${esc(g[0])}</h3>${g[1]}</div>`).join('');
+
+/* ===== NHẬT KÝ THEO HÀNH TRÌNH ===== */
+function ins(html) {
+  const ed = $('#ed');
+  ed.innerHTML = (ed.innerHTML || '') + html;
+  try {
+    ed.focus();
+    const r = document.createRange();
+    r.selectNodeContents(ed);
+    r.collapse(false);
+    const s = getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+  } catch (e) {}
+  mirror(false);
+}
+
+const cur = () => PR[S.pm].subs[S.ps];
+
+function paintPractice() {
+  const m = PR[S.pm], sb = cur(), multi = m.subs.length > 1, last = S.ps >= m.subs.length - 1;
+  $('#pm').innerHTML = PR.map((p, i) => `<button class="chip${i === S.pm ? ' on' : ''}" data-pm="${i}">${p.ic} ${esc(p.n)}</button>`).join('');
+  $('#ps').innerHTML = multi ? m.subs.map((x, i) => `<button class="chip${i === S.ps ? ' on' : ''}" data-ps="${i}">${esc(x.n)}</button>`).join('') : '';
+  $('#pc').innerHTML = `<div class="sc-slot">${m.ic} ${esc(m.n)} · ${esc(m.time)}</div>
+    <h3>${esc(sb.t ? sb.n + ' · ' + sb.t : sb.n)}</h3><p class="sc-note" style="margin-top:0">${esc(m.goal)}</p>
+    <ol class="ql">${sb.qs.map((q, i) => `<li><span>${esc(q)}</span><button class="btn sm ghost" data-q="${i}" title="Chèn vào bài viết">＋</button></li>`).join('')}</ol>
+    ${sb.say ? `<div class="say"><b>${sb.n.startsWith('Bước') ? 'Ví dụ / gợi ý' : 'Lời đối thoại'}</b><p>${esc(sb.say)}</p><button class="btn sm ghost" data-say>＋ Chèn vào bài viết</button></div>` : ''}
+    ${sb.note ? `<p class="sc-note">💡 ${esc(sb.note)}</p>` : ''}
+    <div class="row" style="margin-bottom:0"><button class="btn sm" data-all>Chèn tất cả câu hỏi</button>${multi && !last ? '<button class="btn sm ghost" data-next>Tiếp theo →</button>' : ''}</div>`;
+  $('#pr').textContent = sb.qs[0] ? 'Gợi ý: ' + sb.qs[0].replace(/^(Phần cảm xúc|Tôi hiện tại): /, '') : '';
+}
+
+function openPractice(pi, si = 0) { S.pm = pi; S.ps = si; paintPractice(); go('journal'); }
+document.addEventListener('click', e => { const p = e.target.closest('[data-pr]'); if (p) { openPractice(+p.dataset.pr); } });
+
+$('#journal').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  const d = b.dataset, sb = cur();
+  if (d.pm !== undefined) { S.pm = +d.pm; S.ps = 0; paintPractice(); }
+  else if (d.ps !== undefined) { S.ps = +d.ps; paintPractice(); }
+  else if (d.q !== undefined) { ins(`<p><i>❓ ${esc(sb.qs[+d.q])}</i></p><p><br></p>`); chime('tab'); }
+  else if (d.all !== undefined) { ins(sb.qs.map(q => `<p><i>❓ ${esc(q)}</i></p><p><br></p>`).join('')); toast('Đã chèn các câu hỏi vào trang viết'); }
+  else if (d.say !== undefined) { ins(sb.say.split('\n').map(l => `<p><i>${esc(l)}</i></p>`).join('') + '<p><br></p>'); }
+  else if (d.next !== undefined) { S.ps++; paintPractice(); }
+});
+
+$('#gen').onclick = () => { const q = cur().qs; $('#pr').textContent = q[Math.floor(Math.random() * q.length)]; chime('tab'); };
+const pname = () => 'Cẩm nang · ' + PR[S.pm].n + (PR[S.pm].subs.length > 1 ? ' · ' + cur().n : '');
+
+/* ===== GƯƠNG SOI CẢM XÚC ===== */
+function mirror(deep = false) {
+  const raw = $('#ed').innerText.trim(), text = raw.toLowerCase(), chip = S.emo;
+  const set = (st, w, tags, n, wt, q) => {
+    $('#m-state').textContent = st;
+    $('#m-what').textContent = w;
+    $('#m-tags').innerHTML = tags;
+    $('#m-need').textContent = n;
+    $('#m-want').textContent = wt;
+    S.lastMirrorQ = q;
+    $('#m-reflect').textContent = '“' + q + '”';
+  };
+
+  if (!text && !chip) {
+    return set(
+      'Đang chờ',
+      'Viết vài dòng hoặc chọn chủ đề.',
+      '',
+      'Một khoảng lặng nhẹ nhàng.',
+      'Được lắng nghe không phán xét.',
+      'Điều gì đang đọng lại trong bạn?'
+    );
+  }
+
+  const sc = MIRROR_DB.map((it, i) => {
+    let s = 0;
+    it.keys.forEach(k => { if (text.includes(k)) s += 2; });
+    if (chip) {
+      const c = chip.toLowerCase();
+      if (it.name.toLowerCase().includes(c) || (c === 'phán xét' && i === 0) || (c === 'kiêu hãnh' && i === 7) || (c === 'phụ thuộc' && i === 3)) s += 4;
+    }
+    return { it, s };
+  }).sort((a, b) => b.s - a.s);
+
+  const top = sc[0], sec = sc[1].s > 0 ? sc[1] : null;
+  if (top.s === 0) {
+    return set(
+      'Đang viết',
+      chip ? `Chủ đề: ${chip}.` : 'Dòng suy nghĩ đang rõ dần.',
+      (chip ? `<span class="m-tag">${esc(chip)}</span>` : '') + '<span class="m-tag sec">Quan sát</span>',
+      'Kiên nhẫn viết tiếp tự nhiên.',
+      'Gọi rõ điều bận lòng.',
+      deep ? 'Khoảnh khắc nào rõ nhất?' : 'Nếu gói trong 1 từ, đó là gì?'
+    );
+  }
+
+  const p = top.it;
+  set(
+    'Đã nhận diện',
+    p.what,
+    `<span class="m-tag">✦ ${esc(p.name)}</span>` + (sec ? `<span class="m-tag sec">+ ${esc(sec.it.name)}</span>` : ''),
+    p.need,
+    p.want,
+    p.qs[deep ? 1 : 0]
+  );
+}
+
+let mt_;
+$('#ed').addEventListener('input', () => { clearTimeout(mt_); mt_ = setTimeout(() => mirror(false), 400); });
+$('#m-deep-scan').onclick = () => { mirror(true); chime('tab'); toast('Đã soi sâu thêm một lớp'); };
+$('#m-insert-q').onclick = () => { ins(`<p><i>✦ Gương soi hỏi: “${esc(S.lastMirrorQ || 'Cảm xúc này đang muốn nói với mình điều gì?')}”</i></p><p><br></p>`); chime('flip'); };
+
+/* ===== THỞ CƠ HOÀNH ===== */
+let bT = null, bOn = false, bStep = 0, bRound = 0;
+const BR = 3;
+const BP = [
+  { l: 'Hít sâu qua mũi · phình bụng', s: 4, k: 1.65, sub: 'Đặt tay lên bụng, cảm nhận bụng nâng lên' },
+  { l: 'Giữ hơi nhẹ nhàng', s: 2, k: 1.65, sub: 'Thả lỏng vai và cơ hàm' },
+  { l: 'Thở chậm qua miệng · xẹp bụng', s: 6, k: .96, sub: 'Hóp nhẹ bụng, đẩy khí cũ ra ngoài' }
+];
+
+function bell() {
+  try {
+    const c = ac || (bellCtx = bellCtx || mkCtx());
+    if (c.state === 'suspended') c.resume();
+    const n = c.currentTime + .05;
+    [528, 792, 1056].forEach((f, i) => {
+      const o = c.createOscillator(), g = c.createGain();
+      o.type = 'sine';
+      o.frequency.value = f;
+      g.gain.setValueAtTime(.0001, n);
+      g.gain.linearRampToValueAtTime([.14, .05, .02][i], n + .045);
+      g.gain.exponentialRampToValueAtTime(.0003, n + 4);
+      o.connect(g);
+      g.connect(c.destination);
+      o.start(n);
+      o.stop(n + 4.1);
+    });
+  } catch (e) {}
+}
+
+function bStop(done) {
+  bOn = false;
+  clearInterval(bT);
+  $('#b-start').hidden = false;
+  $('#b-stop').hidden = true;
+  $('#b-orb').style.transition = 'transform .8s';
+  $('#b-orb').style.transform = 'scale(1)';
+  if (done) {
+    $('#b-phase').textContent = '✦ Hoàn thành ' + BR + ' nhịp thở!';
+    $('#b-sub').textContent = 'Nhịp thở đã dịu lại.';
+    $('#b-round').textContent = BR + ' / ' + BR + ' nhịp';
+    const d = $('#b-done');
+    d.hidden = false;
+    d.textContent = '🔔 Hoàn thành lúc ' + new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+    bell();
+    sparkle();
+    toast('🔔 Hoàn thành rồi. Giữ nhịp thở dịu này nhé.');
+  } else {
+    $('#b-phase').textContent = 'Đã tạm dừng';
+    $('#b-sub').textContent = 'Bấm “Bắt đầu” khi muốn tiếp tục.';
+  }
+}
+
+function bStart() {
+  if (bOn) return;
+  bOn = true;
+  bRound = 1;
+  bStep = 0;
+  $('#b-done').hidden = true;
+  $('#b-start').hidden = true;
+  $('#b-stop').hidden = false;
+  let ph = BP[0], left = ph.s;
+  const ui = () => {
+    $('#b-round').textContent = 'Nhịp ' + bRound + ' / ' + BR;
+    $('#b-phase').textContent = ph.l + ' (' + left + 's)';
+    $('#b-sub').textContent = ph.sub;
+    $('#b-orb').style.transition = 'transform ' + ph.s + 's ease-in-out';
+    $('#b-orb').style.transform = 'scale(' + ph.k + ')';
+  };
+  ui();
+  chime('tab');
+  bT = setInterval(() => {
+    if (!bOn) return;
+    left--;
+    if (left <= 0) {
+      bStep++;
+      if (bStep >= BP.length) {
+        bStep = 0;
+        bRound++;
+        if (bRound > BR) { bStop(true); return; }
+      }
+      ph = BP[bStep];
+      left = ph.s;
+      chime('tab');
+    }
+    ui();
+  }, 1000);
+}
+
+$('#b-start').onclick = bStart;
+$('#b-stop').onclick = () => bStop(false);
+
+/* ===== THẺ THẤU SUỐT ===== */
+let cf = -1;
+const c3 = $('#c3d');
+const poolOf = () => CARDS.map((c, i) => i).filter(i => cf < 0 || CARDS[i].grp === cf);
+const cardKind = c => c.grp === 0 ? `Ẩn chính · số ${c.lb}` : `${GROUPS[c.grp].n} · ${GROUPS[c.grp].f}`;
+
+function paintDeck() {
+  $('#deck').innerHTML = poolOf().map(i => {
+    const c = CARDS[i];
+    return `<button class="chip g${c.grp}${i === S.card ? ' on' : ''}" data-i="${i}" title="${esc(c.n)}">${c.grp ? c.glyph : ''}${c.lb}</button>`;
+  }).join('');
+  $$('#cfilter .chip').forEach(b => b.classList.toggle('on', +b.dataset.f === cf));
+  $('#cfnote').textContent = cf < 0 ? NOTE_ALL : GROUPS[cf].note;
+}
+
+function paintDetail(c) {
+  const d = $('#cdetail');
+  d.hidden = false;
+  d.innerHTML = `<div class="sc-slot">${esc(cardKind(c))} · ${esc(c.en)}</div>
+    <h3 style="margin:.1em 0 .2em">${c.glyph} ${esc(c.n)}</h3>
+    <p class="sc-mant">${esc(c.sh)}</p>
+    <div class="dl">Bóng đang nói gì</div><p>${esc(c.m)}</p>
+    <div class="dl">Phần vàng ẩn bên trong</div><p>${esc(c.g)}</p>
+    <div class="dl">Câu hỏi soi chiếu</div><p class="q">${esc(c.q)}</p>
+    <div class="dl">Thực hành nhỏ</div><p>${esc(c.a)}</p>
+    <p class="sc-note">Mảng cảm xúc đồng điệu: ${esc(TH[c.th][0])}</p>
+    <div class="row"><button class="btn sm" data-act="w">Viết từ thẻ này</button><button class="btn sm ghost" data-act="n">Rút lá khác</button></div>`;
+}
+
+function pick(i) {
+  S.card = i;
+  const c = CARDS[i], was = c3.classList.contains('flip');
+  c3.classList.remove('flip');
+  setTimeout(() => {
+    $('#ck').textContent = cardKind(c);
+    $('#ct').textContent = c.glyph + ' ' + c.n;
+    $('#cm').textContent = c.sh;
+    $('#cq').textContent = c.en;
+    c3.classList.add('flip');
+    paintDetail(c);
+  }, was ? 360 : 40);
+  $$('#deck .chip').forEach(b => b.classList.toggle('on', +b.dataset.i === i));
+  tipsFor(i);
+  chime('flip');
+}
+
+function drawRandom() {
+  const p = poolOf();
+  let i = p[Math.floor(Math.random() * p.length)];
+  if (p.length > 1 && i === S.card) i = p[(p.indexOf(i) + 1 + Math.floor(Math.random() * (p.length - 1))) % p.length];
+  pick(i);
+}
+
+const SPLB = ['Mặt nạ · điều bạn thể hiện', 'Bóng · điều bạn đang giấu', 'Vàng · điều chờ được tích hợp'];
+$('#draw').onclick = drawRandom;
+$('#draw3').onclick = () => {
+  const p = poolOf().sort(() => Math.random() - .5).slice(0, 3);
+  const sp = $('#spread');
+  sp.hidden = false;
+  sp.innerHTML = p.map((i, k) => {
+    const c = CARDS[i];
+    return `<div class="cardx"><div class="sc-slot">${SPLB[k]}</div><h3>${c.glyph} ${esc(c.n)}</h3><p class="sc-mant">${esc(c.sh)}</p><p class="q">${esc(k === 2 ? c.g : c.q)}</p><button class="btn sm ghost" data-open="${i}">Mở thẻ này</button></div>`;
+  }).join('');
+  chime('flip');
+};
+$('#spread').onclick = e => {
+  const b = e.target.closest('[data-open]');
+  if (!b) return;
+  pick(+b.dataset.open);
+  $('#c3d').scrollIntoView({ behavior: 'smooth', block: 'center' });
+};
+$('#cfilter').onclick = e => { const b = e.target.closest('.chip'); if (!b) return; cf = +b.dataset.f; paintDeck(); };
+$('#deck').onclick = e => { const b = e.target.closest('.chip'); if (b) pick(+b.dataset.i); };
+c3.onclick = () => { if (S.card === null) drawRandom(); else c3.classList.toggle('flip'); };
+$('#cdetail').onclick = e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  if (b.dataset.act === 'n') drawRandom();
+  else if (b.dataset.act === 'w') {
+    const c = CARDS[S.card];
+    write({ prompt: c.q, emo: TH[c.th][0], src: { t: 'card', title: `Thẻ ${S.card + 1} · ${c.n}` } });
+  }
+};
+paintDeck();
+
+function tipsFor(i) {
+  const th = CARDS[i].th, b = $('#ctips');
+  b.hidden = false;
+  b.innerHTML = `<div class="sc-slot">🌿 Self-Care đồng điệu với “${esc(TH[th][0])}”</div><div class="chips">${RT[th].map(k => `<button class="chip" data-tip="${k}">#${k + 1} ${esc(SC[k][0])}</button>`).join('')}</div>`;
+}
+
+/* ===== VIẾT / LƯU ===== */
+const EM = TH.map(t => t[0]);
+function paintEmo() { $$('#emo .chip').forEach(b => b.classList.toggle('on', b.textContent === S.emo)); }
+$('#emo').innerHTML = EM.map(e => `<button class="chip">${esc(e)}</button>`).join('');
+$('#emo').onclick = e => { const b = e.target.closest('.chip'); if (!b) return; S.emo = S.emo === b.textContent ? '' : b.textContent; paintEmo(); mirror(false); };
+
+function paintSrc() { const s = S.src; $('#srcb').hidden = !s; if (s) $('#srct').textContent = '🔗 Đang viết từ: ' + s.title; }
+$('#srcx').onclick = () => { S.src = null; paintSrc(); toast('Đã gỡ liên kết nguồn'); };
+
+function write({ prompt = '', emo = '', src = null, html = '', editing = null }) {
+  S.emo = emo; S.src = src; S.editing = editing;
+  if (prompt) $('#pr').textContent = prompt;
+  $('#ed').innerHTML = html;
+  paintEmo(); paintSrc();
+  $('#edb').hidden = !editing;
+  $('#nx').hidden = true;
+  go('journal');
+  mirror(false);
+  setTimeout(() => { try { $('#ed').focus(); } catch (e) {} }, 120);
+}
+
+$$('.tools button[data-c]').forEach(b => {
+  const run = e => { e.preventDefault(); try { document.execCommand(b.dataset.c); } catch (err) {} };
+  b.addEventListener('mousedown', run);
+  b.addEventListener('touchstart', run, { passive: false });
+});
+
+const say = s => { $('#msg').textContent = s; setTimeout(() => { $('#msg').textContent = ''; }, 3000); };
+
+function clean(h) {
+  try {
+    const d = new DOMParser().parseFromString(h, 'text/html');
+    const ok = ['B', 'I', 'STRONG', 'EM', 'UL', 'OL', 'LI', 'BR', 'DIV', 'P'];
+    (function w(n) {
+      [...n.childNodes].forEach(c => {
+        if (c.nodeType !== 1) return;
+        if (!ok.includes(c.tagName)) c.replaceWith(document.createTextNode(c.textContent));
+        else { [...c.attributes].forEach(a => c.removeAttribute(a.name)); w(c); }
+      });
+    })(d.body);
+    return d.body.innerHTML;
+  } catch (e) { return esc(h); }
+}
+
+function reset() { $('#ed').innerHTML = ''; S.editing = null; S.src = null; S.emo = ''; paintEmo(); $('#edb').hidden = true; paintSrc(); mirror(false); }
+$('#clr').onclick = () => { reset(); toast('Đã làm trống trang viết'); };
+
+$('#save').onclick = () => {
+  const html = clean($('#ed').innerHTML), text = $('#ed').innerText.trim();
+  if (!text) { say('Hãy viết vài dòng trước khi lưu.'); return; }
+  const a = entries().slice(), pr = $('#pr').textContent, src = S.src || { t: 'practice', title: pname() };
+  if (S.editing) {
+    const x = a.find(e => e.id === S.editing);
+    if (x) { Object.assign(x, { html, text, emotion: S.emo, prompt: pr, edited: Date.now() }); if (S.src) x.src = S.src; }
+  } else {
+    a.push({ id: 'e' + Date.now(), ts: Date.now(), emotion: S.emo, prompt: pr, html, text, src });
+  }
+  save_(a);
+  const em = S.emo;
+  reset();
+  say('Đã lưu tạm trong phiên ✓');
+  toast('Đã lưu bài viết. Bạn đã dành thời gian thật tử tế cho mình.');
+  sparkle();
+  chime('save');
+  afterSave(em);
+};
+
+function afterSave(emo) {
+  const th = TH.findIndex(t => t[0] === emo);
+  const k = th >= 0 ? RT[th][Math.floor(Math.random() * RT[th].length)] : Math.floor(Math.random() * 54);
+  const n = $('#nx');
+  n.hidden = false;
+  n.innerHTML = `<span class="lbl" style="margin:0">Bước tiếp theo:</span><button class="btn sm ghost" data-go="archive">Xem trong Kho</button><button class="btn sm ghost" data-go="cards">Rút thẻ mới</button><button class="btn sm" data-tip="${k}">🌿 ${esc(SC[k][0])}</button>`;
+}
+
+/* ===== KHO LƯU TRỮ ===== */
+$('#fe').innerHTML = '<option value="">Tất cả chủ đề</option>' + EM.map(e => `<option>${esc(e)}</option>`).join('') + '<option value="_">Không chọn chủ đề</option>';
+const d8 = ts => { const d = new Date(ts); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+const stype = e => e.src ? e.src.t : 'free';
+
+function renderList() {
+  const q = $('#q').value.trim().toLowerCase(), fe = $('#fe').value, fs = $('#fs').value, fd = $('#fd').value;
+  const a = entries().filter(e =>
+    (!q || e.text.toLowerCase().includes(q)) &&
+    (!fe || (fe === '_' ? !e.emotion : e.emotion === fe)) &&
+    (!fs || stype(e) === fs) &&
+    (!fd || d8(e.ts) === fd)
+  ).sort((x, y) => y.ts - x.ts);
+
+  $('#list').innerHTML = a.length ? a.map(e => `<div class="box entry"><div class="meta">${new Date(e.ts).toLocaleString('vi-VN')}${e.emotion ? `<span class="tag">${esc(e.emotion)}</span>` : ''}${e.src ? `<span class="tag">${esc(e.src.title)}</span>` : ''}${e.edited ? ' · đã chỉnh sửa' : ''}</div>
+    <div class="pv">${esc(e.text.slice(0, 160))}${e.text.length > 160 ? '…' : ''}</div>
+    <div class="row" style="margin:6px 0 0"><button class="btn sm ghost" data-a="v" data-id="${e.id}">Xem</button><button class="btn sm ghost" data-a="e" data-id="${e.id}">Sửa</button><button class="btn sm ghost" data-a="d" data-id="${e.id}">Xóa</button></div></div>`).join('')
+    : '<div class="box c"><p class="lead c">Chưa có bài nào trong phiên này. Những gì bạn viết sẽ nằm ở đây cho đến khi tải lại trang.</p><button class="btn sm" data-pr="0">Bắt đầu buổi sáng</button></div>';
+}
+
+['q', 'fe', 'fs', 'fd'].forEach(i => { $('#' + i).oninput = renderList; });
+
+let viewing = null;
+$('#list').onclick = e => {
+  const b = e.target.closest('button[data-a]');
+  if (!b) return;
+  const id = b.dataset.id, a = entries(), x = a.find(k => k.id === id);
+  if (!x) return;
+  if (b.dataset.a === 'v') {
+    viewing = x;
+    $('#mh').textContent = new Date(x.ts).toLocaleString('vi-VN') + (x.emotion ? ' · ' + x.emotion : '') + (x.src ? ' · ' + x.src.title : '');
+    $('#mb').innerHTML = (x.prompt ? `<p class="q">${esc(x.prompt)}</p>` : '') + clean(x.html);
+    $('#mod').hidden = false;
+  } else if (b.dataset.a === 'e') {
+    write({ prompt: x.prompt, emo: x.emotion || '', src: x.src || null, html: clean(x.html), editing: id });
+    $('#edb').textContent = 'Bạn đang chỉnh sửa bài ngày ' + new Date(x.ts).toLocaleDateString('vi-VN') + '. Bấm Lưu Nhật Ký để cập nhật.';
+  } else if (b.dataset.sure) {
+    save_(a.filter(k => k.id !== id));
+    renderList();
+    toast('Đã xóa bài viết');
+  } else {
+    b.dataset.sure = 1;
+    b.textContent = 'Chắc chắn xóa?';
+    setTimeout(() => { b.dataset.sure = ''; b.textContent = 'Xóa'; }, 3000);
+  }
+};
+
+$('#mx').onclick = () => { $('#mod').hidden = true; };
+$('#mod').onclick = e => { if (e.target.id === 'mod') $('#mod').hidden = true; };
+addEventListener('keydown', e => { if (e.key === 'Escape') $('#mod').hidden = true; });
+$('#mcont').onclick = () => {
+  if (!viewing) return;
+  $('#mod').hidden = true;
+  write({ prompt: 'Viết tiếp: ' + (viewing.prompt || 'điều đọng lại sau lần viết trước'), emo: viewing.emotion || '', src: viewing.src || { t: 'free', title: 'Viết tiếp một bài cũ' } });
+};
+
+/* Tự động đính kèm ghi nguồn Creator khi sao chép đoạn dài từ nội dung hệ thống (không can thiệp nhật ký cá nhân của người dùng) */
+document.addEventListener('copy', e => {
+  try {
+    const sel = window.getSelection(), t = String(sel || '');
+    if (t.length < 140 || !sel.anchorNode) return;
+    const n = sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement;
+    if (!n || n.closest('#curtain, #ed, #list, #mod, input, textarea, [contenteditable="true"]')) return;
+    e.clipboardData.setData('text/plain', t + '\n\n— Trích từ “Góc Soi Chiếu” · Creator: ' + CREDIT.name + ' · © ' + CREDIT.year + '\n(Kiến thức nền thuộc tri thức cộng đồng; ý tưởng & cấu trúc trang thuộc quyền tác giả)');
+    e.preventDefault();
+  } catch (err) {}
+});
+
+try {
+  console.info('%c🐠 Góc Soi Chiếu · Creator: ' + CREDIT.name + ' (© ' + CREDIT.year + ')', 'font-weight:bold;font-size:13px;color:#634c91;');
+  console.info(CREDIT.scope);
+} catch (err) {}
+
+$('#exp').onclick = () => {
+  try {
+    const a = entries().slice().sort((x, y) => x.ts - y.ts);
+    if (!a.length) { toast('Chưa có nhật ký để sao lưu'); return; }
+    const txt = a.map(e => `[${new Date(e.ts).toLocaleString('vi-VN')}]${e.emotion ? ' #' + e.emotion : ''}${e.src ? ' (' + e.src.title + ')' : ''}\n${e.prompt ? 'Gợi ý: ' + e.prompt + '\n' : ''}${e.text}\n`).join('\n----\n\n') + '\n\n————————\nXuất từ Góc Soi Chiếu · Creator: ' + CREDIT.name + ' · © ' + CREDIT.year + '\nNội dung nhật ký ở trên thuộc quyền sở hữu của bạn.\n';
+    const l = document.createElement('a');
+    l.href = URL.createObjectURL(new Blob([txt], { type: 'text/plain;charset=utf-8' }));
+    l.download = 'nhat-ky-goc-soi-chieu.txt';
+    document.body.appendChild(l);
+    l.click();
+    document.body.removeChild(l);
+    setTimeout(() => URL.revokeObjectURL(l.href), 4000);
+    toast('Đang tải tệp sao lưu...');
+  } catch (e) { toast('Không thể xuất tệp lúc này'); }
+};
+
+function stats() { const n = $('#cnt'); n.hidden = !entries().length; n.textContent = entries().length; }
+
+/* ===== SELF-CARE ===== */
+const scCard = (it, i, tag) => {
+  const th = RT.findIndex(r => r.includes(i)), br = i === 18;
+  return `<div class="cardx"><div class="sc-slot">${tag}</div><h3>${esc(it[0])}</h3><p>${esc(it[1])}</p><p class="sc-mant">✦ ${esc(it[2])}</p><p class="q">${esc(it[3])}</p>
+    <div class="row"><button class="btn sm" data-w="${i}">Viết nhật ký</button>${br ? '<button type="button" class="btn sm" id="btn-breath-jump">🌿 Thực hành thở cơ hoành</button>' : ''}${th >= 0 && !br ? `<button class="btn sm ghost" data-th="${th}">Soi bóng tối: ${esc(TH[th][0])}</button>` : ''}</div></div>`;
+};
+
+$('#spdraw').onclick = () => {
+  const n = +($('#sp .chip.on') || { dataset: { n: 1 } }).dataset.n;
+  const idx = [...SC.keys()].sort(() => Math.random() - .5).slice(0, n);
+  $('#spres').innerHTML = idx.map((i, k) => scCard(SC[i], i, `Lá bài số ${k + 1} / ${n}`)).join('');
+  chime('flip');
+};
+$('#spclr').onclick = () => { $('#spres').innerHTML = ''; };
+$$('#sp .chip').forEach(c => { c.onclick = () => { $$('#sp .chip').forEach(x => x.classList.remove('on')); c.classList.add('on'); }; });
+$('#scall').innerHTML = SC.map((s, i) => `<button class="chip" data-i="${i}" title="${esc(s[1])}">${i + 1}. ${esc(s[0])}</button>`).join('');
+$('#scall').onclick = e => {
+  const b = e.target.closest('.chip');
+  if (b) {
+    const i = +b.dataset.i;
+    $('#spres').innerHTML = scCard(SC[i], i, `Lá bài ${i + 1} / 54`);
+    $('#spres').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    chime('flip');
+  }
+};
+$('#scq').oninput = e => {
+  const v = e.target.value.toLowerCase();
+  $$('#scall .chip').forEach((c, i) => { c.style.display = (SC[i][0] + SC[i][1]).toLowerCase().includes(v) ? '' : 'none'; });
+};
+
+document.addEventListener('click', e => {
+  if (e.target.id === 'btn-breath-jump' || e.target.id === 'btn-breath-trigger') {
+    go('journal');
+    setTimeout(() => {
+      const w = $('#breath-widget');
+      w.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      w.style.boxShadow = '0 0 25px var(--glow)';
+      setTimeout(() => { w.style.boxShadow = 'none'; }, 1500);
+    }, 100);
+    return;
+  }
+  const w = e.target.closest('[data-w]');
+  if (w) {
+    const i = +w.dataset.w, th = RT.findIndex(r => r.includes(i));
+    write({ prompt: SC[i][3], emo: th >= 0 ? TH[th][0] : '', src: { t: 'care', title: `Self-Care ${i + 1} · ${SC[i][0]}` } });
+    return;
+  }
+  const t = e.target.closest('[data-tip]');
+  if (t) {
+    const i = +t.dataset.tip;
+    $('#spres').innerHTML = scCard(SC[i], i, `Lá bài ${i + 1} / 54`);
+    go('care');
+    setTimeout(() => $('#spres').scrollIntoView({ behavior: 'smooth', block: 'center' }), 90);
+    return;
+  }
+  const h = e.target.closest('[data-th]');
+  if (h) {
+    go('cards'); cf = -1; paintDeck();
+    const th = +h.dataset.th, p = CARDS.map((c, i) => i).filter(i => CARDS[i].th === th);
+    pick(p[Math.floor(Math.random() * p.length)]);
+  }
+});
+
+/* ===== ÂM NHẠC MỚI ===== */
+let playing = false, SPB = 1, mode = '0', mi = 3, vol = store('swj.vol') == null ? .55 : +store('swj.vol');
+
+function store(k, v) {
+  try {
+    if (v === undefined) return JSON.parse(localStorage.getItem(k));
+    localStorage.setItem(k, JSON.stringify(v));
+  } catch (e) { return null; }
+}
+
+const hz = n => 440 * Math.pow(2, (n - 69) / 12);
+const rnd = (a, b) => a + Math.random() * (b - a);
+
+const CHS = [
+  [[57, 60, 64, 67, 71], [53, 57, 60, 64, 69], [60, 64, 67, 71, 74], [55, 59, 62, 64, 69]],
+  [[50, 54, 57, 61, 64], [45, 49, 52, 56, 59], [47, 50, 54, 57, 61], [43, 47, 50, 54, 57]],
+  [[40, 47, 52, 59, 64], [38, 45, 50, 57, 64], [43, 50, 55, 62, 66], [40, 47, 52, 59, 66]],
+  [[48, 55, 60, 64, 67], [53, 57, 60, 64, 67], [48, 55, 60, 64, 67], [55, 59, 62, 65, 67]]
+];
+const SCL = [
+  [69, 72, 74, 76, 79, 81, 84],
+  [74, 76, 78, 81, 83, 86, 88],
+  [64, 66, 68, 71, 73, 76, 78],
+  [72, 74, 76, 79, 81, 84, 88]
+];
+const BPM = [58, 76, 44, 60, 72, 88, 70, 78], ARP = [0, 2, 4, 3, 1, 3, 4, 2];
+
+function mkReverb(sec) {
+  const len = Math.max(1, ac.sampleRate * sec | 0), b = ac.createBuffer(2, len, ac.sampleRate);
+  for (let c = 0; c < 2; c++) {
+    const d = b.getChannelData(c); let lp = 0;
+    for (let i = 0; i < len; i++) {
+      const e = 1 - i / len;
+      const w = (Math.random() * 2 - 1) * e * e * Math.sqrt(e);
+      lp = lp * .82 + w * .18;
+      d[i] = lp;
+    }
+  }
+  const r = ac.createConvolver(); r.buffer = b; return r;
+}
+
+function build() {
+  ac = mkCtx();
+  if (ac.state === 'suspended') { try { ac.resume(); } catch (e) {} }
+  master = ac.createGain(); master.gain.value = .0001;
+  const warmth = ac.createBiquadFilter(); warmth.type = 'lowshelf'; warmth.frequency.value = 180; warmth.gain.value = -2.5;
+  const treble = ac.createBiquadFilter(); treble.type = 'lowpass'; treble.frequency.value = 3600; treble.Q.value = .5;
+  const comp = ac.createDynamicsCompressor(); comp.threshold.value = -22; comp.knee.value = 24; comp.ratio.value = 3; comp.attack.value = .02; comp.release.value = .25;
+  const lim = ac.createDynamicsCompressor(); lim.threshold.value = -6; lim.knee.value = 6; lim.ratio.value = 8; lim.attack.value = .003; lim.release.value = .1;
+  master.connect(warmth); warmth.connect(treble); treble.connect(comp); comp.connect(lim); lim.connect(ac.destination);
+
+  bus = ac.createGain(); bus.gain.value = .78;
+  const dry = ac.createGain(); dry.gain.value = .82;
+  bus.connect(dry); dry.connect(master);
+
+  const rv = mkReverb(LITE ? 1.6 : 2.4), rg = ac.createGain(); rg.gain.value = +mode === 2 ? .52 : .34;
+  bus.connect(rv); rv.connect(rg); rg.connect(master);
+
+  NB = ac.createBuffer(1, ac.sampleRate * 2, ac.sampleRate);
+  const d = NB.getChannelData(0); let pink = 0;
+  for (let i = 0; i < d.length; i++) {
+    const white = Math.random() * 2 - 1;
+    pink = pink * .92 + white * .08;
+    d[i] = pink * 2.4;
+  }
+  master.gain.setTargetAtTime(Math.max(.0001, vol * .52), ac.currentTime, .85);
+}
+
+const env = (g, t, a, d, pk) => {
+  const safePk = Math.max(.0004, pk);
+  g.gain.setValueAtTime(.0001, t);
+  g.gain.linearRampToValueAtTime(safePk, t + Math.max(.012, a));
+  g.gain.exponentialRampToValueAtTime(.0002, t + Math.max(.012, a) + Math.max(.05, d));
+};
+
+function tone(type, f, t, a, d, pk, out, det) {
+  const o = ac.createOscillator(), g = ac.createGain();
+  o.type = type; o.frequency.value = Math.min(4200, Math.max(38, f)); o.detune.value = det || 0;
+  env(g, t, a, d, pk);
+  o.connect(g); g.connect(out || bus);
+  o.start(t); o.stop(t + a + d + .16);
+}
+
+function pad(ns, t, d) {
+  const f = ac.createBiquadFilter(); f.type = 'lowpass'; f.Q.value = .55;
+  f.frequency.setValueAtTime(320, t); f.frequency.linearRampToValueAtTime(760, t + d * .5); f.frequency.linearRampToValueAtTime(340, t + d);
+  f.connect(bus);
+  const dv = LITE ? [0] : [-5, 5], pv = LITE ? .028 : .018;
+  ns.forEach(n => dv.forEach(c => tone('triangle', hz(n), t, d * .35, d * .75, pv, f, c)));
+}
+
+const bass = (n, t, d) => tone('sine', hz(n), t, .06, d, .14);
+const piano = (n, t, v) => { tone('triangle', hz(n), t, .015, 2.6, .075 * v); tone('sine', hz(n) * 2, t, .012, 1.1, .016 * v); };
+const pluck = (n, t, v) => { tone('triangle', hz(n), t, .012, .82, .095 * v); tone('sine', hz(n) * 2, t, .01, .32, .02 * v); };
+const bellN = (n, t, v) => [[1, .055, 4.2], [2, .018, 2.2], [3, .007, 1.2]].forEach(p => tone('sine', hz(n) * p[0], t, .012, p[2], p[1] * v));
+
+function note(n, t, v) {
+  const m = +mode;
+  if (m === 0) piano(n, t, v);
+  else if (m === 1) pluck(n, t, v);
+  else if (m === 2) tone('sine', hz(n), t, .9, 3.4, .032 * v);
+  else bellN(n, t, v);
+}
+
+function bed(gv, type, f, lfo, amt) {
+  const s = ac.createBufferSource(), fl = ac.createBiquadFilter(), g = ac.createGain();
+  s.buffer = NB; s.loop = true; fl.type = type; fl.frequency.value = f; fl.Q.value = .6; g.gain.value = gv;
+  s.connect(fl); fl.connect(g); g.connect(master); s.start();
+  if (lfo) {
+    const o = ac.createOscillator(), a = ac.createGain();
+    o.frequency.value = lfo; a.gain.value = amt;
+    o.connect(a); a.connect(g.gain); o.start();
+  }
+}
+
+function melody(t, v) { const sc = SCL[+mode]; mi = Math.max(0, Math.min(sc.length - 1, mi + Math.floor(rnd(-2, 3)))); note(sc[mi], t, v); }
+const bassH = (n, t, d) => { bass(n, t, d); tone('sine', hz(n + 12), t, .06, d * .7, .05); };
+
+function kick(t, v) {
+  const o = ac.createOscillator(), g = ac.createGain();
+  o.frequency.setValueAtTime(130, t); o.frequency.exponentialRampToValueAtTime(48, t + .14);
+  g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(.2 * v, t + .008); g.gain.exponentialRampToValueAtTime(.0002, t + .32);
+  o.connect(g); g.connect(master); o.start(t); o.stop(t + .36);
+}
+
+function hat(t, v) {
+  const s = ac.createBufferSource(), f = ac.createBiquadFilter(), g = ac.createGain();
+  s.buffer = NB; f.type = 'highpass'; f.frequency.value = 6500;
+  g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(.05 * v, t + .004); g.gain.exponentialRampToValueAtTime(.0002, t + .07);
+  s.connect(f); f.connect(g); g.connect(master); s.start(t, Math.random() * 1.5); s.stop(t + .1);
+}
+
+const VOICE = {
+  piano: (n, t, v) => piano(n, t, v),
+  kal: (n, t, v) => { tone('sine', hz(n), t, .004, 1.1, .12 * v); tone('sine', hz(n) * 5.4, t, .003, .14, .025 * v); },
+  ep: (n, t, v) => { tone('sine', hz(n), t, .008, 2, .1 * v); tone('sine', hz(n) * 2, t, .008, .9, .025 * v); tone('sine', hz(n) * 7, t, .003, .18, .012 * v); },
+  gtr: (n, t, v) => { pluck(n, t, v); tone('sawtooth', hz(n), t, .006, .45, .014 * v); }
+};
+
+const SONG = {
+  4: { v: 'piano', av: .42, mv: .78, sw: 0, dr: 0, r: [48, 43, 45, 41], ch: [[60, 64, 67], [59, 62, 67], [60, 64, 69], [60, 65, 69]], acc: [['b', 0], null, 1, null, 2, null, 1, null], mel: [[[[0, 76], [3, 79], [4, 84], [6, 83]], [[0, 79], [2, 83], [4, 86], [6, 83]], [[0, 84], [2, 83], [3, 81], [4, 76], [6, 81]], [[0, 81], [2, 79], [4, 77], [6, 76]]], [[[0, 79], [1, 84], [2, 83], [4, 79], [6, 76]], [[0, 74], [2, 79], [3, 83], [4, 86], [7, 83]], [[0, 81], [2, 84], [4, 88], [5, 86], [6, 84]], [[0, 84], [2, 81], [4, 77], [6, 79], [7, 76]]]] },
+  5: { v: 'kal', av: .36, mv: .8, sw: 0, dr: 0, r: [50, 47, 43, 45], ch: [[62, 66, 69], [62, 66, 71], [62, 67, 71], [61, 64, 69]], acc: [['b', 0], 1, 2, 1, 2, 1, 2, 1], mel: [[[[0, 81], [2, 78], [3, 81], [4, 83], [6, 81]], [[0, 78], [2, 83], [3, 81], [4, 78], [6, 74]], [[0, 83], [2, 86], [3, 83], [4, 79], [6, 81]], [[0, 85], [2, 81], [4, 76], [5, 78], [6, 81]]], [[[0, 86], [1, 83], [2, 81], [4, 78], [6, 74]], [[0, 83], [2, 78], [3, 81], [4, 83], [6, 86]], [[0, 86], [2, 83], [4, 79], [5, 83], [6, 86]], [[0, 85], [2, 88], [3, 85], [4, 81], [6, 81], [7, 78]]]] },
+  6: { v: 'ep', av: .4, mv: .7, sw: .1, dr: 1, r: [41, 40, 38, 36], ch: [[57, 60, 64, 65], [55, 59, 62, 64], [57, 60, 62, 65], [55, 59, 60, 64]], acc: [['b', 'C'], null, null, null, null, 'c', 'f', null], mel: [[[[1, 76], [3, 79], [4, 81], [6, 79]], [[0, 79], [2, 76], [3, 74], [6, 71]], [[1, 74], [3, 77], [4, 81], [5, 79], [6, 77]], [[0, 76], [2, 79], [4, 84], [7, 83]]], [[[0, 84], [2, 81], [4, 79], [6, 81]], [[1, 83], [3, 79], [4, 76], [6, 79]], [[0, 77], [2, 74], [4, 77], [5, 81]], [[0, 79], [3, 76], [4, 72], [6, 76]]]] },
+  7: { v: 'gtr', av: .5, mv: .8, sw: 0, dr: 0, r: [43, 40, 48, 50], ch: [[62, 67, 71], [59, 64, 67], [60, 64, 67], [62, 66, 69]], acc: ['b', 2, 1, 2, 'f', 1, 2, 1], mel: [[[[0, 79], [2, 83], [3, 86], [4, 83], [6, 79]], [[0, 76], [2, 79], [3, 83], [4, 79], [6, 76]], [[0, 76], [2, 79], [3, 84], [4, 83], [6, 79]], [[0, 78], [2, 81], [3, 86], [4, 85], [6, 81]]], [[[0, 86], [1, 83], [2, 79], [4, 83], [6, 86]], [[0, 83], [2, 79], [4, 76], [5, 79], [6, 83]], [[0, 84], [2, 79], [4, 76], [6, 79]], [[0, 81], [2, 78], [4, 74], [5, 78], [6, 81]]]] }
+};
+
+function accTok(P, ch, r, k, T, v) {
+  if (k === 'b') bassH(r, T, SPB * 3.2);
+  else if (k === 'f') bassH(r + 7, T, SPB * 1.8);
+  else if (k === 'C' || k === 'c') ch.forEach((n, i) => VOICE[P.v](n, T + i * .025, (k === 'C' ? .36 : .2) * v));
+  else VOICE[P.v](ch[k], T, P.av * v);
+}
+
+function playSong(m, s, t) {
+  const P = SONG[m], nb = P.r.length, bar = Math.floor(s / 8), bi = bar % nb, pos = s % 8;
+  const ph = Math.floor(bar / nb) % P.mel.length, ch = P.ch[bi];
+  const T = t + (P.sw && pos % 2 ? SPB * P.sw : 0), hv = () => .9 + Math.random() * .2;
+  if (pos === 0) pad(ch.map(n => n - 12), T, SPB * 4.6);
+  const a = P.acc[pos];
+  if (a != null) [].concat(a).forEach(k => accTok(P, ch, P.r[bi], k, T, hv()));
+  P.mel[ph][bi].forEach(e => { if (e[0] === pos && Math.random() > .05) VOICE[P.v](e[1], T, P.mv * hv()); });
+  if (P.dr) {
+    if (pos === 0 || pos === 5) kick(T, pos ? .55 : .85);
+    if (pos === 2 || pos === 6) hat(T, .9);
+    else if (pos % 2) hat(T, .35);
+  }
+}
+
+function play(s, t) {
+  if (+mode >= 4) { playSong(+mode, s, t); return; }
+  const m = +mode, ch = CHS[m][Math.floor(s / 16) % 4], pos = s % 16, T = t + (m === 1 && s % 2 ? SPB * .04 : 0);
+  if (m === 0) {
+    if (pos === 0) { pad(ch.slice(0, 4), T, SPB * 8.5); bass(ch[0] - 12, T, SPB * 6); ch.forEach((n, i) => piano(n, T + i * .08, .56 - i * .06)); }
+    if ([3, 6, 10, 13].includes(pos) && Math.random() < .55) melody(T, rnd(.45, .8));
+  } else if (m === 1) {
+    if (pos === 0) { pad(ch.slice(0, 3), T, SPB * 8); bass(ch[0] - 12, T, SPB * 3); }
+    if (Math.random() > .14) pluck(ch[ARP[pos % 8]] + 12, T, rnd(.5, .82));
+    if (pos % 4 === 3 && Math.random() < .2) melody(T, .65);
+  } else if (m === 2) {
+    if (pos === 0) { pad(ch, T, SPB * 15.5); bass(ch[0] - 12, T, SPB * 14); }
+    if (pos % 4 === 2 && Math.random() < .28) melody(T, rnd(.55, .9));
+  } else {
+    if (pos === 0 && Math.floor(s / 16) % 2 === 0) pad(ch.slice(0, 3).map(n => n - 12), T, SPB * 14);
+    if (Math.random() < .2) melody(T + rnd(0, .5), rnd(.45, .85));
+  }
+}
+
+function tick() { if (!ac) return; while (nx < ac.currentTime + 1.2) { play(st, nx + rnd(0, .01)); nx += SPB / 2; st++; } }
+function setUI(on) { playing = on; document.body.classList.toggle('playing', on); $('#mt').textContent = on ? '⏸ Tắt nhạc' : '▶ Phát nhạc'; }
+
+function startAudio() {
+  try {
+    mode = $('#mus-select').value;
+    SPB = 60 / BPM[+mode];
+    build();
+    if (mode === '3') { bed(.055, 'bandpass', 1850, .06, .016); bed(.04, 'lowpass', 360, .08, .02); }
+    else if (mode === '2') { bed(.022, 'lowpass', 240, .05, .012); }
+    else if (mode === '5') { bed(.02, 'bandpass', 2400, .11, .008); }
+    else if (mode === '6') { bed(.01, 'highpass', 3200, 0, 0); }
+    else if (mode === '7') { bed(.05, 'lowpass', 520, .07, .03); bed(.026, 'bandpass', 1300, .05, .012); }
+    nx = ac.currentTime + .2; st = 0; mi = 3;
+    tm = setInterval(tick, LITE ? 250 : 180);
+    setUI(true);
+  } catch (e) {}
+}
+
+function stopAudio() {
+  if (!ac) return;
+  clearInterval(tm);
+  const c = ac;
+  try { master.gain.setTargetAtTime(.0001, c.currentTime, .25); } catch (e) {}
+  setTimeout(() => { try { c.close(); } catch (e) {} }, 1300);
+  ac = null;
+  setUI(false);
+}
+
+function chime(k) {
+  if (!playing || !ac) return;
+  try {
+    const t = ac.currentTime + .02;
+    if (k === 'flip') { bellN(79, t, .45); bellN(84, t + .12, .36); }
+    else if (k === 'save') { [72, 76, 79, 84].forEach((n, i) => bellN(n, t + i * .1, .45)); }
+    else { bellN(84, t, .2); }
+  } catch (e) {}
+}
+
+$('#mus').onclick = () => (playing ? stopAudio() : startAudio());
+$('#mus-select').value = store('swj.mus') || '4';
+$('#mus-select').onchange = e => { store('swj.mus', e.target.value); if (playing) { stopAudio(); setTimeout(startAudio, 650); } };
+$('#vol').value = vol;
+$('#vol').oninput = e => { vol = +e.target.value; store('swj.vol', vol); if (ac) { try { master.gain.setTargetAtTime(Math.max(.0001, vol * .52), ac.currentTime, .1); } catch (err) {} } };
+
+function sparkle() {
+  const E = ['✦', '💛', '💜', '⭐', '🌸'];
+  for (let i = 0, N = LITE ? 7 : 14; i < N; i++) {
+    const s = document.createElement('span');
+    s.className = 'fx';
+    s.textContent = E[i % E.length];
+    s.style.left = (15 + Math.random() * 70) + '%';
+    s.style.setProperty('--dx', (Math.random() * 140 - 70) + 'px');
+    s.style.animationDelay = (Math.random() * .35) + 's';
+    document.body.appendChild(s);
+    setTimeout(() => { s.remove(); }, 2300);
+  }
+}
+
+/* ===== MÀN GIỚI THIỆU & KHỞI ĐỘNG ===== */
+$('#open').onclick = () => { $('#curtain').classList.add('open'); chime('flip'); };
+$('#reopen').onclick = () => { $('#curtain').classList.remove('open'); };
+
+document.addEventListener('visibilitychange', () => {
+  try {
+    const c = ac;
+    if (!c) return;
+    if (document.hidden) c.suspend();
+    else if (playing) c.resume();
+  } catch (e) {}
+});
+
+paintPractice();
+paintEmo();
+paintSrc();
+stats();
+mirror(false);
+
+/* ===== XỬ LÝ CÀI ĐẶT PWA TRÊN ANDROID (BEFOREINSTALLPROMPT) ===== */
+let deferredPrompt = null;
+const navInstallBtn = $('#install-btn');
+const curtainInstallBtn = $('#curtain-install-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  if (navInstallBtn) navInstallBtn.hidden = false;
+  if (curtainInstallBtn) curtainInstallBtn.hidden = false;
+});
+
+async function triggerPwaInstall() {
+  if (!deferredPrompt) {
+    toast('Trên Chrome Android: bấm dấu ⋮ góc trên phải → chọn "Cài đặt ứng dụng" hoặc "Thêm vào Màn hình chính".');
+    return;
+  }
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') {
+    toast('✦ Đang cài đặt Góc Soi Chiếu lên màn hình chính...');
+    if (navInstallBtn) navInstallBtn.hidden = true;
+    if (curtainInstallBtn) curtainInstallBtn.hidden = true;
+  }
+  deferredPrompt = null;
+}
+
+if (navInstallBtn) navInstallBtn.onclick = triggerPwaInstall;
+if (curtainInstallBtn) curtainInstallBtn.onclick = triggerPwaInstall;
+
+window.addEventListener('appinstalled', () => {
+  if (navInstallBtn) navInstallBtn.hidden = true;
+  if (curtainInstallBtn) curtainInstallBtn.hidden = true;
+  const hint = $('#android-install-hint');
+  if (hint) hint.hidden = true;
+  toast('✦ Đã cài đặt ứng dụng thành công!');
+});
+
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  const hint = $('#android-install-hint');
+  if (hint) hint.hidden = true;
+}
+
+go(location.hash.slice(1) || 'home', false);
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
