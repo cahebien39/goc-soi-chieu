@@ -1,5 +1,5 @@
 Bản quyền Tiếng Việt:
-🛡️ Bản quyền & quy định sử dụng web
+🛡️ Bản quyền & quy định sử dụng web:
 Văn bản quy định sử dụng không gian trực tuyến này, nêu rõ phần thuộc về tác giả, phần thuộc về cộng đồng, phạm vi sao chép và nguyên tắc tôn trọng người khác.
 -----------
 KHÔNG GIAN WEB ĐƯỢC TẠO BỞI  © 2026
@@ -39,7 +39,7 @@ Liên hệ: cahebien39@gmail.com
 
 ---------------------
 English Copyright:
-🛡️ Copyright & Terms of Use
+🛡️ Copyright & Terms of Use:
 This document outlines the terms for using this online space, specifying what belongs to the author, what belongs to the public domain, the scope of permitted reproduction, and the principles for respecting others.
 -----------
 WEB SPACE CREATED BY © 2026
