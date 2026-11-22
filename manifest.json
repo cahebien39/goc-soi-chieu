@@ -1,0 +1,32 @@
+{
+  "name": "Góc Soi Chiếu · Shadow Work",
+  "short_name": "Góc Soi Chiếu",
+  "description": "Không gian thực hành Shadow Work: 78 Thẻ Thấu Suốt, nhật ký, Gương Soi Cảm Xúc, Self-Care.",
+  "lang": "vi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#282238",
+  "theme_color": "#282238",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
