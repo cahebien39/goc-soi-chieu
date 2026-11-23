@@ -489,6 +489,52 @@ h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 700; color: var(--ink); }
   background: var(--gold);
 }
 
+.visit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .74rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card2);
+  color: var(--soft);
+}
+
+.visit-pill b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ===== PHẦN CHÂN WEB & BỘ ĐẾM LƯỢT TRUY CẬP ===== */
+.site-footer {
+  margin-top: 28px;
+  padding: 16px 20px;
+  border-radius: 20px;
+  border: 1.5px solid var(--line);
+  background: linear-gradient(148deg, var(--f1), var(--f2) 56%, var(--f3));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: .84rem;
+  color: var(--soft);
+  box-shadow: 0 12px 24px -18px var(--shadow);
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-meta strong {
+  color: var(--ink);
+  font-family: "Lora", Georgia, serif;
+}
+
 /* ===== ĐỊNH DANH CREATOR & BẢO VỆ QUYỀN TÁC GIẢ ===== */
 .by {
   display: inline-flex;
@@ -1311,6 +1357,13 @@ button, select, .chip, .btn { touch-action: manipulation; }
       <p class="ip-privacy-note" style="margin-bottom:0"><span class="ip-privacy-label">Your journal privacy:</span> Anything you write in your journal belongs to you, remains only in your current browser session, is not sent to any server, and is cleared upon reload unless you download a backup.</p>
     </article>
   </section>
+
+  <!-- Phần chân web chứa bộ đếm lượt truy cập -->
+  <footer class="site-footer" aria-label="Chân trang và bộ đếm lượt truy cập">
+    <span class="visit-pill" id="visit-counter" title="Thống kê lượt truy cập trên trình duyệt này">
+      👁 Lượt truy cập: <b id="visit-total">0</b> · Hôm nay: <b id="visit-today">0</b>
+    </span>
+  </footer>
 </main>
 
 <!-- Modal xem chi tiết bài viết -->
@@ -2728,6 +2781,36 @@ function updateNetworkStatus() {
 window.addEventListener('online', () => { updateNetworkStatus(); toast('Đã kết nối lại mạng'); });
 window.addEventListener('offline', () => { updateNetworkStatus(); toast('Chế độ ngoại tuyến — Ứng dụng vẫn hoạt động bình thường'); });
 updateNetworkStatus();
+
+/* ===== BỘ ĐẾM SỐ LƯỢNG TRUY CẬP WEB ===== */
+function initVisitCounter() {
+  try {
+    const todayKey = d8(Date.now());
+    const stored = store('swj.visits') || { total: 0, days: {}, lastSession: '' };
+    const sessionId = window.name || ('sess_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7));
+    if (!window.name) window.name = sessionId;
+
+    // Ghi nhận một lượt truy cập mới cho mỗi phiên làm việc (tab/phiên mở mới)
+    if (stored.lastSession !== sessionId) {
+      stored.total = (Number(stored.total) || 0) + 1;
+      stored.days[todayKey] = (Number(stored.days[todayKey]) || 0) + 1;
+      stored.lastSession = sessionId;
+
+      // Giữ tối đa 30 ngày gần nhất để bộ nhớ gọn nhẹ
+      const keys = Object.keys(stored.days).sort();
+      if (keys.length > 30) {
+        keys.slice(0, keys.length - 30).forEach(k => delete stored.days[k]);
+      }
+      store('swj.visits', stored);
+    }
+
+    const totalEl = $('#visit-total');
+    const todayEl = $('#visit-today');
+    if (totalEl) totalEl.textContent = Number(stored.total || 0).toLocaleString('vi-VN');
+    if (todayEl) todayEl.textContent = Number(stored.days[todayKey] || 0).toLocaleString('vi-VN');
+  } catch (e) {}
+}
+initVisitCounter();
 
 /* ===== MÀN GIỚI THIỆU & KHỞI ĐỘNG ===== */
 $('#open').onclick = () => { $('#curtain').classList.add('open'); chime('flip'); };
