@@ -7,10 +7,13 @@
 - Tâm lý học phân tích của Carl Gustav Jung, biểu tượng Tarot, kỹ thuật Shadow Work, hơi thở cơ hoành và chăm sóc bản thân. Tác giả không giữ độc quyền các tri thức này.
 
 ## Quyền riêng tư
-- Nội dung bạn viết thuộc về bạn. Ứng dụng chạy hoàn toàn trên trình duyệt, không gửi dữ liệu lên máy chủ; kho chỉ lưu tạm trong phiên.
+- Nội dung bạn viết thuộc về bạn.
+- Ứng dụng chạy hoàn toàn trên trình duyệt, không gửi dữ liệu lên máy chủ; kho chỉ lưu tạm trong phiên.
 
 ## Trích dẫn
-- Bạn được tự do học hỏi và chia sẻ. Khi sao chép đoạn dài, nguồn “Góc Soi Chiếu · CÁ HỀ DIEU AN” sẽ được tự động đính kèm. Nghiêm cấm sao chép nguyên bản thiết kế, mã nguồn để nhận là của mình hoặc xóa tên tác giả.
+- Bạn được tự do học hỏi và chia sẻ.
+- Khi sao chép đoạn dài, nguồn “Góc Soi Chiếu · CÁ HỀ DIEU AN” sẽ được tự động đính kèm.
+- Nghiêm cấm sao chép nguyên bản thiết kế, mã nguồn để nhận là của mình hoặc xóa tên tác giả.
 
 ## Lưu ý an toàn
 - Đây là công cụ tự thực hành, không thay thế trị liệu. Nếu thấy quá tải hoặc khó chịu kéo dài, hãy dừng lại và tìm hỗ trợ chuyên môn.
