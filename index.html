@@ -100,15 +100,15 @@ textarea:focus,input:focus,select:focus,#ed:focus{outline:2px solid var(--a1);ou
 #bw.on{display:flex}#bo{width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--p2),var(--a1));box-shadow:0 0 60px var(--a1);transform:scale(.8)}
 #bp{font:500 1.6rem var(--serif);margin-top:1.8rem}
 .ar{padding:.9rem 1rem;border-radius:16px;background:var(--card);border:1px solid var(--line);margin:.6rem 0}.ar .meta{font-size:.8rem;color:var(--mute)}.ar .tx{margin-top:.3rem;overflow-wrap:anywhere}
-#mp{visibility:hidden;position:fixed;left:0;right:0;bottom:0;z-index:50;transform:translateY(105%);transition:transform .4s,visibility 0s .4s;padding:1rem 1rem calc(1rem + env(safe-area-inset-bottom));background:var(--bg1);border-top:1px solid var(--line);border-radius:22px 22px 0 0;max-height:80vh;overflow:auto;box-shadow:0 -10px 40px -20px #0006}
-#mp.on{transform:none;visibility:visible;transition:transform .4s,visibility 0s}.trk{display:block;width:100%;text-align:left;padding:.55em .8em;margin:.25rem 0;border-radius:14px;border:1px solid var(--line);background:var(--card)}.trk.on{background:linear-gradient(120deg,var(--p1),var(--p2));color:var(--on)}.trk small{display:block;color:inherit;opacity:.75}
+#mp{visibility:hidden;position:fixed;top:calc(56px + env(safe-area-inset-top));right:0;bottom:calc(16px + env(safe-area-inset-bottom));left:auto;z-index:50;width:clamp(192px,22vw,248px);min-height:min(420px,calc(100vh - 88px));max-height:calc(100vh - 76px - env(safe-area-inset-top) - env(safe-area-inset-bottom));display:flex;flex-direction:column;transform:translateX(106%);transition:transform .4s cubic-bezier(.2,.7,.2,1),visibility 0s .4s;padding:.65rem .68rem;background:var(--bg1);border:1px solid var(--line);border-right:0;border-radius:20px 0 0 20px;overflow:hidden;box-shadow:-12px 10px 36px -16px #0008}#mp.on{transform:translateX(0);visibility:visible;transition:transform .4s cubic-bezier(.2,.7,.2,1),visibility 0s}#mp>.row:first-child{margin-top:0;flex-shrink:0;gap:.35rem}#mp>.row:first-child h3{font-size:.86rem;line-height:1.25}#mp>.row:first-child .btn.sm{padding:.28em .7em;font-size:.75rem}#trks{flex:1 1 auto;min-height:0;overflow-y:auto;padding-right:.12rem}.trk{display:block;width:100%;text-align:left;padding:.4rem .54rem;margin:.24rem 0;border-radius:11px;border:1px solid var(--line);background:var(--card);font-size:.78rem;line-height:1.32}.trk.on{background:linear-gradient(120deg,var(--p1),var(--p2));color:var(--on)}.trk small{display:block;color:inherit;opacity:.76;font-size:.66rem;line-height:1.28}
 .trk{transition:background .5s,box-shadow .25s,transform .25s}.trk.on{box-shadow:0 0 calc(var(--lv,0)*30px) var(--a1);transform:scale(1.01)}
 #mub{transition:transform .12s,background .5s}#mub.pl{background:linear-gradient(120deg,var(--p1),var(--p2));transform:scale(calc(1 + var(--lv,0)*.2))}
-#np{margin:.6rem 0}.npt{display:flex;align-items:center;gap:.8rem}#npb{display:inline-flex;align-items:flex-end;gap:3px;height:30px}
-#npb i{width:5px;height:30px;border-radius:3px;background:linear-gradient(var(--a2),var(--a1));transform-origin:bottom;transform:scaleY(.2);transition:transform .12s}
-.pb{height:4px;border-radius:2px;background:var(--line);margin-top:.7rem;overflow:hidden}.pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a1),var(--a2));transition:width .5s linear}
-.vol-bar{display:flex;align-items:center;gap:.55rem;margin:.55rem 0 .2rem;padding:.35rem .7rem;border-radius:999px;background:var(--card);border:1px solid var(--line)}
-.vol-bar label{font-size:.82rem;white-space:nowrap}
+#np{margin:.25rem 0;padding:.45rem .52rem;flex-shrink:0}.npt{display:flex;align-items:center;gap:.38rem}#npb{display:inline-flex;align-items:flex-end;gap:2px;height:16px}
+#npb i{width:3px;height:16px;border-radius:3px;background:linear-gradient(var(--a2),var(--a1));transform-origin:bottom;transform:scaleY(.2);transition:transform .12s}
+.pb{height:3px;border-radius:2px;background:var(--line);margin-top:.35rem;overflow:hidden}.pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a1),var(--a2));transition:width .5s linear}
+.vol-bar{display:flex;align-items:center;gap:.35rem;margin:.3rem 0 .08rem;padding:.2rem .48rem;border-radius:999px;background:var(--card);border:1px solid var(--line);flex-shrink:0}
+#mp>.row:last-child{flex-shrink:0;margin-bottom:0;margin-top:.22rem;font-size:.72rem}
+.vol-bar label{font-size:.7rem;white-space:nowrap}
 input[type=range]#vol{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:var(--line);outline:none;cursor:pointer;padding:0;border:0}
 input[type=range]#vol::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:linear-gradient(120deg,var(--a1),var(--a2));box-shadow:0 0 6px var(--a1);cursor:pointer}
 input[type=range]#vol::-moz-range-thumb{width:14px;height:14px;border-radius:50%;border:0;background:linear-gradient(120deg,var(--a1),var(--a2));box-shadow:0 0 6px var(--a1);cursor:pointer}
@@ -155,7 +155,7 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:1rem 1rem 2re
     <div class="card principle"><h3>Hiểu nguyên nhân ≠ biện minh</h3><p>Hiểu vì sao mình phản ứng như vậy để thay đổi, không để bào chữa.</p></div>
   </div>
   <div class="row" style="margin-top:1.2rem">
-    <button class="btn" data-pr="0">☀ Soi chiếu buổi sáng</button>
+    <button class="btn" data-pr="0">☀ Morning Pages</button>
     <button class="btn" data-pr="1">◐ Quy trình 7 bước</button>
     <button class="btn" data-pr="4">☾ Lắng lại trước khi ngủ</button>
   </div>
@@ -478,7 +478,7 @@ const RT = [
 /* ===== CẨM NANG THỰC HÀNH ===== */
 const PR = [
   {
-    n: 'Buổi sáng', ic: '☀', time: '5–10 phút',
+    n: 'Morning Pages', ic: '☀', time: '5–10 phút',
     goal: 'Nhận diện trạng thái tâm lý và những điều đang diễn ra bên trong trước khi bắt đầu ngày mới.',
     subs: [{
       n: '10 câu hỏi buổi sáng',
@@ -656,8 +656,8 @@ const GUIDE = [
   ['Shadow Work là gì?', '<p>Nhận diện và làm việc với những cảm xúc, nhu cầu hoặc phản ứng chưa được chú ý:</p>' + li(['Ghen tị, giận dữ, sợ hãi, cầu toàn.', 'Nhu cầu được lắng nghe, kết nối hoặc công nhận.', 'Phẩm chất bị kìm nén: tự tin, ranh giới, sáng tạo.'])],
   ['Mục tiêu thực hành', ol(['Nhận ra phản ứng bên trong.', 'Hiểu nhu cầu phía sau.', 'Phân biệt phần của mình và người khác.', 'Chuyển nhận thức thành hành động nhỏ.'])],
   ['Nguyên tắc quan trọng', li(['<b>Nhìn thấy</b> không là đồng ý.', '<b>Chấp nhận</b> không là cho phép.', '<b>Hiểu nguyên nhân</b> không là biện minh.'])],
-  ['Quy trình 7 bước', ol(['Dừng lại &amp; quan sát', 'Gọi tên bóng tối', 'Đối thoại nội tâm', 'Khám phá nguồn gốc', 'Phân biệt trách nhiệm', 'Tích hợp', 'Hành động cụ thể']) + '<div class="row"><button class="btn sm" data-pr="1">Mở trong Nhật ký</button></div>'],
-  ['Nhịp thực hành', li(['<b>Sáng</b> · đặt ý định (5–10 phút)', '<b>Trong ngày</b> · quan sát phản ứng', '<b>Khi căng thẳng</b> · 7 bước (5–15 phút)', '<b>Trước khi ngủ</b> · tổng kết ngày (10 phút)'])],
+  ['7 Bước soi chiếu', ol(['Dừng lại &amp; quan sát', 'Gọi tên bóng tối', 'Đối thoại nội tâm', 'Khám phá nguồn gốc', 'Phân biệt trách nhiệm', 'Tích hợp', 'Hành động cụ thể']) + '<div class="row"><button class="btn sm" data-pr="1">Mở trong Nhật ký</button></div>'],
+  ['Nhịp thực hành', li(['<b>Morning Pages</b> · đặt ý định (5–10 phút)', '<b>Trong ngày</b> · quan sát phản ứng', '<b>Khi căng thẳng</b> · 7 bước (5–15 phút)', '<b>Trước khi ngủ</b> · tổng kết ngày (10 phút)'])],
   ['Lưu ý hiệu quả', ol(['Thành thật nhưng không tự trách nặng nề.', 'Quan sát trước khi phán xét.', 'Chọn một hành động nhỏ, thực tế.', 'Theo dõi sự thay đổi qua từng tuần.'])],
   ['Cam kết thực hành', li(['Không chối bỏ cảm xúc thật.', 'Không đổ lỗi hay tự làm tổn thương.', 'Chọn cách ứng xử trưởng thành và có ranh giới.'])],
   ['Lưu ý an toàn', '<p>Công cụ tự thực hành, không thay thế trị liệu. Nếu thấy quá tải hoặc khó chịu kéo dài, hãy dừng lại và tìm hỗ trợ chuyên môn.</p>']
@@ -689,15 +689,22 @@ let toastT;function toast(m){const e=$('#toast');e.textContent=m;e.classList.add
 
 /* ---- Giao diện AM / PM / Dark ---- */
 let tmode=LS.g('gsc_theme')||'auto';
+function resolveAutoTheme(d=new Date()){
+  const mins=d.getHours()*60+d.getMinutes();
+  if(mins>=360&&mins<1020)return 'am';
+  if(mins>=1020)return 'pm';
+  if(mins<=350)return 'dark';
+  return 'am';
+}
 function applyTheme(){
-  const h=new Date().getHours(),t=tmode==='auto'?(h>=5&&h<18?'am':'pm'):tmode;
+  const t=tmode==='auto'?resolveAutoTheme():tmode;
   document.documentElement.dataset.theme=t;
   $('#tc').content={am:'#F0FAF6',pm:'#F7F0FE',dark:'#1A1426'}[t];
   $('#thb').textContent={auto:'◐',am:'☼',pm:'☾',dark:'●'}[tmode];
-  $('#thb').title='Giao diện: '+{auto:'tự động theo giờ',am:'Buổi sáng',pm:'Buổi tối',dark:'Đêm sâu'}[tmode];
+  $('#thb').title='Giao diện: '+{auto:'tự động theo giờ (6h–17h xanh sáng · 17h–0h tím tối · 0h–5h50 đêm sâu)',am:'Buổi sáng (Xanh sáng)',pm:'Buổi tối (Tím tối)',dark:'Đêm sâu'}[tmode];
 }
 $('#thb').onclick=()=>{const m=['auto','am','pm','dark'];tmode=m[(m.indexOf(tmode)+1)%4];LS.s('gsc_theme',tmode);applyTheme();toast($('#thb').title);chime(500)};
-applyTheme();setInterval(applyTheme,60000);
+applyTheme();setInterval(applyTheme,30000);
 
 /* ---- Điều hướng ---- */
 const TABS=[['home','Cẩm nang'],['cards','78 Thẻ'],['journal','Nhật ký'],['care','Self-Care'],['archive','Kho'],['copyright','Bản quyền']];
@@ -1089,19 +1096,45 @@ document.addEventListener('click',e=>{
 /* ---- PWA: manifest + icon PNG (chạy được trên GitHub Pages) ---- */
 (function(){
   try{
-    const href=document.querySelector('link[rel=icon]').href,img=new Image();
+    const iconLink=document.querySelector('link[rel=icon]');
+    if(!iconLink)return;
+    const href=iconLink.href,img=new Image();
     img.onload=()=>{
-      const c=document.createElement('canvas');c.width=c.height=512;c.getContext('2d').drawImage(img,0,0,512,512);
-      const png=c.toDataURL('image/png');$('#ati').href=png;
-      const man={name:'Góc Soi Chiếu · Shadow Work',short_name:'Góc Soi Chiếu',lang:'vi',start_url:location.href.split('#')[0],scope:location.href.split('#')[0].replace(/[^/]*$/,''),display:'standalone',background_color:'#F0FAF6',theme_color:'#6EC9A8',icons:[{src:png,sizes:'512x512',type:'image/png',purpose:'any'},{src:href,sizes:'any',type:'image/svg+xml'}]};
-      const l=document.createElement('link');l.rel='manifest';l.href=URL.createObjectURL(new Blob([JSON.stringify(man)],{type:'application/manifest+json'}));document.head.appendChild(l);
-    };img.src=href;
+      try{
+        const c=document.createElement('canvas');
+        c.width=512;c.height=512;
+        const g=c.getContext('2d');
+        g.drawImage(img,0,0,512,512);
+        const png=c.toDataURL('image/png');
+        if($('#ati'))$('#ati').href=png;
+        const baseUrl=location.href.split('#')[0];
+        const scopeUrl=baseUrl.replace(/[^/]*$/,'');
+        const man={
+          name:'Góc Soi Chiếu · Shadow Work',
+          short_name:'Góc Soi Chiếu',
+          lang:'vi',
+          start_url:baseUrl,
+          scope:scopeUrl,
+          display:'standalone',
+          background_color:'#F0FAF6',
+          theme_color:'#6EC9A8',
+          icons:[
+            {src:png,sizes:'512x512',type:'image/png',purpose:'any'},
+            {src:href,sizes:'any',type:'image/svg+xml'}
+          ]
+        };
+        const l=document.createElement('link');
+        l.rel='manifest';
+        l.href=URL.createObjectURL(new Blob([JSON.stringify(man)],{type:'application/manifest+json'}));
+        document.head.appendChild(l);
+      }catch(err){}
+    };
+    img.src=href;
   }catch(e){}
 })();
 
 paintDeck();paintCare();saveMem();doMirror();
 if(location.hash.slice(1)&&TABS.some(t=>t[0]===location.hash.slice(1)))go(location.hash.slice(1),true);else go('home',true);
-
 </script>
 </body>
 </html>
