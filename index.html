@@ -90,6 +90,11 @@ textarea:focus,input:focus,select:focus,#ed:focus{outline:2px solid var(--a1);ou
 #ed:empty::before{content:attr(data-ph);color:var(--mute)}#ed.fade{opacity:0;filter:blur(8px)}
 .qb{display:block;width:100%;text-align:left;border:0;background:none;padding:.35em .5em;border-radius:10px;color:var(--ink)}.qb:hover{background:var(--card)}.qb::before{content:"↳ ";color:var(--a1)}
 .say,.note{font-size:.88rem;color:var(--mute);white-space:pre-line}.note{font-style:italic}
+#pr{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.45rem;margin:.6rem 0}
+#pr .chip{width:100%;text-align:left;padding:.45em .85em;border-radius:12px;display:flex;align-items:center;gap:.45rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.date-wrap{position:relative;display:flex;align-items:center}
+.date-wrap span{position:absolute;left:.9em;color:var(--mute);pointer-events:none;font-size:.95rem}
+.date-wrap input[type=date]{padding-left:6.2em;min-height:42px}
 #mir .mi{margin:.35rem 0}#mir b{color:var(--deep)}.tag{display:inline-block;font-size:.75rem;padding:.05em .6em;border-radius:999px;background:var(--p1);color:var(--on);margin-right:.25rem}
 #bw{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;flex-direction:column;background:color-mix(in srgb,var(--bg1) 92%,transparent);backdrop-filter:blur(14px);text-align:center}
 #bw.on{display:flex}#bo{width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--p2),var(--a1));box-shadow:0 0 60px var(--a1);transform:scale(.8)}
@@ -97,6 +102,16 @@ textarea:focus,input:focus,select:focus,#ed:focus{outline:2px solid var(--a1);ou
 .ar{padding:.9rem 1rem;border-radius:16px;background:var(--card);border:1px solid var(--line);margin:.6rem 0}.ar .meta{font-size:.8rem;color:var(--mute)}.ar .tx{margin-top:.3rem;overflow-wrap:anywhere}
 #mp{visibility:hidden;position:fixed;left:0;right:0;bottom:0;z-index:50;transform:translateY(105%);transition:transform .4s,visibility 0s .4s;padding:1rem 1rem calc(1rem + env(safe-area-inset-bottom));background:var(--bg1);border-top:1px solid var(--line);border-radius:22px 22px 0 0;max-height:80vh;overflow:auto;box-shadow:0 -10px 40px -20px #0006}
 #mp.on{transform:none;visibility:visible;transition:transform .4s,visibility 0s}.trk{display:block;width:100%;text-align:left;padding:.55em .8em;margin:.25rem 0;border-radius:14px;border:1px solid var(--line);background:var(--card)}.trk.on{background:linear-gradient(120deg,var(--p1),var(--p2));color:var(--on)}.trk small{display:block;color:inherit;opacity:.75}
+.trk{transition:background .5s,box-shadow .25s,transform .25s}.trk.on{box-shadow:0 0 calc(var(--lv,0)*30px) var(--a1);transform:scale(1.01)}
+#mub{transition:transform .12s,background .5s}#mub.pl{background:linear-gradient(120deg,var(--p1),var(--p2));transform:scale(calc(1 + var(--lv,0)*.2))}
+#np{margin:.6rem 0}.npt{display:flex;align-items:center;gap:.8rem}#npb{display:inline-flex;align-items:flex-end;gap:3px;height:30px}
+#npb i{width:5px;height:30px;border-radius:3px;background:linear-gradient(var(--a2),var(--a1));transform-origin:bottom;transform:scaleY(.2);transition:transform .12s}
+.pb{height:4px;border-radius:2px;background:var(--line);margin-top:.7rem;overflow:hidden}.pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a1),var(--a2));transition:width .5s linear}
+.vol-bar{display:flex;align-items:center;gap:.55rem;margin:.55rem 0 .2rem;padding:.35rem .7rem;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.vol-bar label{font-size:.82rem;white-space:nowrap}
+input[type=range]#vol{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:var(--line);outline:none;cursor:pointer;padding:0;border:0}
+input[type=range]#vol::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:linear-gradient(120deg,var(--a1),var(--a2));box-shadow:0 0 6px var(--a1);cursor:pointer}
+input[type=range]#vol::-moz-range-thumb{width:14px;height:14px;border-radius:50%;border:0;background:linear-gradient(120deg,var(--a1),var(--a2));box-shadow:0 0 6px var(--a1);cursor:pointer}
 #toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:200;padding:.6em 1.2em;border-radius:999px;background:var(--ink);color:var(--bg1);font-size:.9rem;transition:all .4s;max-width:90vw;text-align:center}#toast.show{opacity:1;transform:translate(-50%,0)}
 footer{text-align:center;color:var(--mute);font-size:.8rem;padding:1rem 1rem 2rem}
 .ip{display:none}.ip.on{display:block}
@@ -114,14 +129,8 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:1rem 1rem 2re
       <button data-mood="think">Đang suy nghĩ quá nhiều</button>
       <button data-mood="view">Cần một góc nhìn mới</button>
       <button data-mood="calm">Muốn lắng lại</button>
-      <button data-mood="direct">Vào thẳng Góc Soi Chiếu</button>
+      <button data-mood="direct">Mời vào Góc Soi Chiếu</button>
     </div>
-    <button class="tg" id="qt" aria-pressed="false">○ Khoảng lặng 5 giây trước khi vào</button>
-  </div>
-  <div class="ct-in" id="ct1" hidden>
-    <div id="cdn">5</div>
-    <p class="ask">Hít vào… thở ra… chỉ cần ở đây.</p>
-    <button class="btn ghost sm" id="skip">Bỏ qua</button>
   </div>
 </div>
 
@@ -156,29 +165,24 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:1rem 1rem 2re
 <!-- TAB 2 · 78 THẺ -->
 <section class="sec" id="cards">
   <h2>78 Thẻ Thấu Suốt</h2>
-  <div class="row" id="cfilter"></div>
-  <p class="mute" id="cfnote"></p>
-  <div class="row"><button class="btn" id="draw">Rút 1 lá</button><button class="btn ghost" id="draw3">Trải 3 lá · Mặt nạ · Bóng · Vàng</button></div>
+  <div class="row"><button class="btn" id="draw">Rút 1 thẻ</button><button class="btn ghost" id="draw3">Trải 3 Thẻ</button></div>
   <div id="single">
     <div class="flip" id="c3d" role="button" tabindex="0" aria-label="Lật thẻ"><div class="fi"></div></div>
     <details class="dp card deep" id="cdetail" hidden><summary>Chiều sâu</summary><div id="cdeepc"></div></details>
   </div>
   <div id="spread" class="grid" hidden></div>
-  <details class="dp"><summary>Xem tất cả thẻ</summary><div class="row" id="deck"></div></details>
+  <details class="dp"><summary>Xem tất cả thẻ</summary>
+    <div class="row" id="cfilter"></div>
+    <p class="mute" id="cfnote"></p>
+    <div class="row" id="deck"></div>
+  </details>
 </section>
 
 <!-- TAB 3 · NHẬT KÝ -->
 <section class="sec" id="journal">
   <h2>Nhật ký &amp; Gương soi</h2>
-  <div class="card">
-    <h3>Lật góc nhìn nhanh</h3>
-    <textarea id="fv" rows="3" maxlength="200" placeholder="Một băn khoăn đang quấn lấy bạn…"></textarea>
-    <div class="row"><button class="btn" id="fvb">Đảo góc nhìn</button><small id="fvc">0/200</small></div>
-    <div id="fvo"></div>
-  </div>
-
-  <h3 style="margin-top:1.4rem">Không gian tự vấn</h3>
-  <div class="row" id="pr"></div>
+  <h3>Không gian tự vấn</h3>
+  <div id="pr"></div>
   <div id="prp"></div>
 
   <p class="mute" style="margin-bottom:.2rem">Bạn đang cảm thấy…</p>
@@ -197,7 +201,7 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:1rem 1rem 2re
   <div class="card" style="margin-top:.4rem">
     <h3>Khép lại</h3>
     <p class="mute">Giữ lại những gì còn cần, hoặc để phần còn lại tan đi.</p>
-    <div class="row"><button class="btn" id="save">Lưu lại vào Kho</button><button class="btn ghost" id="clr">Buông bỏ hoàn toàn</button></div>
+    <div class="row"><button class="btn" id="save">Lưu lại vào Kho</button><button class="btn ghost" id="clr">Chuyển hoá hoàn toàn</button></div>
   </div>
 </section>
 
@@ -217,12 +221,12 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:1rem 1rem 2re
 <!-- TAB 5 · KHO -->
 <section class="sec" id="archive">
   <h2>Kho lưu trữ phiên</h2>
-  <p class="mute">Chỉ lưu tạm trong phiên trình duyệt này, không gửi đi đâu cả.</p>
+  <p class="mute">Kho lưu trữ cảm xúc để bạn soi chiếu lại, chỉ lưu tạm trong phiên này và không gửi đi đâu.</p>
   <div class="grid">
     <input type="search" id="q" placeholder="Tìm từ khóa…" aria-label="Tìm trong kho">
     <select id="fe" aria-label="Lọc theo cảm xúc"></select>
     <select id="fs" aria-label="Lọc theo nguồn"></select>
-    <input type="date" id="fd" aria-label="Lọc theo ngày">
+    <div class="date-wrap"><span aria-hidden="true">Thời gian:</span><input type="date" id="fd" aria-label="Thời gian"></div>
   </div>
   <div class="row"><button class="btn sm ghost" id="exp">Xuất sao lưu .txt</button><small id="cnt"></small></div>
   <div id="list"></div>
@@ -267,8 +271,14 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:1rem 1rem 2re
 
 <aside id="mp" aria-label="Nhạc nền">
   <div class="row"><h3 style="margin:0;flex:1">Nhạc nền Góc Soi Chiếu</h3><button class="btn sm ghost" id="mpx">Đóng</button></div>
+  <div id="np" class="card" hidden>
+    <div class="npt"><span id="npb" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><div><b id="npn"></b><small id="nps" style="display:block"></small></div></div>
+    <div class="pb"><i id="pbi"></i></div>
+    <div class="row" style="justify-content:center;margin:.5rem 0 0"><button class="ib" id="npp" aria-label="Bài trước">⏮</button><button class="ib" id="npx" aria-label="Dừng nhạc">⏹</button><button class="ib" id="npn2" aria-label="Bài kế">⏭</button></div>
+    <div class="row" style="justify-content:center;margin:.2rem 0 0"><button class="tg" id="auto" aria-pressed="true" style="margin:0">● Tự chuyển bài mượt mà</button></div>
+  </div>
   <div id="trks"></div>
-  <div class="row"><label for="vol" class="mute">Âm lượng</label><input type="range" id="vol" min="0" max="1" step="0.01" style="flex:1"><button class="btn sm" id="mst">Dừng nhạc</button></div>
+  <div class="vol-bar"><label for="vol" class="mute">Âm Lượng</label><input type="range" id="vol" min="0" max="1" step="0.01"></div>
   <div class="row"><button class="tg" id="sfx" aria-pressed="true" style="margin:0">● Âm thanh tương tác</button></div>
 </aside>
 <div id="toast" role="status" aria-live="polite"></div>
@@ -487,7 +497,7 @@ const PR = [
     }]
   },
   {
-    n: 'Quy trình 7 bước', ic: '◐', time: '5–15 phút khi cảm xúc mạnh',
+    n: '7 Bước soi chiếu', ic: '◐', time: '5–15 phút khi cảm xúc mạnh',
     goal: 'Dùng mỗi khi có một cảm xúc mạnh, một tình huống khó chịu hoặc một phản ứng khiến bạn không hiểu chính mình.',
     subs: [
       {
@@ -573,7 +583,7 @@ const PR = [
     ]
   },
   {
-    n: 'Các mối quan hệ', ic: '🤝', time: '3–10 phút',
+    n: 'Mối quan hệ', ic: '🤝', time: '3–10 phút',
     goal: 'Dùng khi gặp một người khiến bạn phản ứng mạnh, dù là khó chịu, ngưỡng mộ hay bị đối xử không lành mạnh.',
     subs: [
       {
@@ -608,7 +618,7 @@ const PR = [
     ]
   },
   {
-    n: 'Đối thoại với bản thân', ic: '💬', time: '5–10 phút',
+    n: 'Nói với Bản thân', ic: '💬', time: '5–10 phút',
     goal: 'Dùng cấu trúc này khi cảm xúc mạnh xuất hiện: chèn khung hội thoại và điền vào chỗ trống.',
     subs: [{
       n: 'Mẫu hội thoại',
@@ -626,7 +636,7 @@ const PR = [
     }]
   },
   {
-    n: '30 câu hỏi', ic: '❓', time: 'chọn 3–5 câu mỗi ngày',
+    n: '30 câu', ic: '❓', time: 'chọn 3–5 câu mỗi ngày',
     goal: 'Mỗi ngày chọn 3–5 câu, không cần trả lời hết.',
     subs: [
       { n: 'A · Nhận diện', qs: ['Tôi đang cảm thấy gì nhưng chưa dám thừa nhận?', 'Tôi đang cố chứng minh điều gì?', 'Tôi đang sợ người khác phát hiện điều gì?', 'Tôi đang duy trì hình ảnh nào?', 'Tôi đang né tránh sự thật nào?'] },
@@ -707,7 +717,7 @@ $('#guide').innerHTML=GUIDE.map((g,i)=>`<details class="sub"${i===0?' open':''}>
 
 /* ---- 78 Thẻ ---- */
 let cf=-1,lastCard=-1,cardT;
-$('#c3d .fi').innerHTML='<div class="ff"><div class="gl">✦</div><div class="lb">Rút một lá</div><small>Bấm “Rút 1 lá” để bắt đầu</small></div>';
+$('#c3d .fi').innerHTML='<div class="ff"><div class="gl">✦</div><div class="lb">Rút một thẻ</div><small>Bấm “Rút 1 thẻ” để bắt đầu</small></div>';
 $('#cfilter').innerHTML=['Tất cả',...GROUPS.map(g=>g.g+' '+g.n)].map((n,i)=>`<button class="chip${i===0?' on':''}" data-f="${i-1}">${n}</button>`).join('');
 const pool=()=>CARDS.map((c,i)=>i).filter(i=>cf<0||CARDS[i].grp===cf);
 function paintDeck(){
@@ -739,7 +749,7 @@ $('#c3d').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#
 
 /* ---- Tự vấn: thực hành, cảm xúc, soạn thảo ---- */
 const ed=$('#ed');let S={emo:-1,src:'',pr:-1,q:null};
-$('#pr').innerHTML=PR.map((p,i)=>`<button class="chip" data-pr="${i}">${p.ic} ${esc(p.n)}</button>`).join('');
+$('#pr').innerHTML=PR.map((p,i)=>`<button class="chip" data-pr="${i}">${esc(p.n)}</button>`).join('');
 $('#emo').innerHTML=TH.map((t,i)=>`<button class="chip" data-emo="${i}">${esc(t[0])}</button>`).join('');
 function openPR(i){
   S.pr=i;S.src=PR[i].n;const p=PR[i];
@@ -784,19 +794,6 @@ function doMirror(){
 }
 ed.addEventListener('input',()=>{if(!ed.innerText.trim())ed.innerHTML='';mirror()});
 
-/* ---- Lật góc nhìn ---- */
-$('#fv').addEventListener('input',e=>$('#fvc').textContent=e.target.value.length+'/200');
-$('#fvb').onclick=()=>{
-  const t=$('#fv').value.trim();if(!t){toast('Hãy viết một băn khoăn ngắn trước nhé.');return}
-  const m=detect(t,null),d=m&&m.db;
-  const need=d?d.need.replace(/\.$/,'').toLowerCase():'một điều bạn chưa gọi tên';
-  $('#fvo').innerHTML=
-   `<div class="lens"><b>1 · Người quan sát khách quan</b><p>Đứng xa nhìn vào, người quan sát chỉ thấy: “${esc(t)}”. Điều gì trong đó là sự việc có thể quay phim lại, và điều gì là câu chuyện bạn đang thêm vào?</p></div>`+
-   `<div class="lens"><b>2 · Tấm gương phản chiếu (Shadow)</b><p>${d?`Điều này có thể đang chạm tới: ${esc(d.what)} Bên dưới là nhu cầu: ${esc(d.need)}`:'Điều khiến bạn bận tâm có thể đang chạm vào một nhu cầu chưa được gọi tên. Bạn cần được thấy, được nghe hay được tôn trọng điều gì, kể cả từ chính mình?'}</p></div>`+
-   `<div class="lens"><b>3 · Hành động nhỏ tiếp theo</b><p>Trong 5 phút: hít thở chậm ba nhịp, rồi viết một câu bắt đầu bằng “Điều mình có thể làm ngay là…”, để chăm sóc ${esc(need)}.</p><button class="btn sm ghost" id="fvgo">Viết tiếp trong nhật ký</button></div>`;
-  S.fv=t;chime(560);
-};
-
 /* ---- Thở cơ hoành 4-2-6 x3 ---- */
 let bk=0;
 function breathOpen(){$('#bw').classList.add('on');$('#bp').textContent='Sẵn sàng';$('#b-start').hidden=false;$('#bo').style.transition='none';$('#bo').style.transform='scale(.8)'}
@@ -815,34 +812,34 @@ function breathStart(){
 $('#btn-breath-trigger').onclick=()=>{ctx();breathOpen()};$('#b-start').onclick=breathStart;$('#b-stop').onclick=breathClose;
 
 /* ---- Khép lại / Kho ---- */
-let mem=[];try{mem=JSON.parse(SS.g('gsc_mem')||'[]')}catch(e){}
-const saveMem=()=>{SS.s('gsc_mem',JSON.stringify(mem));$('#nav [data-t=archive]').textContent='Kho'+(mem.length?' ('+mem.length+')':'')};
+let mem=[];
+const saveMem=()=>{$('#nav [data-t=archive]').textContent='Kho'+(mem.length?' ('+mem.length+')':'')};
 const OK=new Set(['b','i','u','strong','em','ul','ol','li','br','div','p']);
 const clean=h=>h.replace(/<script[\s\S]*?<\/script>/gi,'').replace(/<(\/?)([a-z0-9]+)[^>]*>/gi,(m,s,t)=>OK.has(t.toLowerCase())?`<${s}${t.toLowerCase()}>`:'');
-function letGo(after){ed.classList.add('fade');setTimeout(()=>{ed.innerHTML='';ed.classList.remove('fade');$('#fv').value='';$('#fvo').innerHTML='';$('#fvc').textContent='0/200';S.q=null;doMirror();if(after)after()},1400)}
+function letGo(after){ed.classList.add('fade');setTimeout(()=>{ed.innerHTML='';ed.classList.remove('fade');S.q=null;S.src='';S.emo=-1;S.pr=-1;$$('#emo .chip,#pr .chip').forEach(b=>b.classList.remove('on'));$('#prp').innerHTML='';doMirror();if(after)after()},1400)}
 $('#save').onclick=()=>{
   const text=ed.innerText.trim();if(!text){toast('Chưa có gì để lưu. Hãy viết vài dòng đã.');return}
   mem.unshift({id:Date.now(),ts:new Date().toISOString(),emo:S.emo>=0?TH[S.emo][0]:'',src:S.src||'Viết tự do',html:clean(ed.innerHTML),text});
   saveMem();chime(660);toast('Đã lưu vào Kho. Phiên này khép lại nhẹ nhàng.');letGo();
 };
 $('#clr').onclick=()=>{
-  if(!ed.innerText.trim()&&!$('#fv').value.trim()){toast('Không còn gì để buông, bạn đã nhẹ rồi.');return}
-  chime(396);toast('Đang buông… hít thở, để nó tan đi.');letGo(()=>toast('Đã buông bỏ. Nhẹ hơn một chút rồi.'));
+  if(!ed.innerText.trim()){toast('Không còn gì để chuyển hoá, bạn đã nhẹ rồi.');return}
+  chime(396);toast('Đang chuyển hoá… hít thở, để nó tan đi.');letGo(()=>toast('Đã chuyển hoá. Nhẹ hơn một chút rồi.'));
 };
 const fmtD=iso=>new Date(iso).toLocaleString('vi-VN',{dateStyle:'medium',timeStyle:'short'});
 function fillSel(){
-  const keep=[$('#fe').value,$('#fs').value];
-  const u=a=>[...new Set(a.filter(Boolean))];
-  $('#fe').innerHTML='<option value="">Mọi cảm xúc</option>'+u(mem.map(m=>m.emo)).map(x=>`<option>${esc(x)}</option>`).join('');
-  $('#fs').innerHTML='<option value="">Mọi nguồn</option>'+u(mem.map(m=>m.src)).map(x=>`<option>${esc(x)}</option>`).join('');
-  $('#fe').value=keep[0];$('#fs').value=keep[1];
+  if($('#fe').options.length)return;
+  const o=a=>a.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
+  $('#fe').innerHTML='<option value="">Mọi cảm xúc</option>'+o(TH.map(t=>t[0]));
+  $('#fs').innerHTML='<option value="">Mọi nguồn</option>'+o(['Viết tự do',...PR.map(p=>p.n),'Self-Care']);
 }
+const srcOf=m=>m.src.startsWith('Self-Care')?'Self-Care':m.src;
 function renderList(){
   fillSel();
   const q=nrm($('#q').value),fe=$('#fe').value,fs=$('#fs').value,fd=$('#fd').value;
-  const r=mem.filter(m=>(!q||nrm(m.text+' '+m.emo+' '+m.src).includes(q))&&(!fe||m.emo===fe)&&(!fs||m.src===fs)&&(!fd||m.ts.slice(0,10)===fd||new Date(m.ts).toLocaleDateString('en-CA')===fd));
+  const r=mem.filter(m=>(!q||nrm(m.text+' '+m.emo+' '+m.src).includes(q))&&(!fe||m.emo===fe)&&(!fs||srcOf(m)===fs)&&(!fd||m.ts.slice(0,10)===fd||new Date(m.ts).toLocaleDateString('en-CA')===fd));
   $('#cnt').textContent=r.length+'/'+mem.length+' bài viết';
-  $('#list').innerHTML=r.length?r.map(m=>`<div class="ar"><div class="meta">${fmtD(m.ts)} · ${esc(m.src)}${m.emo?' · '+esc(m.emo):''}</div><div class="tx">${m.html}</div><div class="row"><button class="btn sm ghost" data-reopen="${m.id}">Viết tiếp</button><button class="btn sm ghost" data-del="${m.id}">Xóa</button></div></div>`).join(''):'<p class="mute">Kho đang trống. Những gì bạn lưu trong phiên này sẽ xuất hiện ở đây.</p>';
+  $('#list').innerHTML=r.length?r.map(m=>`<div class="ar"><div class="meta">${fmtD(m.ts)} · ${esc(m.src)}${m.emo?' · '+esc(m.emo):''}</div><div class="tx">${m.html}</div><div class="row"><button class="btn sm ghost" data-reopen="${m.id}">Viết tiếp</button><button class="btn sm ghost" data-del="${m.id}">Xóa</button></div></div>`).join(''):'';
 }
 ['q','fe','fs','fd'].forEach(id=>$('#'+id).addEventListener('input',renderList));
 $('#exp').onclick=()=>{
@@ -866,120 +863,209 @@ document.addEventListener('copy',e=>{
 });
 
 /* ================= ÂM THANH (Web Audio thuần) ================= */
-let ac=null,master,nbuf,out=null,tick=null,cur=-1,beat=0,nextT=0,beds=[],sfxOn=true,vol=parseFloat(LS.g('gsc_vol'));if(!(vol>=0&&vol<=1))vol=.5;
+let ac=null,an=null,master,nbuf,out=null,tick=null,cur=-1,beat=0,nextT=0,beds=[],sfxOn=true,vol=parseFloat(LS.g('gsc_vol'));if(!(vol>=0&&vol<=1))vol=.7;
+const vg=v=>v*v*2.2;
+function unlockAudio(){
+  if(!ac)return;
+  if(ac.state==='suspended')ac.resume().catch(()=>{});
+  try{const b=ac.createBuffer(1,1,22050),s=ac.createBufferSource();s.buffer=b;s.connect(ac.destination);s.start(0)}catch(e){}
+}
 function ctx(){
-  if(ac){if(ac.state==='suspended')ac.resume();return ac}
+  if(ac){unlockAudio();return ac}
   const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;
   try{ac=new C({latencyHint:'playback'})}catch(e){ac=new C()}
-  master=ac.createGain();master.gain.value=vol*.7;
-  const warm=ac.createBiquadFilter();warm.type='lowshelf';warm.frequency.value=220;warm.gain.value=4;
+  master=ac.createGain();master.gain.value=vg(vol);
+  const warm=ac.createBiquadFilter();warm.type='lowshelf';warm.frequency.value=220;warm.gain.value=3;
   const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=3400;lp.Q.value=.5;
-  const comp=ac.createDynamicsCompressor();
+  const mix=ac.createGain(),comp=ac.createDynamicsCompressor(),fin=ac.createGain();
+  comp.threshold.value=-22;comp.knee.value=20;comp.ratio.value=3.5;comp.attack.value=.02;comp.release.value=.3;fin.gain.value=.9;
   const len=Math.floor(ac.sampleRate*(LITE?1.5:3.2)),ir=ac.createBuffer(2,len,ac.sampleRate);
   for(let c=0;c<2;c++){const d=ir.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6)}
-  const rv=ac.createConvolver();rv.buffer=ir;const wet=ac.createGain();wet.gain.value=LITE?.25:.38;
-  master.connect(warm);warm.connect(lp);lp.connect(comp);comp.connect(ac.destination);comp.connect(rv);rv.connect(wet);wet.connect(ac.destination);
+  const rv=ac.createConvolver();rv.buffer=ir;const rl=ac.createBiquadFilter();rl.type='lowpass';rl.frequency.value=2600;const wet=ac.createGain();wet.gain.value=LITE?.22:.34;
+  master.connect(warm);warm.connect(lp);lp.connect(mix);lp.connect(rv);rv.connect(rl);rl.connect(wet);wet.connect(mix);mix.connect(comp);comp.connect(fin);const lim=ac.createDynamicsCompressor();lim.threshold.value=-4;lim.knee.value=0;lim.ratio.value=20;lim.attack.value=.003;lim.release.value=.12;fin.connect(lim);lim.connect(ac.destination);
+  an=ac.createAnalyser();an.fftSize=64;an.smoothingTimeConstant=.75;lim.connect(an);
   const nl=ac.sampleRate*(LITE?1:2);nbuf=ac.createBuffer(1,nl,ac.sampleRate);const nd=nbuf.getChannelData(0);for(let i=0;i<nl;i++)nd[i]=Math.random()*2-1;
+  unlockAudio();
   return ac;
 }
+['pointerdown','touchstart','keydown'].forEach(ev=>document.addEventListener(ev,()=>{if(ac&&ac.state==='suspended')unlockAudio()},{passive:true}));
+const NN={C:0,'C#':1,D:2,'D#':3,E:4,F:5,'F#':6,G:7,'G#':8,A:9,'A#':10,B:11};
+const N=s=>{const m=/^([A-G]#?)(\d)$/.exec(s);return 440*Math.pow(2,(NN[m[1]]+12*(+m[2]+1)-69)/12)};
+const NS=s=>s.split(' ').map(N);
+let walkIdx=-1,curCh=[];
 function osc(type,f,t,dur,peak,att,dest,det){
   const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;if(det)o.detune.value=det;
   g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(peak,t+att);g.gain.exponentialRampToValueAtTime(.0001,t+Math.max(dur,att+.05));
-  o.connect(g);g.connect(dest||out||master);o.start(t);o.stop(t+dur+.1);return g;
+  o.connect(g);g.connect(dest||out||master);o.start(t);o.stop(t+dur+.1);g.o=o;return g;
 }
-function puff(t,f,dur,peak){const s=ac.createBufferSource();s.buffer=nbuf;const b=ac.createBiquadFilter();b.type='bandpass';b.frequency.value=f;b.Q.value=4;const g=ac.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(peak,t+dur*.4);g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(b);b.connect(g);g.connect(out||master);s.start(t);s.stop(t+dur+.1)}
+const rp=()=>Math.random()*1.4-.7;
+function pan(p,dest){const tgt=dest||out||master;if(!ac.createStereoPanner)return tgt;const s=ac.createStereoPanner();s.pan.value=p;s.connect(tgt);return s}
+function lpf(fr,dest){const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=fr;f.connect(dest||out||master);return f}
+function vib(o,t,dur,rate,depth){const l=ac.createOscillator(),g=ac.createGain();l.frequency.value=rate;g.gain.value=depth;l.connect(g);g.connect(o.frequency);l.start(t);l.stop(t+dur+.1)}
+function puff(t,f,dur,peak,dest){const s=ac.createBufferSource();s.buffer=nbuf;const b=ac.createBiquadFilter();b.type='bandpass';b.frequency.value=f;b.Q.value=4;const g=ac.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(peak,t+dur*.4);g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(b);b.connect(g);g.connect(dest||out||master);s.start(t);s.stop(t+dur+.1)}
 const VOICES={
-  felt:(f,t)=>{const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1100;lp.connect(out);osc('sine',f,t,3.2,.17,.012,lp);osc('triangle',f*2,t,1.2,.04,.012,lp)},
-  harp:(f,t)=>{osc('triangle',f,t,2.6,.13,.004);osc('sine',f*2,t,1,.05,.004)},
-  bamboo:(f,t)=>{osc('sine',f,t,2.8,.11,.25);puff(t,f*2,1.2,.05)},
-  rhodes:(f,t)=>{osc('sine',f,t,3.2,.13,.01);osc('sine',f*2,t,.5,.06,.01);osc('sine',f*4,t,.15,.02,.01)},
-  cello:(f,t)=>{const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=520;lp.connect(out);osc('sawtooth',f/2,t,6,.06,1.4,lp)},
-  bowl:(f,t)=>{osc('sine',f,t,7,.1,.05);osc('sine',f*2.76,t,5,.04,.05);osc('sine',f*5.4,t,3,.02,.05)},
-  chime:(f,t)=>{osc('sine',f,t,4,.06,.003);osc('sine',f*2.4,t,2.6,.03,.003);osc('sine',f*3.9,t,1.6,.015,.003)}
+  felt:(f,t,dst)=>{const d=lpf(1300,pan(rp()*.5,dst));osc('sine',f,t,3.6,.16,.012,d);osc('triangle',f*2,t,1.4,.035,.012,d)},
+  harp:(f,t,dst)=>{const d=pan(rp(),dst);osc('triangle',f,t,2.8,.12,.003,d);osc('sine',f*2,t,1.1,.05,.003,d);osc('sine',f*3,t,.6,.02,.003,d)},
+  rhodes:(f,t,dst)=>{const d=lpf(2600,pan(rp()*.6,dst));osc('sine',f,t,3.4,.12,.008,d);osc('sine',f*2,t,.6,.05,.008,d);osc('sine',f*4,t,.12,.018,.008,d)},
+  flute:(f,t,dst)=>{const d=pan(rp()*.6,dst),g=osc('sine',f,t,3,.1,.35,d);vib(g.o,t,3,4.6,f*.006);puff(t,f*2,1,.035,d)},
+  cello:(f,t,dst)=>{const d=lpf(900,pan(rp()*.5,dst)),g=osc('sawtooth',f,t,7.5,.13,1.8,d);vib(g.o,t,7.5,5,f*.004);osc('sine',f*2,t,6,.05,1.8,d)},
+  bowl:(f,t,dst)=>{const d=pan(rp()*.5,dst);osc('sine',f,t,8,.09,.05,d);osc('sine',f+1.3,t,8,.06,.05,d);osc('sine',f*2.76,t,5,.035,.05,d);osc('sine',f*5.4,t,3,.015,.05,d)},
+  chime:(f,t,dst)=>{const d=pan(rp(),dst);osc('sine',f,t,4.5,.055,.003,d);osc('sine',f*2.4,t,2.8,.025,.003,d);osc('sine',f*3.9,t,1.6,.012,.003,d)},
+  bell:(f,t,dst)=>{const d=pan(rp(),dst);osc('sine',f,t,3.4,.05,.004,d);osc('sine',f*2,t,1.6,.02,.004,d)}
 };
-function pad(fr,t,dur,type){
+function padChord(type,fr,t,dur,dst){
+  const base=dst||out||master,att=Math.min(2.6,dur*.35);let tgt=base;
+  if(type==='choir'){const l=lpf(2200,base),inp=ac.createGain();(LITE?[800]:[650,1080]).forEach(q=>{const b=ac.createBiquadFilter();b.type='bandpass';b.frequency.value=q;b.Q.value=2.5;inp.connect(b);b.connect(l)});tgt=inp}
+  else if(type==='saw')tgt=lpf(380,base);
   fr.forEach(f=>{
-    if(type==='saw'){const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=380;lp.connect(out);osc('sawtooth',f,t,dur,.035,dur*.3,lp)}
-    else if(type==='drone'){osc('sine',f,t,dur,.05,dur*.35,out,-4);osc('sine',f,t,dur,.05,dur*.35,out,4)}
-    else osc(type==='tri'?'triangle':'sine',f,t,dur,.05,Math.min(1.6,dur*.3))
+    if(type==='saw'||type==='choir')osc('sawtooth',f,t,dur,type==='choir'?.5:.03,att,tgt);
+    else if(type==='drone'){osc('sine',f,t,dur,.08,att,base,-4);osc('sine',f,t,dur,.08,att,base,4)}
+    else{osc(type==='tri'?'triangle':'sine',f,t,dur,.045,att,base);if(!LITE)osc('sine',f,t,dur,.025,att,base,6)}
+    if(f<170)osc('sine',f*2,t,dur,type==='choir'?.05:.035,att,base);
   });
 }
+function drip(t,dst){const f=1300+Math.random()*1300,o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(f*.55,t+.14);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.04,t+.005);g.gain.exponentialRampToValueAtTime(.0001,t+.28);o.connect(g);g.connect(pan(rp(),dst));o.start(t);o.stop(t+.35)}
+function bird(t,dst){const n=2+Math.floor(Math.random()*3),b=2300+Math.random()*900;for(let i=0;i<n;i++){const s=t+i*.13,o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.setValueAtTime(b,s);o.frequency.exponentialRampToValueAtTime(b*1.35,s+.08);g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(.022,s+.01);g.gain.exponentialRampToValueAtTime(.0001,s+.1);o.connect(g);g.connect(pan(rp()*.5,dst));o.start(s);o.stop(s+.14)}}
+function thump(t,dst){const o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.setValueAtTime(70,t);o.frequency.exponentialRampToValueAtTime(42,t+.28);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.16,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+.5);o.connect(g);g.connect(dst||out||master);o.start(t);o.stop(t+.6)}
 const TRACKS=[
- {n:'Ngọn Đèn Hiên Nhà',s:'Felt Piano',e:'🕯️',bpm:66,g:1,pad:'sine',bar:4,ch:[[110,130.8,164.8],[87.3,110,130.8],[130.8,164.8,196],[98,123.5,146.8]],v:'felt',p:.55,sc:[220,261.6,329.6,392,440,523.3,659.3]},
- {n:'Mặt Hồ Phản Chiếu',s:'Harp & Water',e:'🪞',bpm:72,g:1,pad:'tri',bar:4,ch:[[73.4,110,146.8],[65.4,98,130.8],[73.4,110,164.8],[55,82.4,110]],v:'harp',p:.7,sc:[293.7,329.6,370,440,493.9,587.3,659.3],bed:'water'},
- {n:'Hơi Thở Rừng Sâu',s:'Bamboo & Earth',e:'🌿',bpm:62,g:1,pad:'sine',bar:8,ch:[[73.4,110],[65.4,98]],v:'bamboo',p:.3,sc:[293.7,349.2,392,440,523.3],bed:'wind'},
- {n:'Khoảng Sáng Sau Mưa',s:'Warm Rhodes',e:'☀️',bpm:74,g:1,pad:'sine',bar:4,ch:[[130.8,164.8,196,246.9],[110,130.8,164.8,196],[87.3,130.8,164.8,220],[98,146.8,196,246.9]],v:'rhodes',p:.45,sc:[392,440,523.3,587.3,659.3,784]},
- {n:'Trăng Non Tĩnh Lặng',s:'Deep Cello Pad',e:'🌑',bpm:52,g:2,pad:'saw',bar:8,ch:[[65.4,98],[58.3,87.3],[55,82.4],[49,73.4]],v:'cello',p:.22,sc:[261.6,293.7,329.6,392,440]},
- {n:'Đền Thờ Nội Tâm',s:'Singing Bowl 528Hz',e:'🔮',bpm:48,g:2,pad:'sine',bar:8,ch:[[132,264]],v:'bowl',p:.3,sc:[264,396,528,792],root:528},
- {n:'Cõi Vô Thức',s:'Etheric Drone',e:'🌌',bpm:42,g:2,pad:'drone',bar:8,ch:[[55,82.4,110],[55,82.5,123.5]],bed:'wind'},
- {n:'Buông Bỏ Nhẹ Nhàng',s:'Wind Chimes',e:'🕊️',bpm:58,g:2,pad:'sine',bar:8,ch:[[130.8,196]],v:'chime',p:.5,sc:[784,880,988,1175,1319,1568],bed:'rain'}
+ {n:'Ngọn Đèn Hiên Nhà',lv:0.5,s:'Felt Piano',d:'piano phủ nỉ, hợp âm ấm dần về phía sáng',e:'🕯️',bpm:66,g:1,bar:4,bass:1,
+  pads:[{t:'sine',ch:[NS('A2 E3 G3 B3'),NS('F2 C3 E3 A3'),NS('C3 G3 D4 E4'),NS('G2 D3 B3 E4')]}],
+  arp:{v:'felt',e:1,p:.8,pat:[0,2,3,2,1,3,2,1]},mel:{v:'felt',p:.16,sc:NS('C5 D5 E5 G5 A5 C6')}},
+ {n:'Mặt Hồ Phản Chiếu',lv:0.78,s:'Harp & Water',d:'hạc rải trong trẻo trên mặt nước gợn',e:'🪞',bpm:72,g:1,bar:4,
+  pads:[{t:'tri',ch:[NS('D3 A3 E4 F#4'),NS('B2 F#3 A3 D4'),NS('G2 D3 F#3 B3'),NS('A2 E3 B3 E4')]}],
+  arp:{v:'harp',e:1,p:.85,pat:[0,1,2,3,2,1,3,2],up:2},mel:{v:'harp',p:.2,sc:NS('D5 E5 F#5 A5 B5 D6')},bed:'water',fx:{drip:.25,shim:{p:.1,sc:NS('D5 A5 E6')}}},
+ {n:'Hơi Thở Rừng Sâu',lv:0.67,s:'Bamboo & Earth',d:'sáo trúc, nhịp đất và gió qua tán lá',e:'🌿',bpm:62,g:1,bar:8,bass:1,
+  pads:[{t:'sine',ch:[NS('D2 A2 E3 A3'),NS('G2 D3 A3 D4'),NS('D2 A2 F#3 A3'),NS('A2 E3 B3 E4')]}],
+  mel:{v:'flute',p:.3,sc:NS('D4 E4 F#4 A4 B4 D5 E5')},bed:'wind',fx:{thump:4,bird:.04}},
+ {n:'Khoảng Sáng Sau Mưa',lv:0.54,s:'Warm Rhodes',d:'rhodes ấm, giọt mưa còn đọng, tiếng chim đầu ngày',e:'☀️',bpm:74,g:1,bar:4,bass:1,
+  pads:[{t:'sine',ch:[NS('C3 G3 B3 D4'),NS('F2 A3 C4 E4'),NS('A2 E3 G3 B3'),NS('G2 B3 E4 A4')]}],
+  arp:{v:'rhodes',e:2,p:.85,pat:[0,1,2,3,1,2,3,2]},mel:{v:'rhodes',p:.22,sc:NS('E5 G5 A5 C6 D6 E6')},bed:'rain',fx:{drip:.3,bird:.12}},
+ {n:'Trăng Non Tĩnh Lặng',lv:0.41,s:'Deep Cello & Choir',d:'cello trầm, hợp xướng mơ hồ, chuông sáng thưa thớt',e:'🌑',bpm:52,g:2,bar:8,bass:1,
+  pads:[{t:'choir',ch:[NS('A2 E3 C4 E4'),NS('F2 C3 A3 C4'),NS('G2 D3 B3 D4'),NS('E2 B2 G3 B3')]}],
+  mel:{v:'cello',p:.3,sc:NS('A2 C3 D3 E3 G3 A3')},fx:{bell:{p:.3,sc:NS('E5 G5 A5 C6 D6')}}},
+ {n:'Đền Thờ Nội Tâm',lv:0.43,s:'Singing Bowl 528Hz',d:'bát xoay ngân vang, tần số 528Hz, ánh sáng lấp lánh',e:'🔮',bpm:48,g:2,bar:8,
+  pads:[{t:'choir',ch:[NS('C3 G3 C4 E4'),NS('G2 D3 B3 D4'),NS('A2 E3 A3 C4'),NS('F2 C3 A3 C4')]}],
+  mel:{v:'bowl',p:.3,sc:[264,396,528,660,792]},fx:{bowl:528,shim:{p:.4,sc:[528,792,1056]},bell:{p:.22,sc:[792,1056,1320]}}},
+ {n:'Cõi Vô Thức',lv:0.31,s:'Etheric Drone',d:'dải drone vũ trụ, không nhịp phách, tâm trí tự do',e:'🌌',bpm:42,g:2,bar:8,
+  pads:[{t:'drone',ch:[NS('D2 A2 D3 A3'),NS('D2 A2 E3 B3')]},{t:'choir',ch:[NS('D4 A4 E5'),NS('D4 B4 E5')]}],mel:{v:'bowl',p:.08,sc:NS('D3 A3 D4')},bed:'wind',fx:{shim:{p:.5,sc:NS('D5 A5 E6 A6')}}},
+ {n:'Buông Bỏ Nhẹ Nhàng',lv:1.05,s:'Wind Chimes',d:'chuông gió thanh thoát trên nền mưa phùn',e:'🕊️',bpm:58,g:2,bar:8,
+  pads:[{t:'tri',ch:[NS('C3 G3 D4 A4'),NS('F2 A3 C4 E4'),NS('G2 D3 A3 D4'),NS('C3 E3 G3 B3')]}],
+  mel:{v:'chime',p:.5,sc:NS('C6 D6 E6 G6 A6')},bed:'rain',fx:{drip:.15}}
 ];
-function startBed(k){
-  const s=ac.createBufferSource();s.buffer=nbuf;s.loop=true;const f=ac.createBiquadFilter(),g=ac.createGain();let lfo=null;
+function startBed(k,dst){
+  const tgt=dst||out||master,s=ac.createBufferSource();s.buffer=nbuf;s.loop=true;const f=ac.createBiquadFilter(),g=ac.createGain();let lfo=null;
   if(k==='water'){f.type='bandpass';f.frequency.value=900;f.Q.value=.7;g.gain.value=.05;lfo=[ac.createOscillator(),ac.createGain()];lfo[0].frequency.value=.3;lfo[1].gain.value=.02;lfo[0].connect(lfo[1]);lfo[1].connect(g.gain)}
   else if(k==='wind'){f.type='bandpass';f.frequency.value=420;f.Q.value=1.2;g.gain.value=.06;lfo=[ac.createOscillator(),ac.createGain()];lfo[0].frequency.value=.08;lfo[1].gain.value=200;lfo[0].connect(lfo[1]);lfo[1].connect(f.frequency)}
   else{f.type='highpass';f.frequency.value=1600;g.gain.value=.03}
-  s.connect(f);f.connect(g);g.connect(out);s.start();if(lfo)lfo[0].start();beds.push(s);if(lfo)beds.push(lfo[0]);
+  s.connect(f);f.connect(g);g.connect(tgt);s.start();if(lfo)lfo[0].start();beds.push(s);if(lfo)beds.push(lfo[0]);
 }
-function sched(T,b,t,spb){
-  if(b%T.bar===0)pad(T.ch[(b/T.bar)%T.ch.length],t,T.bar*spb+2,T.pad);
-  if(T.root&&b%8===0)VOICES.bowl(T.root,t);
-  if(T.v&&Math.random()<T.p){const f=rnd(T.sc)*(Math.random()<.2?2:1);VOICES[T.v](f,t+Math.random()*spb*.5)}
+function sched(T,b,t,spb,dst){
+  const tgt=dst||out||master;
+  if(b%T.bar===0){
+    const ci=b/T.bar;T.pads.forEach((p,k)=>{const c=p.ch[ci%p.ch.length];if(k===0)curCh=c;padChord(p.t,c,t,T.bar*spb+3,tgt)});
+    if(T.bass&&curCh.length){osc('sine',curCh[0],t,T.bar*spb+2,.07,1.5,tgt);osc('sine',curCh[0]*2,t,T.bar*spb+2,.05,1.5,tgt)};
+  }
+  if(T.arp&&b%T.arp.e===0&&curCh.length&&Math.random()<T.arp.p){
+    const k=T.arp.pat[(b/T.arp.e)%T.arp.pat.length];
+    VOICES[T.arp.v](curCh[k%curCh.length]*(k>=curCh.length?2:1)*(T.arp.up||1),t+Math.random()*.03,tgt);
+  }
+  if(T.mel&&Math.random()<T.mel.p){
+    const sc=T.mel.sc;walkIdx=walkIdx<0?Math.floor(sc.length/2):Math.max(0,Math.min(sc.length-1,walkIdx+rnd([-2,-1,-1,0,1,1,2])));
+    VOICES[T.mel.v](sc[walkIdx],t+Math.random()*spb*.6,tgt);
+  }
+  const x=T.fx;if(!x)return;
+  if(x.drip&&Math.random()<x.drip)drip(t+Math.random()*spb,tgt);
+  if(x.bird&&Math.random()<x.bird)bird(t+Math.random()*spb,tgt);
+  if(x.thump&&b%x.thump===0)thump(t,tgt);
+  if(x.bowl&&b%8===0)VOICES.bowl(x.bowl,t,tgt);
+  if(x.shim&&!LITE&&Math.random()<x.shim.p)osc('sine',rnd(x.shim.sc),t,6,.014,2.4,pan(rp(),tgt));
+  if(x.bell&&Math.random()<x.bell.p)VOICES.bell(rnd(x.bell.sc),t+Math.random()*spb,tgt);
 }
-function stopMusic(fade){
-  clearInterval(tick);tick=null;const o=out,bs=beds;beds=[];
-  if(o&&ac){o.gain.cancelScheduledValues(ac.currentTime);o.gain.setTargetAtTime(0,ac.currentTime,fade?.3:.05);setTimeout(()=>{bs.forEach(n=>{try{n.stop()}catch(e){}});try{o.disconnect()}catch(e){}},fade?1800:300)}
-  cur=-1;paintTracks();$('#mub').style.background='';
+const XF=3,LEN=150;let startT=0,autoNext=true,raf=0,lvl=0;
+function stopMusic(fade,xf){
+  clearInterval(tick);tick=null;const o=out,bs=beds;beds=[];out=null;
+  if(o&&ac){o.gain.cancelScheduledValues(ac.currentTime);o.gain.setTargetAtTime(0,ac.currentTime,xf?.9:fade?.5:.05);
+    setTimeout(()=>{bs.forEach(n=>{try{n.stop()}catch(e){}});try{o.disconnect()}catch(e){}try{o.tf&&o.tf.disconnect()}catch(e){}},xf?7000:3500)}
+  cur=-1;markTracks();
 }
-function playTrack(i){
-  if(!ctx())return;if(cur===i){stopMusic(true);return}
-  if(cur>=0)stopMusic(true);
-  const T=TRACKS[i];out=ac.createGain();out.gain.value=0;out.gain.setTargetAtTime(1,ac.currentTime,1.2);out.connect(master);
-  if(T.bed)startBed(T.bed);
-  cur=i;beat=0;const spb=60/T.bpm;nextT=ac.currentTime+.15;
-  tick=setInterval(()=>{while(nextT<ac.currentTime+.7){sched(T,beat,nextT,spb);beat++;nextT+=spb}},120);
-  paintTracks();$('#mub').style.background='linear-gradient(120deg,var(--p1),var(--p2))';toast('♪ '+T.n+' · '+T.s);
+function playTrack(i,force){
+  if(!ctx())return;
+  if(ac.state==='suspended')ac.resume().catch(()=>{});
+  if(cur===i&&!force){stopMusic(true);return}
+  const xf=cur>=0;if(xf)stopMusic(true,true);
+  const T=TRACKS[i],now=ac.currentTime;
+  const trackOut=ac.createGain();trackOut.gain.setValueAtTime(0.001,now);
+  const br=ac.createGain(),tf=ac.createBiquadFilter();
+  br.gain.value=.92;tf.type='lowpass';tf.frequency.value=2800;tf.Q.value=.4;
+  trackOut.connect(br);br.connect(tf);tf.connect(master);trackOut.tf=tf;
+  trackOut.gain.setTargetAtTime(T.lv||1,now,xf?1:.8);
+  out=trackOut;
+  if(!LITE)[[.045,.08,br.gain],[.03,1000,tf.frequency]].forEach(p=>{const l=ac.createOscillator(),g=ac.createGain();l.frequency.value=p[0]*(.8+Math.random()*.4);g.gain.value=p[1];l.connect(g);g.connect(p[2]);l.start();beds.push(l)});
+  if(T.bed)startBed(T.bed,trackOut);
+  cur=i;beat=0;walkIdx=-1;curCh=[];const spb=60/T.bpm;nextT=now+.04;startT=now;
+  sched(T,beat,nextT,spb,trackOut);beat++;nextT+=spb;
+  tick=setInterval(()=>{
+    if(ac.state==='suspended')ac.resume().catch(()=>{});
+    while(nextT<ac.currentTime+.7){sched(T,beat,nextT,spb,trackOut);beat++;nextT+=spb}
+    if(autoNext&&ac.currentTime-startT>(T.len||LEN))playTrack((cur+1)%TRACKS.length,true);
+  },120);
+  markTracks();toast('♪ '+T.n+' · '+T.s);startViz();
 }
 function paintTracks(){
   const G=['','Vỗ Về &amp; Mở Lòng · khi mới bắt đầu viết, ôm ấp tổn thương','Chiều Sâu &amp; Tích Hợp Bóng Tối · khi đối thoại nội tâm, chiêm nghiệm thẻ'];
-  let h='',g=0;TRACKS.forEach((T,i)=>{if(T.g!==g){g=T.g;h+=`<p class="mute" style="margin:.8rem 0 .2rem;font-size:.85rem">${G[g]}</p>`}h+=`<button class="trk${cur===i?' on':''}" data-trk="${i}">${T.e} ${T.n}<small>${T.s} · ${T.bpm} BPM</small></button>`});
+  let h='',g=0;TRACKS.forEach((T,i)=>{if(T.g!==g){g=T.g;h+=`<p class="mute" style="margin:.8rem 0 .2rem;font-size:.85rem">${G[g]}</p>`}h+=`<button class="trk" data-trk="${i}">${T.e} ${T.n}<small>${T.s} · ${T.bpm} BPM — ${T.d}</small></button>`});
   $('#trks').innerHTML=h;
 }
-paintTracks();$('#vol').value=vol;
-$('#vol').oninput=e=>{vol=+e.target.value;LS.s('gsc_vol',vol);if(master)master.gain.setTargetAtTime(vol*.7,ac.currentTime,.05)};
-$('#mub').onclick=()=>{ctx();$('#mp').classList.toggle('on')};$('#mpx').onclick=()=>$('#mp').classList.remove('on');$('#mst').onclick=()=>{if(cur>=0)stopMusic(true);else toast('Chưa có nhạc đang phát.')};
+function markTracks(){
+  $$('#trks .trk').forEach(b=>b.classList.toggle('on',+b.dataset.trk===cur));
+  $('#np').hidden=cur<0;$('#mub').classList.toggle('pl',cur>=0);
+  if(cur>=0){const T=TRACKS[cur];$('#npn').textContent=T.e+' '+T.n;$('#nps').textContent=T.s+' · '+T.bpm+' BPM'}
+  else{$('#mub').style.removeProperty('--lv');$('#mp').style.removeProperty('--lv')}
+}
+function startViz(){
+  if(raf||!an)return;
+  const bars=$$('#npb i'),data=new Uint8Array(an.frequencyBinCount),rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;let fr=0;
+  const loop=()=>{
+    if(cur<0||!ac){raf=0;bars.forEach(b=>b.style.transform='');return}
+    raf=requestAnimationFrame(loop);
+    if(document.hidden||ac.state!=='running'||(fr++&1))return;
+    an.getByteFrequencyData(data);const n=data.length*.7,bn=bars.length;let tot=0;
+    bars.forEach((b,k)=>{const a0=Math.floor(k*n/bn),a1=Math.max(a0+1,Math.floor((k+1)*n/bn));let s=0;for(let j=a0;j<a1;j++)s+=data[j];const v=s/(a1-a0)/255;tot+=v;b.style.transform='scaleY('+(.15+Math.min(1,v*1.6)*.85).toFixed(2)+')'});
+    lvl=lvl*.6+(tot/bn)*.4;const L=rm?0:lvl.toFixed(3);$('#mub').style.setProperty('--lv',L);$('#mp').style.setProperty('--lv',L);
+    $('#pbi').style.width=Math.min(100,(ac.currentTime-startT)/(TRACKS[cur].len||LEN)*100).toFixed(1)+'%';
+  };
+  raf=requestAnimationFrame(loop);
+}
+const stepTrack=d=>{if(cur>=0)playTrack((cur+d+TRACKS.length)%TRACKS.length,true)};
+paintTracks();markTracks();$('#vol').value=vol;
+$('#vol').oninput=e=>{vol=+e.target.value;LS.s('gsc_vol',vol);if(master)master.gain.setTargetAtTime(vg(vol),ac.currentTime,.05)};
+$('#mub').onclick=()=>{ctx();$('#mp').classList.toggle('on')};$('#mpx').onclick=()=>$('#mp').classList.remove('on');$('#npx').onclick=()=>stopMusic(true);$('#npp').onclick=()=>stepTrack(-1);$('#npn2').onclick=()=>stepTrack(1);
+$('#auto').onclick=()=>{autoNext=!autoNext;$('#auto').setAttribute('aria-pressed',autoNext);$('#auto').textContent=(autoNext?'●':'○')+' Tự chuyển bài mượt mà';toast(autoNext?'Sẽ tự chuyển sang bài kế tiếp.':'Mỗi bài sẽ lặp lại.')};
 $('#sfx').onclick=()=>{sfxOn=!sfxOn;$('#sfx').setAttribute('aria-pressed',sfxOn);$('#sfx').textContent=(sfxOn?'●':'○')+' Âm thanh tương tác'};
 document.addEventListener('visibilitychange',()=>{if(!ac)return;if(document.hidden){if(ac.state==='running')ac.suspend()}else ac.resume()});
-function chime(f){if(!sfxOn||!ac||ac.state!=='running')return;const t=ac.currentTime;osc('sine',f,t,1.1,.045,.005,master);osc('sine',f*1.5,t,.8,.02,.005,master)}
-function bell(){if(!ctx())return;const t=ac.currentTime;[[528,.12],[792,.07]].forEach(p=>osc('sine',p[0],t,5,p[1],.02,master));osc('sine',1056,t,2.5,.03,.02,master)}
+function chime(f){if(!sfxOn)return;if(!ac)ctx();if(!ac)return;if(ac.state==='suspended')ac.resume().catch(()=>{});const t=ac.currentTime+.01;osc('sine',f,t,1.1,.045,.005,master);osc('sine',f*1.5,t,.8,.02,.005,master)}
+function bell(){if(!ctx())return;const t=ac.currentTime+.01;[[528,.12],[792,.07]].forEach(p=>osc('sine',p[0],t,5,p[1],.02,master));osc('sine',1056,t,2.5,.03,.02,master)}
 
 /* ================= KHỞI ĐỘNG ================= */
-let quiet=false,entered=false,curT,cdIv;
-$('#qt').onclick=()=>{quiet=!quiet;$('#qt').setAttribute('aria-pressed',quiet);$('#qt').textContent=(quiet?'● ':'○ ')+'Khoảng lặng 5 giây trước khi vào'};
+let entered=false,curT;
 function doEnter(m){
   if(entered)return;entered=true;$('#curtain').classList.add('out');document.body.classList.remove('lock');
   clearTimeout(curT);curT=setTimeout(()=>{$('#curtain').style.display='none'},800);
   const h=location.hash.slice(1);
-  if(m==='think'){go('journal',true);setTimeout(()=>$('#fv').focus(),500)}
+  if(m==='think'){go('journal',true);setTimeout(()=>ed.focus(),500)}
   else if(m==='view'){go('cards',true);setTimeout(drawOne,600)}
   else if(m==='calm'){go('journal',true);setTimeout(()=>{breathOpen()},400)}
   else go(TABS.some(t=>t[0]===h)?h:'home',true);
   chime(528);
 }
-function enter(m){
-  ctx();
-  if(!quiet){doEnter(m);return}
-  $('#ct0').hidden=true;$('#ct1').hidden=false;let n=5;$('#cdn').textContent=n;
-  const iv=cdIv=setInterval(()=>{n--;if(n<=0){clearInterval(iv);doEnter(m)}else $('#cdn').textContent=n},1000);
-  $('#skip').onclick=()=>{clearInterval(iv);doEnter(m)};
-}
+function enter(m){ctx();doEnter(m)}
 $$('[data-mood]').forEach(b=>b.onclick=()=>enter(b.dataset.mood));
 
 /* ---- Nút mở lại màn giới thiệu ---- */
 $('#inb').onclick=()=>{
-  clearTimeout(curT);clearInterval(cdIv);breathClose();$('#mp').classList.remove('on');
+  clearTimeout(curT);breathClose();$('#mp').classList.remove('on');
   const c=$('#curtain');entered=false;c.style.display='';
-  $('#ct0').hidden=false;$('#ct1').hidden=true;document.body.classList.add('lock');
+  document.body.classList.add('lock');
   void c.offsetWidth;c.classList.remove('out');chime(440);
 };
 
@@ -993,7 +1079,6 @@ document.addEventListener('click',e=>{
   else if(d.q!==undefined){insertQ(d.q);chime(600)}
   else if(d.emo!==undefined){const i=+d.emo;S.emo=S.emo===i?-1:i;S.q=null;$$('#emo .chip').forEach(b=>b.classList.toggle('on',+b.dataset.emo===S.emo));doMirror();chime(520)}
   else if(t.id==='m-insert-q'&&S.q)insertQ(S.q.q);
-  else if(t.id==='fvgo'){go('journal',true);S.src='Lật góc nhìn';ed.focus();insertQ('Băn khoăn: '+S.fv)}
   else if(d.reopen){const m=mem.find(x=>x.id==d.reopen);if(m){go('journal');ed.innerHTML=clean(m.html);S.src=m.src;doMirror();ed.focus()}}
   else if(d.del){mem=mem.filter(x=>x.id!=d.del);saveMem();renderList();chime(380)}
   else if(d.wq!==undefined){go('journal');S.src='Self-Care · '+SC[+d.wq][0];insertQ(SC[+d.wq][3])}
