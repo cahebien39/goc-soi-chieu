@@ -50,6 +50,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 header{position:sticky;top:0;z-index:20;padding:.55rem 1rem;background:color-mix(in srgb,var(--bg1) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .hb{max-width:960px;margin:auto;display:flex;align-items:center;gap:.5rem}
 .brand{font-family:var(--serif);font-size:1.1rem;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-link{background:none;border:0;padding:.15em .25em;border-radius:10px;text-align:left;transition:opacity .2s;outline:none}
+.brand-link:hover{opacity:.78}
+.brand-link:focus,.brand-link:focus-visible,.brand-link:active{outline:none;box-shadow:none}
 .ib{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:1rem;padding:0}
 #nav{max-width:960px;margin:.45rem auto 0;display:flex;gap:.35rem;overflow-x:auto;scrollbar-width:none}
 #nav button{flex:none;border:0;background:transparent;padding:.35em .8em;border-radius:999px;color:var(--mute);font-size:.9rem}
@@ -136,7 +139,7 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:1rem 1rem 2re
 
 <header>
   <div class="hb">
-    <div class="brand">◐ Góc Soi Chiếu</div>
+    <button type="button" class="brand brand-link" id="brand-home" title="Về trang chủ" aria-label="Quay lại trang chủ Góc Soi Chiếu">◐ Góc Soi Chiếu</button>
     <button class="ib" id="inb" title="Màn giới thiệu" aria-label="Mở lại màn giới thiệu">✦</button>
     <button class="ib" id="thb" title="Đổi giao diện" aria-label="Đổi giao diện">☼</button>
     <button class="ib" id="mub" title="Nhạc nền" aria-label="Nhạc nền">♪</button>
@@ -1047,6 +1050,7 @@ const stepTrack=d=>{if(cur>=0)playTrack((cur+d+TRACKS.length)%TRACKS.length,true
 paintTracks();markTracks();$('#vol').value=vol;
 $('#vol').oninput=e=>{vol=+e.target.value;LS.s('gsc_vol',vol);if(master)master.gain.setTargetAtTime(vg(vol),ac.currentTime,.05)};
 $('#mub').onclick=()=>{ctx();$('#mp').classList.toggle('on')};$('#mpx').onclick=()=>$('#mp').classList.remove('on');$('#npx').onclick=()=>stopMusic(true);$('#npp').onclick=()=>stepTrack(-1);$('#npn2').onclick=()=>stepTrack(1);
+$('#brand-home').onclick=e=>{e.currentTarget.blur();go('home')};
 $('#auto').onclick=()=>{autoNext=!autoNext;$('#auto').setAttribute('aria-pressed',autoNext);$('#auto').textContent=(autoNext?'●':'○')+' Tự chuyển bài mượt mà';toast(autoNext?'Sẽ tự chuyển sang bài kế tiếp.':'Mỗi bài sẽ lặp lại.')};
 $('#sfx').onclick=()=>{sfxOn=!sfxOn;$('#sfx').setAttribute('aria-pressed',sfxOn);$('#sfx').textContent=(sfxOn?'●':'○')+' Âm thanh tương tác'};
 document.addEventListener('visibilitychange',()=>{if(!ac)return;if(document.hidden){if(ac.state==='running')ac.suspend()}else ac.resume()});
